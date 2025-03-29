@@ -7,8 +7,7 @@ public class EnemyController : EnemyBase
 
     [SerializeField] private GameObject target;
 
-
-    public Transform[] waypoints; // Arrastra los waypoints desde el Inspector
+    public Transform[] waypoints;
     private NavMeshAgent agent;
     private int currentWaypointIndex = 0;
 
@@ -20,6 +19,7 @@ public class EnemyController : EnemyBase
    
     protected override void Attack()
     {
+        ChangeState(EnemyStates.Attacking);
         print("Attacking Player");
     }
 
@@ -33,10 +33,11 @@ public class EnemyController : EnemyBase
             Attack();
         }
 
-        if (agent.remainingDistance < 0.5f && !agent.pathPending)
+        if(state == EnemyStates.Wandering)
         {
-            MoveToNextWaypoint();
+            if (agent.remainingDistance < 0.5f && !agent.pathPending) MoveToNextWaypoint();
         }
+        
     }
 
     void MoveToNextWaypoint()

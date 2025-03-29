@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     private PlayerInputActions playerControls;
     private InputAction move, fire;
     
-    
 
     public float MouseSensitivity;
 
@@ -25,11 +24,6 @@ public class PlayerController : MonoBehaviour
     public int damageAmount = 10;
 
     private Camera mainCamera;
-
-
-
-
-
 
     [Header("Movement Settings")]
     private float speed = 20;
