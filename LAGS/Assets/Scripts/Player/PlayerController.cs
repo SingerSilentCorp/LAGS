@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     private PlayerInputActions playerControls;
     private InputAction move, fire;
     
-    private float speed;
+    
 
     public float MouseSensitivity;
 
@@ -24,31 +24,48 @@ public class PlayerController : MonoBehaviour
     [Header("Daño")]
     public int damageAmount = 10;
 
+    private Camera mainCamera;
+
+
+
+
+
+
+    [Header("Movement Settings")]
+    private float speed = 20;
+    [SerializeField] private float rotationSpeed = 10f;
+    [SerializeField] private float acceleration = 8f;
+    [SerializeField] private float deceleration = 12f;
+
+    [Header("References")]
+    [SerializeField] private Transform cameraTransform;
+    private Vector3 currentVelocity;
+
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
-        speed = 20;
-
         playerControls = new PlayerInputActions();
+        rb = GetComponent<Rigidbody>();
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     void Update()
     {
         movePos = move.ReadValue<Vector2>();
 
-        // Lanzar el raycast desde la cámara (o posición del jugador)
+        
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
 
-        // Dibujar el raycast en el editor para debug
+        
         Debug.DrawRay(ray.origin, ray.direction * raycastDistance, Color.green);
 
-        // Verificar si el raycast golpea algo
+        
         if (Physics.Raycast(ray, out hit, raycastDistance, interactableLayers))
         {
             target = hit.collider.gameObject;
-            // Mostrar feedback visual (opcional)
             Debug.Log("Objeto detectado: " + hit.collider.name);
         }
         else
@@ -59,9 +76,54 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = new Vector3(movePos.x * speed, 0, movePos.y * speed);
+        //rb.linearVelocity = new Vector3(movePos.x * speed, 0, movePos.y * speed);
+
+        PlayerMovement();
     }
 
+    private void RotateTowardsDirection(Vector3 direction)
+    {
+        if (direction.magnitude > 0.1f)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            rb.rotation = Quaternion.Slerp(rb.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
+        }
+    }
+
+    private void PlayerMovement()
+    {
+        Vector3 inputDirection = new Vector3(movePos.x, 0f, movePos.y).normalized;
+
+        if (inputDirection.magnitude >= 0.1f)
+        {
+            
+            Vector3 cameraForward = cameraTransform.forward;
+            Vector3 cameraRight = cameraTransform.right;
+
+            cameraForward.y = 0f;
+            cameraRight.y = 0f;
+            cameraForward.Normalize();
+            cameraRight.Normalize();
+
+            Vector3 moveDirection = cameraForward * inputDirection.z + cameraRight * inputDirection.x;
+
+            
+            Vector3 targetVelocity = moveDirection * speed;
+
+            
+            currentVelocity = Vector3.Lerp(currentVelocity, targetVelocity, acceleration * Time.fixedDeltaTime);
+
+            
+            //RotateTowardsDirection(moveDirection);
+        }
+        else
+        {
+            currentVelocity = Vector3.Lerp(currentVelocity, Vector3.zero, deceleration * Time.fixedDeltaTime);
+        }
+
+        currentVelocity.y = rb.linearVelocity.y;
+        rb.linearVelocity = currentVelocity;
+    }
 
     private void Fire(InputAction.CallbackContext context)
     {
