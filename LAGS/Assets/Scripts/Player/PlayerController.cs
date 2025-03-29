@@ -18,18 +18,15 @@ public class PlayerController : MonoBehaviour
     [Header("References")]
     private Rigidbody rb;
     private PlayerInputActions playerControls;
-    private InputAction move, fire;
+    private InputAction move, fire, sprint;
 
     [SerializeField] private Transform cameraTransform;
     private Vector3 currentVelocity;
 
     [Header("PlayerStats")]
-    private float health = 100;
-    private float speed = 20;
-    private float damage = 10;
-
-
-
+    private float baseHealth, health = 100;
+    private float baseSpeed, speed = 20;
+    private float baseDamage, damage = 10;
 
     private void Awake()
     {
@@ -40,27 +37,27 @@ public class PlayerController : MonoBehaviour
         Cursor.visible = false;
     }
 
-    void Update()
+    private void Update()
     {
         movePos = move.ReadValue<Vector2>();
 
-        
+
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
 
-        
+
         Debug.DrawRay(ray.origin, ray.direction * raycastDistance, Color.green);
 
-        
+
         if (Physics.Raycast(ray, out hit, raycastDistance, interactableLayers))
         {
             target = hit.collider.gameObject;
             Debug.Log("Objeto detectado: " + hit.collider.name);
         }
-        else
-        {
-            target = null;
-        }
+        else target = null;
+
+        if (sprint.IsPressed()) speed += (speed * 0.5f);
+        else speed = baseSpeed;
     }
 
     private void FixedUpdate()
@@ -74,7 +71,7 @@ public class PlayerController : MonoBehaviour
 
         if (inputDirection.magnitude >= 0.1f)
         {
-            
+
             Vector3 cameraForward = cameraTransform.forward;
             Vector3 cameraRight = cameraTransform.right;
 
@@ -85,10 +82,10 @@ public class PlayerController : MonoBehaviour
 
             Vector3 moveDirection = cameraForward * inputDirection.z + cameraRight * inputDirection.x;
 
-            
+
             Vector3 targetVelocity = moveDirection * speed;
 
-            
+
             currentVelocity = Vector3.Lerp(currentVelocity, targetVelocity, acceleration * Time.fixedDeltaTime);
         }
         else
@@ -102,7 +99,22 @@ public class PlayerController : MonoBehaviour
 
     private void Fire(InputAction.CallbackContext context)
     {
-        if(target != null) Debug.Log("Fire: " + target.name);
+        if (target != null) Debug.Log("Fire: " + target.name);
+    }
+
+    private void IncreaseOrDecreaseSpeed(float percent)
+    {
+        speed += speed * (percent / 100.0f);
+    }
+
+    private void IncreaseOrDecreaseHealth(float percent)
+    {
+        health += health * (percent / 100.0f);
+    }
+
+    private void IncreaseOrDecreaseDamage(float percent)
+    {
+        damage += damage * (percent / 100.0f);
     }
 
 
@@ -115,12 +127,16 @@ public class PlayerController : MonoBehaviour
         fire.Enable();
 
         fire.performed += Fire;
+
+        sprint = playerControls.Player.Sprint;
+        sprint.Enable();
     }
 
     private void OnDisable()
     {
         move.Disable();
         fire.Disable();
+        sprint.Disable();
     }
 }
 

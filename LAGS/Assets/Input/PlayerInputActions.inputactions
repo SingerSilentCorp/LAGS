@@ -31,12 +31,39 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Sprint",
+                    "type": "Button",
+                    "id": "dc03c994-70d1-49e6-b3ad-49017998a2e0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "8ec84aab-3065-46b5-88e8-9210d6535e88",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Dialog",
+                    "type": "Button",
+                    "id": "6c63fd41-1e51-4f73-9743-2c9f421ef6c1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
                     "name": "WASD",
-                    "id": "60cbfa57-a209-421d-b69f-f8ab93028f9f",
+                    "id": "94958a9c-4056-40f7-941b-edb4c72304c4",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -47,7 +74,7 @@
                 },
                 {
                     "name": "up",
-                    "id": "a309ba70-ae68-415d-87be-b5d1834664fc",
+                    "id": "49839158-ffad-4e6c-b6ad-28218a910175",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
@@ -58,7 +85,7 @@
                 },
                 {
                     "name": "down",
-                    "id": "2fe54f24-f023-436c-9bb7-a139d51f8adf",
+                    "id": "01ea5fdd-16d3-4a45-ad46-b6c082934ff8",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
@@ -69,7 +96,7 @@
                 },
                 {
                     "name": "left",
-                    "id": "baf633b3-baa6-4807-8198-f82381ca78a6",
+                    "id": "480a1646-d335-4ff2-a6f8-f6dedac59dca",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
@@ -80,7 +107,7 @@
                 },
                 {
                     "name": "right",
-                    "id": "d15aa410-15fe-4467-8492-d4ac868b665e",
+                    "id": "920d0603-fb20-4675-a51f-9bf54df320e7",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
@@ -108,6 +135,67 @@
                     "processors": "",
                     "groups": "",
                     "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2122df57-ab83-4205-8c2c-f49869610b88",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d8b6ed9c-f51e-47be-a5e2-5c1f2bcfa072",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ce6050ff-7af1-42d5-92b5-c577d828e97a",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dialog",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "85aa11e2-6400-4a72-9a75-9c13084a9fea",
+            "actions": [
+                {
+                    "name": "Accept",
+                    "type": "Button",
+                    "id": "ca9bd98f-cd98-4fcf-93ee-6b59572112a7",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "1811d499-d034-48dd-9ac1-b83cae92f173",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accept",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
