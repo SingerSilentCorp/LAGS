@@ -453,10 +453,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MouseSensitivity: 0
-  raycastDistance: 11.1
+  target: {fileID: 0}
+  raycastDistance: 13.61
   interactableLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   damageAmount: 10
 --- !u!65 &591028876
 BoxCollider:
