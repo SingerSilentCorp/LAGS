@@ -1,39 +1,34 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static UnityEngine.GraphicsBuffer;
 
 public class PlayerController : MonoBehaviour
 {
     private Vector3 movePos;
-
-    private Rigidbody rb;
-
-    private PlayerInputActions playerControls;
-    private InputAction move, fire;
-    
-
-    public float MouseSensitivity;
-
     public GameObject target;
 
     [Header("Configuración Raycast")]
-    public float raycastDistance = 3f; // Distancia máxima de detección
-    public LayerMask interactableLayers; // Capas con las que puede interactuar
-
-    [Header("Daño")]
-    public int damageAmount = 10;
-
-    private Camera mainCamera;
+    public float raycastDistance = 3f;
+    public LayerMask interactableLayers;
 
     [Header("Movement Settings")]
-    private float speed = 20;
     [SerializeField] private float rotationSpeed = 10f;
     [SerializeField] private float acceleration = 8f;
     [SerializeField] private float deceleration = 12f;
 
     [Header("References")]
+    private Rigidbody rb;
+    private PlayerInputActions playerControls;
+    private InputAction move, fire;
+
     [SerializeField] private Transform cameraTransform;
     private Vector3 currentVelocity;
+
+    [Header("PlayerStats")]
+    private float health = 100;
+    private float speed = 20;
+    private float damage = 10;
+
+
 
 
     private void Awake()
@@ -70,18 +65,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //rb.linearVelocity = new Vector3(movePos.x * speed, 0, movePos.y * speed);
-
         PlayerMovement();
-    }
-
-    private void RotateTowardsDirection(Vector3 direction)
-    {
-        if (direction.magnitude > 0.1f)
-        {
-            Quaternion targetRotation = Quaternion.LookRotation(direction);
-            rb.rotation = Quaternion.Slerp(rb.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
-        }
     }
 
     private void PlayerMovement()
@@ -106,9 +90,6 @@ public class PlayerController : MonoBehaviour
 
             
             currentVelocity = Vector3.Lerp(currentVelocity, targetVelocity, acceleration * Time.fixedDeltaTime);
-
-            
-            //RotateTowardsDirection(moveDirection);
         }
         else
         {
