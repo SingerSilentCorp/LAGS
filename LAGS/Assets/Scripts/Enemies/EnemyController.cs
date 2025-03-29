@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyController : EnemyBase
 {
@@ -6,6 +7,17 @@ public class EnemyController : EnemyBase
 
     [SerializeField] private GameObject target;
 
+
+    public Transform[] waypoints; // Arrastra los waypoints desde el Inspector
+    private NavMeshAgent agent;
+    private int currentWaypointIndex = 0;
+
+    void Start()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        MoveToNextWaypoint();
+    }
+   
     protected override void Attack()
     {
         print("Attacking Player");
@@ -20,7 +32,21 @@ public class EnemyController : EnemyBase
         {
             Attack();
         }
+
+        if (agent.remainingDistance < 0.5f && !agent.pathPending)
+        {
+            MoveToNextWaypoint();
+        }
     }
+
+    void MoveToNextWaypoint()
+    {
+        if (waypoints.Length == 0) return;
+
+        agent.SetDestination(waypoints[currentWaypointIndex].position);
+        currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length; // Vuelve al inicio después del último
+    }
+
 
     private bool PlayerInRange()
     {
