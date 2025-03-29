@@ -439,12 +439,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MouseSensitivity: 0
-  target: {fileID: 0}
+  target: {fileID: 591028873}
   raycastDistance: 14
   interactableLayers:
     serializedVersion: 2
     m_Bits: 64
   damageAmount: 10
+  rotationSpeed: 10
+  acceleration: 8
+  deceleration: 12
+  cameraTransform: {fileID: 330585546}
 --- !u!65 &591028876
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -817,7 +821,6 @@ MonoBehaviour:
   invertYAxis: 0
   minVerticalAngle: 0
   maxVerticalAngle: 0
-  playerBody: {fileID: 591028879}
   rotationSmoothness: 5
 --- !u!1 &1135068552
 GameObject:
