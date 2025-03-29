@@ -33,7 +33,7 @@ public class EnemyController : EnemyBase
             Attack();
         }
 
-        if(state == EnemyStates.Wandering)
+        if (state == EnemyStates.Wandering)
         {
             if (agent.remainingDistance < 0.5f && !agent.pathPending) MoveToNextWaypoint();
         }
