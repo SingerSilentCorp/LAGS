@@ -2,7 +2,7 @@ using UnityEngine;
 
 public abstract class EnemyBase : MonoBehaviour
 {
-    protected enum EnemyStates { Wandering, Attacking, Dying};
+    protected enum EnemyStates { Wandering, Attacking, Dying, Escape};
 
     protected EnemyStates state = EnemyStates.Wandering;
 
