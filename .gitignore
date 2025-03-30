@@ -72,3 +72,9 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 [Aa]ssets/[Ss]treamingAssets/aa.meta
 [Aa]ssets/[Ss]treamingAssets/aa/*
+LAGS/ProjectSettings/ShaderGraphSettings.asset
+LAGS/ProjectSettings/EditorBuildSettings.asset
+LAGS/ProjectSettings/PackageManagerSettings.asset
+LAGS/ProjectSettings/EditorBuildSettings.asset
+LAGS/ProjectSettings/PackageManagerSettings.asset
+LAGS/ProjectSettings/ShaderGraphSettings.asset
