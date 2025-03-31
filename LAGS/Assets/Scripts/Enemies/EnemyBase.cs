@@ -4,7 +4,7 @@ public abstract class EnemyBase : MonoBehaviour
 {
     protected enum EnemyStates { Wandering, Attacking, Dying, Escape};
 
-    protected EnemyStates state = EnemyStates.Wandering;
+    [SerializeField]  protected EnemyStates state = EnemyStates.Wandering;
 
     [SerializeField] protected float health = 100f;
     [SerializeField] protected float moveSpeed = 10f;
@@ -30,4 +30,13 @@ public abstract class EnemyBase : MonoBehaviour
         //GameManager.Instance.AddScore(scoreValue);
         //Destroy(gameObject);
     }
+
+    protected virtual float GetHealth()
+    {
+        return health;
+    }
+
+    protected virtual void SetSpeed(float _speed) => moveSpeed = _speed;
+    protected virtual void IncreaseDamage() => damage++;
+    protected virtual void ReduceDamage() => damage--;
 }
