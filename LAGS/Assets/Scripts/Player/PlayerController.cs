@@ -11,9 +11,12 @@ public class PlayerController : MonoBehaviour
     public LayerMask interactableLayers;
 
     [Header("Movement Settings")]
-    [SerializeField] private float rotationSpeed = 10f;
-    [SerializeField] private float acceleration = 8f;
-    [SerializeField] private float deceleration = 12f;
+    private float baseRotationSpeed = 10f;
+    [SerializeField] private float rotationSpeed;
+    private float baseAcceleration = 8f;
+    [SerializeField] private float acceleration;
+    private float baseDeceleration = 12f;
+    [SerializeField] private float deceleration;
 
     [Header("References")]
     private Rigidbody rb;
@@ -24,9 +27,12 @@ public class PlayerController : MonoBehaviour
     private Vector3 currentVelocity;
 
     [Header("PlayerStats")]
-    private float baseHealth, health = 100;
-    private float baseSpeed, speed = 20;
-    private float baseDamage, damage = 10;
+    private float baseHealth = 100;
+    private float health;
+    private float baseSpeed = 20;
+    private float speed;
+    private float baseDamage = 10;
+    private float damage;
 
     private void Awake()
     {
@@ -63,6 +69,13 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         PlayerMovement();
+    }
+
+    private void ResetPlayer()
+    {
+        speed = baseSpeed;
+        damage = baseDamage;
+        health = baseHealth;
     }
 
     private void PlayerMovement()

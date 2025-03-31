@@ -641,13 +641,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 308c3379ce3db5e46879db9aa0459bf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 591028873}
+  target: {fileID: 0}
   raycastDistance: 14
   interactableLayers:
     serializedVersion: 2
     m_Bits: 64
   rotationSpeed: 10
-  acceleration: 8
+  acceleration: 10
   deceleration: 12
   cameraTransform: {fileID: 330585546}
 --- !u!65 &591028876
@@ -752,7 +752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: d9051270036d6ca4eb60d14e6ab08877, type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -766,7 +766,7 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard&Mouse
+  m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 330585545}
