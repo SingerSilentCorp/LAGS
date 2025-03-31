@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
         }
         else target = null;
 
-        if (sprint.IsPressed()) speed += (speed * 0.5f);
+        if (sprint.IsPressed()) speed = baseSpeed * 1.5f;
         else speed = baseSpeed;
     }
 
