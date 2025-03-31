@@ -1,24 +1,30 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
 
 public class TestEnemieAnimations : MonoBehaviour
 {
-
+    [SerializeField] Transform _player;
     private enum EnemysStates { walk, escape, dead };
 
     [SerializeField] EnemysStates _enemie = EnemysStates.walk;
 
     int health;
-
-
+    float velocidadX;
+    private Rigidbody rb;
     Animator _anim;
+
+    private float lastX;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        lastX = transform.position.x;
+
         _anim = GetComponent<Animator>();
         health = 10;
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -27,6 +33,21 @@ public class TestEnemieAnimations : MonoBehaviour
         switch(_enemie)
         {
             case EnemysStates.walk:
+
+                float currentX = transform.position.x; // Posición actual en X
+
+                if (currentX > lastX)
+                {
+                    Debug.Log("Moviéndose a la derecha ➡️");
+                }
+                else if (currentX < lastX)
+                {
+                    Debug.Log("Moviéndose a la izquierda ⬅️");
+                }
+
+                lastX = currentX;
+
+
                 if (health < 5)
                 {
                     StartCoroutine(StartViewPlayer());
