@@ -62,39 +62,49 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        PlayerMovement();
+       PlayerMovement();
     }
 
     private void PlayerMovement()
     {
-        Vector3 inputDirection = new Vector3(movePos.x, 0f, movePos.y).normalized;
+        //Vector3 inputDirection = new Vector3(movePos.x, 0f, movePos.y).normalized;
 
-        if (inputDirection.magnitude >= 0.1f)
-        {
+        //if (inputDirection.magnitude >= 0.1f)
+        //{
 
-            Vector3 cameraForward = cameraTransform.forward;
-            Vector3 cameraRight = cameraTransform.right;
+        //    Vector3 cameraForward = cameraTransform.forward;
+        //    Vector3 cameraRight = cameraTransform.right;
 
-            cameraForward.y = 0f;
-            cameraRight.y = 0f;
-            cameraForward.Normalize();
-            cameraRight.Normalize();
+        //    cameraForward.y = 0f;
+        //    cameraRight.y = 0f;
+        //    cameraForward.Normalize();
+        //    cameraRight.Normalize();
 
-            Vector3 moveDirection = cameraForward * inputDirection.z + cameraRight * inputDirection.x;
-
-
-            Vector3 targetVelocity = moveDirection * speed;
+        //    Vector3 moveDirection = cameraForward * inputDirection.z + cameraRight * inputDirection.x;
 
 
-            currentVelocity = Vector3.Lerp(currentVelocity, targetVelocity, acceleration * Time.fixedDeltaTime);
-        }
-        else
-        {
-            currentVelocity = Vector3.Lerp(currentVelocity, Vector3.zero, deceleration * Time.fixedDeltaTime);
-        }
+        //    Vector3 targetVelocity = moveDirection * speed;
 
-        currentVelocity.y = rb.linearVelocity.y;
-        rb.linearVelocity = currentVelocity;
+
+        //    currentVelocity = Vector3.Lerp(currentVelocity, targetVelocity, acceleration * Time.fixedDeltaTime);
+        //}
+        //else
+        //{
+        //    currentVelocity = Vector3.Lerp(currentVelocity, Vector3.zero, deceleration * Time.fixedDeltaTime);
+        //}
+
+        //currentVelocity.y = rb.linearVelocity.y;
+        //rb.linearVelocity = currentVelocity;
+
+       float horizontal = Input.GetAxis("Horizontal"); // A/D o Flechas
+        float vertical = Input.GetAxis("Vertical"); // W/S o Flechas
+
+        // Dirección según la cámara
+        Vector3 direction = (cameraTransform.forward * vertical + cameraTransform.right * horizontal).normalized;
+        direction.y = 0; // Evitar que el jugador se mueva en Y
+
+        // Aplicar movimiento sin afectar la gravedad
+        rb.linearVelocity = new Vector3(direction.x * speed, rb.linearVelocity.y, direction.z * speed);
     }
 
     private void Fire(InputAction.CallbackContext context)
