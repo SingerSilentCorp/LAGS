@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     private Vector3 movePos;
-    public GameObject target;
+    private GameObject target;
 
     [Header("Configuración Raycast")]
     public float raycastDistance = 3f;
@@ -21,9 +21,12 @@ public class PlayerController : MonoBehaviour
     [Header("References")]
     private Rigidbody rb;
     private PlayerInputActions playerControls;
-    private InputAction move, fire, sprint;
-    private InputAction uiAccept;
     [SerializeField] private DialogueManager dialogueManager;
+    [SerializeField] private GameManager gameManager;
+
+    [Header("Inputs")]
+    private InputAction move, fire, sprint;
+    private InputAction uiAccept, pause;
 
     [SerializeField] private Transform cameraTransform;
     private Vector3 currentVelocity;
@@ -43,8 +46,7 @@ public class PlayerController : MonoBehaviour
         playerControls = new PlayerInputActions();
         rb = GetComponent<Rigidbody>();
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        gameManager.MouseVisible(false);
     }
 
     private void Update()
@@ -138,6 +140,20 @@ public class PlayerController : MonoBehaviour
         damage += damage * (percent / 100.0f);
     }
 
+    private void Pause(InputAction.CallbackContext context)
+    {
+        if (context.performed && !gameManager.pauseOpen)
+        {
+            gameManager.OpenPause(true);
+            Time.timeScale = 0.0f;
+        }
+        else if (context.performed && gameManager.pauseOpen)
+        {
+            gameManager.OpenPause(false);
+            Time.timeScale = 1.0f;
+        }
+    }
+
 
     private void OnEnable()
     {
@@ -154,6 +170,11 @@ public class PlayerController : MonoBehaviour
 
         uiAccept = playerControls.UI.Accept;
         uiAccept.Enable();
+
+        pause = playerControls.Player.Pause;
+        pause.Enable();
+
+        pause.performed += Pause;
     }
 
     private void OnDisable()
@@ -161,7 +182,9 @@ public class PlayerController : MonoBehaviour
         move.Disable();
         fire.Disable();
         sprint.Disable();
+
         uiAccept.Disable();
+        pause.Disable();
     }
 }
 

@@ -1,0 +1,145 @@
+﻿title: Intro
+---
+<<declare $emp = "">>
+<<declare $cr = "Chrome Raven">>
+<<declare $who = "????">>
+<<declare $gw = "Gray Wolf">>
+<<declare $rh = "Riot Hydra">>
+<<declare $sh = "Silver Hare">>
+<<declare $changeIMG = false>>
+<<declare $createFade = true>>
+
+// NOTAS GENERALES
+
+// el jugador hace avanzar 
+// cada imagen con diálogo o cada imagen sola con un click
+
+// TODOS los textos deben aparecer como si fueran tipeados en 
+// una computadora (como en Word o Google Docs), "efecto máquina de escribir"
+
+<<set $createFade to true>>
+{$emp}: #line:0199f68 
+{$emp}: Las Noches. Nuestro hogar. #line:0e7fb05 
+
+<<set $changeIMG to true>>
+<<set $createFade to true>>
+{$emp}: Duele decirlo, pero esta nación corre un grave peligro. #line:0a1208a 
+{$emp}: Anarquistas y criminales atentan contra la democracia dirigida, el pilar de la nación. #line:0fad2a6 
+{$emp}: Ellos envenenan la mente de nuestros niños y matan a sus madres. #line:097d3e6 
+{$emp}: Esparcen mentiras, aterrorizan los hogares. #line:00e7cb2 
+{$emp}: Tu familia podría ser la siguiente. #line:041d745 
+
+<<set $changeIMG to true>>
+<<set $createFade to true>>
+{$emp}: Por eso es que estás aquí—para proteger a los inocentes. #line:0026994 
+{$emp}: Ustedes son nuestros defensores, los campeones de la libertad. #line:03a0704 
+
+<<set $changeIMG to true>>
+<<set $createFade to true>>
+{$emp}: USTEDES son el escudo de la democracia. #line:0d518c4 
+{$emp}: Los HÉROES cromados de la nación—los Synth. #line:05b3689 
+
+<<set $changeIMG to true>>
+<<set $createFade to true>>
+{$emp}: Recupera las calles. Protege la libertad.  #line:07b6318 
+{$emp}: ¡Salva a nuestro país! #line:0a4f28e 
+
+// fundido a negro (1.0 s.)
+    <<jump Secreto1>>
+===
+
+title: Secreto1
+---
+// es un diálogo entre dos personajes
+// el retrato de los personajes se intercala con cada línea de texto
+{$cr}: El trabajo está hecho. No hubo sobrevivientes.  #line:0f93714 
+<<set $changeIMG to true>>
+{$who}: Has servido bien a tu país. Sus muertes nos fortalecen. #line:04e3c12 
+<<set $changeIMG to true>>
+{$cr}: Cumple tu parte del trato. Déjalos ir. Tú sabes que— #line:0793d15 
+<<set $changeIMG to true>>
+{$cr}: Silencio. Les verás en la otra vida, si es que crees en esas estupideces. #line:0d7ee4f 
+// en esta línea sla FIGURA OSCURECIDA es reemplazada por RUIDO BLANCO. Se escucha RUIDO BLANCO.
+// en respuesta, el retrato del otro personaje aparece en pantalla
+<<set $changeIMG to true>>
+{$cr}: Desgraciado. Ya oyeron. Vendrán por nosotros. #line:0c93c92 
+
+    <<jump Secreto2>>
+===
+
+title: Secreto2
+---
+// es un diálogo entre dos personajes
+// el retrato de los personajes se intercala con cada línea de texto
+{$who}: Recibí el cargamento, Gray Wolf. #line:0f795b0 
+{$gw}: A tu servicio. Una probada les reventará el cerebro gehehee. #line:042a18f 
+{$who}: No esperaba menos. Te enviaré lo acordado. #line:09548cc 
+{$gw}: Riot Hydra, es un placer hacer negocios— #line:0a56e51 
+{$rh}: Ahórrate la saliva. Tan solo eres una herramienta para nuestra nación. #line:0142e72 
+
+// La CONVERSACIÓN termina. La transmisión es CORTADA.
+
+    <<jump Secreto3>>
+===
+
+title: Secreto3
+---
+// es un diálogo entre dos personajes
+// el retrato de los personajes se intercala con cada línea de texto
+{$sh}: …No sé cómo pasó. Yo pensé que— #line:07962dc 
+{$rh}: Te lo advertí. Nada de testigos. Tu rostro está en todos lados. #line:04f6b97 
+{$sh}: Sí, sí, la cagué, lo solucionaré. #line:000c68b 
+{$rh}: Debes de creer que soy un imbécil. #line:07fc666 
+{$sh}: Hermano, te respeto, sabes bien que— #line:0ea78ce 
+{$rh}: Calla, mierda. Muerto serás más útil. #line:099a92c 
+
+// La CONVERSACIÓN termina. la transmisión es CORTADA
+
+===
+
+//FINALES
+
+title: Final_A
+---
+// Si el número de secretos encontrados por el jugador es x≤1 :
+
+{$emp}: Felicidades, soldado. Lo lograste.  #line:0c21ad1 
+{$emp}: Acabaste con las alimañas que han demacrado el rostro de nuestra hermosa ciudad. #line:07bcbdf 
+{$emp}: Hoy eres un héroe. Nuestro campeón. #line:005eb57 
+{$emp}: Tu mano reavivó la llama de la democracia en nuestras calles. #line:0348a54 
+{$emp}: Nunca dudes. No hagas preguntas. No busques respuestas. #line:03ce710 
+{$emp}: Gracias a ti, hoy somos más libres que ayer. #line:0b1a8fc 
+{$emp}: El precio fue pagado con la sangre de los traidores, pero eso está bien.  #line:0441913 
+{$emp}: Todo, realmente, está bien.  #line:098e3b6 
+
+// suena la canción patriótica del inicio del juego
+
+// fundido a negro tres (3) segundos
+
+===
+
+title: Final_B
+---
+// Si el número de secretos encontrados por el jugador es x≥2: 
+
+{$emp}: ¿Sorprendido? No. Deja ya de mentir. #line:0615998 
+{$emp}: La verdad estaba frente a ti. Elegiste ignorarla. Fue sencillo, después de todo. #line:0026eea 
+{$emp}: El problema era de alguien más.  #line:098bbcd 
+{$emp}: ¿Qué? ¿Te quedarás de brazos cruzados? ¿Llorarás? No me hagas reír. #line:0286555 
+{$emp}: Eso es. Siente la ira. Nuestra ira. Ve. Arregla este desastre. #line:0edb80e 
+
+// empieza el nivel secreto
+
+===
+
+title: Final_B_Cierre
+---
+{$emp}: Mataste al malo de turno. Acabaste con todos. La sangre en tus botas lo prueba. #line:059e042 
+{$emp}: Te detienes a escuchar las calles de Las Noches. Sabes que vienen por ti. #line:07f1f2d 
+{$emp}: ¿Qué harás? ¿Desviar la mirada? ¿Rendirte? Imposible.  #line:096ca50 
+{$emp}: Prepárate. La pelea recién empieza.  #line:0855d4a 
+{$emp}: Acaba con ellos. #line:0b90411 
+
+// suena la canción del nivel secreto
+// fundido a negro por tres (3) segundos
+===
