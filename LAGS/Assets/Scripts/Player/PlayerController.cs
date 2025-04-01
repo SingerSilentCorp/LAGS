@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private PlayerInputActions playerControls;
     private InputAction move, fire, sprint;
+    private InputAction uiAccept;
+    [SerializeField] private DialogueManager dialogueManager;
 
     [SerializeField] private Transform cameraTransform;
     private Vector3 currentVelocity;
@@ -29,6 +31,8 @@ public class PlayerController : MonoBehaviour
     [Header("PlayerStats")]
     private float baseHealth = 100;
     private float health;
+    private float baseArmor = 100;
+    private float armor;
     private float baseSpeed = 20;
     private float speed;
     private float baseDamage = 10;
@@ -64,6 +68,8 @@ public class PlayerController : MonoBehaviour
 
         if (sprint.IsPressed()) speed = baseSpeed * 1.5f;
         else speed = baseSpeed;
+
+        if (uiAccept.WasPressedThisFrame()) dialogueManager.IsPlayingDialog();
     }
 
     private void FixedUpdate()
@@ -76,6 +82,7 @@ public class PlayerController : MonoBehaviour
         speed = baseSpeed;
         damage = baseDamage;
         health = baseHealth;
+        armor = baseArmor;
     }
 
     private void PlayerMovement()
@@ -115,17 +122,18 @@ public class PlayerController : MonoBehaviour
         if (target != null) Debug.Log("Fire: " + target.name);
     }
 
-    private void IncreaseOrDecreaseSpeed(float percent)
+    public void IncreaseOrDecreaseSpeed(float percent)
     {
         speed += speed * (percent / 100.0f);
     }
 
-    private void IncreaseOrDecreaseHealth(float percent)
+    public void IncreaseOrDecreaseHealth(float percent)
     {
-        health += health * (percent / 100.0f);
+        if (health > baseHealth) health = baseHealth;
+        else health += health * (percent / 100.0f);
     }
 
-    private void IncreaseOrDecreaseDamage(float percent)
+    public void IncreaseOrDecreaseDamage(float percent)
     {
         damage += damage * (percent / 100.0f);
     }
@@ -143,6 +151,9 @@ public class PlayerController : MonoBehaviour
 
         sprint = playerControls.Player.Sprint;
         sprint.Enable();
+
+        uiAccept = playerControls.UI.Accept;
+        uiAccept.Enable();
     }
 
     private void OnDisable()
@@ -150,6 +161,7 @@ public class PlayerController : MonoBehaviour
         move.Disable();
         fire.Disable();
         sprint.Disable();
+        uiAccept.Disable();
     }
 }
 

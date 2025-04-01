@@ -1,5 +1,451 @@
-﻿title: Intro
-tags:
+﻿title: Prologo
+---
+<<declare $emp = "">>
+<<declare $ma = "María">>
+<<declare $doc = "Doctor">>
+<<declare $inv = "">>
+<<declare $aop = "Arbiter of Penance">>
+<<declare $zog = "Zealot of Grace">>
+<<declare $mom = "Minister of Mercy">>
+<<declare $hor = "Hermit of Regret">>
+<<declare $voc = "Vicar of Charity">>
+<<declare $changeIMG = false>>
+<<declare $createFade = true>>
+// NOTAS GENERALES
+
+// el jugador hace avanzar 
+// cada imagen con diálogo o cada imagen sola con un click
+
+// TODOS los textos deben aparecer como si fueran tipeados en 
+// una computadora (como en Word o Google Docs), "efecto máquina de escribir"
+
+// todos los segmentos de diálogo DEBEN tener un botón de skip
+// para que el jugador los adelante si desea
+
+// INICIA INTRO DEL JUEGO
+
+// Fundido a negro (1s.)
+// imagen en pantalla "planos intro-01" y que 
+// el texto aparezca centrado en la pantalla (con Unity):
+<<set $createFade to true>>
+{$emp}: 
+{$inv}: Humanity’s on the verge of extinction.
+
+
+// sin transición (corte seco)
+// imagen en pantalla "planos intro-01" y que 
+// el texto aparezca centrado en la pantalla (con Unity):
+<<set $changeIMG to true>>
+<<set $createFade to false>>
+{$inv}: Cities, towns–they have all been leveled to the ground.
+
+
+// corte seco
+// imagen en pantalla "planos intro-03"
+<<set $changeIMG to true>>
+<<set $createFade to true>>
+{$inv}: Worst of all, humanity brought this upon itself.
+
+/// aplicar fundido a negro(1.0 s.)
+// transicion de negro a imagen (1.0 s.)
+// mostrar en pantalla "planos intro-05" 
+<<set $changeIMG to true>>
+<<set $createFade to true>>
+{$inv}: Atlas Space Colony, 3XX7.
+{$inv}: The only remaining scientific station. 
+<<set $changeIMG to true>>
+//<<set $createFade to false>>
+{$inv}: 9:17 Terrestrial TIme.
+
+
+// corte seco
+// mostrar en pantalla "planos intro-09"
+{$inv}: It was then that the Aeon attacked.
+<<set $changeIMG to true>>
+<<set $createFade to true>>
+{$inv}: They determined that humankind did not deserve its continued existence.
+
+// fundido a negro (1.0 s.)
+    <<jump Nivel1intro>>
+===
+
+title: Nivel1intro
+---
+// transición de negro a imagen (0.5 s.)
+//imagen planos intro-11, con caja de diálogo 
+// (transparente abajo, para los diálogos del personaje
+<<set $changeIMG to true>>
+//<<set $createFade to false>>
+{$ma}: Hang in there, Doctor!
+
+// corte seco
+// imagen planos intro-12, con caja de diálogo 
+//(transparente abajo, para los diálogos)
+
+<<set $changeIMG to true>>
+//<<set $createFade to false>>
+{$doc}: María... You cannot allow our work to end like this…
+
+
+// corte seco
+// imagen planos intro-13, con caja de diálogo 
+//(transparente abajo, para los diálogos)
+
+<<set $changeIMG to true>>
+//<<set $createFade to false>>
+{$ma}: Don’t move, sir, get back down!
+
+
+// corte seco
+//imagen planos intro-14, con caja de diálogo abajo 
+//(transparente, para los diálogos)
+<<set $changeIMG to true>>
+//<<set $createFade to false>>
+{$doc}: Us humans… Egoism is our defining trait as a species…
+
+
+// corte seco
+// imagen planos intro-15 con caja de diálogo transparente y abajo
+<<set $changeIMG to true>>
+//<<set $createFade to false>>
+{$doc}: But that, too, is part of what it means to be alive!
+
+
+// corte seco
+// imagen planos intro-16 con caja de diálogo transparente y abajo
+<<set $changeIMG to true>>
+//<<set $createFade to false>>
+{$doc}: Despite all of our failures and shortcomings… Are we to simply submit before our fate?
+
+
+// corte seco
+// imagen planos intro-17 con caja de diálogo transparente y abajo
+<<set $changeIMG to true>>
+//<<set $createFade to false>>
+{$doc}: I tell you, there is no wrong in wanting to stay alive…
+
+
+// corte seco
+//imagen planos intro-18
+<<set $changeIMG to true>>
+<<set $createFade to true>>
+{$emp}:
+
+// fundido a negro (0.5 s.)
+// transicion de negro a imagen planos intro-19 (1.0 s.)
+<<set $changeIMG to true>>
+//<<set $createFade to true>>
+{$emp}:
+
+// corte seco
+// imagen planos intro-20 con caja de diálogo transparente y abajo
+<<set $changeIMG to true>>
+//<<set $createFade to true>>
+{$ma}: That ship… It’s Noah…
+
+
+// corte seco
+// imagen planos intro-21 con caja de diálogo transparente y abajo
+<<set $changeIMG to true>>
+//<<set $createFade to true>>
+{$doc}: Make your way to the colony’s biorepository… 
+{$doc}: You will find humankind’s genetic bank there…
+
+
+
+// corte seco
+// imagen planos intro-22 con caja de diálogo transparente y abajo
+<<set $changeIMG to true>>
+//<<set $createFade to true>>
+{$doc}: I hoped it would not come to this but…
+{$doc}: Take it to Eden.
+
+
+// corte seco
+// imagen planos intro-23 con caja de texto transparente y abajo 
+<<set $changeIMG to true>>
+//<<set $createFade to true>>
+{$doc}: On that planet… Maybe we will be able to… 
+{$doc}: Begin anew.
+
+
+// corte seco
+// imagen planos intro-24 con caja de texto transparente y abajo
+<<set $changeIMG to true>>
+//<<set $createFade to true>>
+{$doc}: Waking dream or nightmare, just do not let it end like this…
+
+//corte seco
+// imagen planos intro-25
+<<set $changeIMG to true>>
+<<set $createFade to true>>
+{$emp}:
+
+//corte seco
+// imagen planos intro-26
+// fundido a negro (1.5 s.)
+<<set $changeIMG to true>>
+<<set $createFade to true>>
+{$emp}:
+
+
+// transición de negro a imagen (1.0 s.)
+// imagen planos intro-27
+<<set $changeIMG to true>>
+//<<set $createFade to true>>
+{$emp}:
+
+
+//corte seco
+// imagen planos intro-28
+<<set $changeIMG to true>>
+//<<set $createFade to true>>
+{$emp}:  
+
+
+// corte seco
+// mostrar imagen planos intro-29 (1 s.); la imagen se mueve de IZQ a DER LENTO
+<<set $changeIMG to true>>
+<<set $createFade to true>>
+{$emp}: 
+
+// fundido a negro (1.5 s.) tras hacer click y empieza el nivel 1
+<<set $createFade to true>>
+{$emp}:
+
+    //<<jump Nivel1desa>>
+===
+
+title: Nivel1desa
 ---
 
+// mostrar en pantalla 
+
+{$inv}: Use the directional arrows or WASD to control the Noah.
+
+// 3 segundos de movimiento libre del jugador, sin enemigos
+
+// me pregunto si podemos poner más controles (opciones)
+// por accesibilidad a jugar con una mano (solo mouse por ejemplo)
+
+// mostrar en pantalla
+{$inv}: Press the Left Mouse Button or the B key to fire.
+// inicia Ronda 1 de enemigos
+
+// mostrar en pantalla
+{$inv}: Press the Right Mouse Button or the N key to dodge.
+// inicia Ronda 2 de enemigos
+
+// en la ronda 7, aparece el jefe
+
+    <<jump Nivel1jefeStart>>
+===
+title: Nivel1jefeStart
+---
+// JEFE NIVEL 1
+// diálogo antes de pelear con el jefe:
+
+{$aop}: We tried to believe in you…
+
+{$ma}: Is that Aeon speaking our language?
+
+{$aop}: But wasteful creatures…
+{$aop}: Have no right to live.
+
+// inicia pelea contra el jefe
+    <<jump Nivel1jefeEnd>>
+===
+title: Nivel1jefeEnd
+---
+
+// diálogo tras derrotar al jefe (sigue en pantalla)
+
+{$aop}: Heralds of destruction…
+{$aop}: When will you be sated?
+
+// el jefe explota
+
+    <<jump Nivel1mensaje>>
+===
+title: Nivel1mensaje
+---
+// suena música de victoria, la Noah vuela al centro de la pantalla 
+// y vuela hacia la derecha hasta salir de la pantalla
+
+// fundido a negro (1 s.)
+// TODOS los textos deben aparecer como si fueran tipeados en 
+// una computadora (como en Word o Google Docs), "efecto máquina de escribir"
+// imagen en pantalla "planos intro-01" y que 
+// el texto aparezca centrado en la pantalla (con Unity):
+
+{$inv}: 9:47 Terrestrial Time.
+{$inv}: SS Noah takes off towards Eden…
+{$inv}: History of life on Earth comes to a close… 
+{$inv}: With a ship taking to the skies.
+// fundido a negro (1 s.)
+    <<jump Nivel2intro>>
+===
+
+title: Nivel2intro
+---
+
+// aparece el fondo espacial 2
+
+// aparece el siguiente mensaje en pantalla
+{$inv}: Use the number pad or the scroll wheel to change your weapons!
+
+// desarrollo del nivel 2
+
+    <<jump Nivel2jefeStart>>
+===
+
+title: Nivel2jefeStart
+---
+{$zog}: Scurry all you want.
+{$zog}: Be grateful, for death is more than you deserve.
+
+// inicia pelea
+
+    <<jump Nivel2jefeEnd>>
+===
+
+title: Nivel2jefeEnd
+---
+
+{$zog}: After poisoning your land, decimating yourselves…
+{$zog}: Why do you even persist?
+
+// el jefe explota
+// Aparece un “asset-de-arma-nueva” donde antes estaba el Jefe. 
+// La nave se dirige automáticamente hacia el objeto. 
+// Aparece una notificación sobre la nave con el ícono de la nueva arma. 
+// Cuando el jugador cambia de arma, la nave cambia de color.
+
+    <<jump Nivel3intro>>
+===
+
+title: Nivel3intro
+---
+
+{$inv}: May your ship chip and shatter.
+
+    <<jump Nivel3jefeStart>>
+===
+
+title: Nivel3jefeStart
+---
+
+{$mom}: Children that were led astray…
+{$mom}: You better gather round. We will show you the way.
+
+// inicia pelea
+
+    <<jump Nivel3jefeEnd>>
+===
+title: Nivel3jefeEnd
+---
+
+{$mom}: Disgraceful.
+{$mom}: Bathe in your ignorance lest you crumble under the weight of your sins…
+
+// el jefe explota
+// Aparece un “asset-de-arma-nueva” donde antes estaba el Jefe. 
+// La nave se dirige automáticamente hacia el objeto. 
+// Aparece una notificación sobre la nave con el ícono de la nueva arma. 
+// Cuando el jugador cambia de arma, la nave cambia de color.
+
+    <<jump Nivel4intro>>
+===
+
+title: Nivel4intro
+---
+
+{$ma}: I can finally see Eden…
+
+// suenan motores de la nave (acelera)
+
+// desarrollo del nivel 4
+
+    <<jump Nivel4jefeStart>>
+===
+
+title: Nivel4jefeStart
+---
+
+{$hor}: Humanity is caught in an endless loop of misery…
+{$hor}: To ignore the weight of history is naive.
+{$hor}: Putting you down is nothing but a pious act.
+
+    <<jump Nivel4jefeEnd>>
+===
+
+title: Nivel4jefeEnd
+---
+
+{$hor}: Since time immemorial, your deeds have remained the same.
+{$hor}: May you choke in your hollow desires…
+
+// el jefe explota
+// Aparece un “asset-de-arma-nueva” donde antes estaba el Jefe. 
+// La nave se dirige automáticamente hacia el objeto. 
+// Aparece una notificación sobre la nave con el ícono de la nueva arma. 
+// Cuando el jugador cambia de arma, la nave cambia de color.
+
+    <<jump Nivel5intro>>
+===
+
+title: Nivel5intro
+---
+// El jugador solo puede jugar el nivel 5 si 
+// ha pasado los 4 niveles anteriores sin usar continues
+
+{$ma}: …They knew.
+
+// desarrollo del nivel 5
+
+    <<jump Nivel5jefeStart>>
+===
+
+title: Nivel5jefeStart
+---
+
+{$voc}: You wretched creatures, blightspawn…
+{$voc}: This is where you die.
+
+    <<jump Nivel5jefeEnd>>
+===
+
+title: Nivel5jefeEnd
+---
+
+{$voc}: Go ahead, scum.
+{$voc}: You will prove us right.
+
+// el jefe explota
+
+{$ma}: ...
+
+// fundido a negro (2 segundos)
+// La nave se dirige lentamente
+// hacia el lado derecho de la pantalla y sale
+    <<jump Epilogo>>
+===
+
+title: Epilogo
+---
+
+// secuencia de ilustraciones para terminar la historia
+// el jugador avanza haciendo click o apretando enter
+
+// TODOS los textos deben aparecer como si fueran tipeados en 
+// una computadora (como en Word o Google Docs), "efecto máquina de escribir"
+
+// todos los segmentos de diálogo DEBEN tener un botón de skip
+// para que el jugador los adelante si desea
+
+// la siguiente frase aparece centrada en la pantalla
+// debe aparecer como si fuera tipeado en 
+// una computadora (como en Word o Google Docs), "efecto máquina de escribir"
+
+{$inv}: Thank you for playing!
 ===
