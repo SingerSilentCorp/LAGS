@@ -4,11 +4,14 @@ using Yarn.Unity;
 
 public class DialogueManager : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField] private TransitionController transitionController;
+
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private DialogueRunner dialogueRunner;
     [SerializeField] private InMemoryVariableStorage variableStorage;
-    [HideInInspector] public bool dialogueIsPlaying { get; private set; }
+    [HideInInspector] public bool DialogueIsPlaying { get; private set; }
 
     private static DialogueManager instance;
 
@@ -18,6 +21,8 @@ public class DialogueManager : MonoBehaviour
     {
         if (instance != null) Debug.LogWarning("Found more than one Dialogue Manager in the scene");
         else instance = this;
+
+        dialogueRunner.AddCommandHandler("stopDialogue", ()=>transitionController.InitTransition(true,()=>transitionController.gameObject.SetActive(false)));
     }
 
     private IEnumerator AutoContinueDialog()
@@ -48,7 +53,12 @@ public class DialogueManager : MonoBehaviour
 
     //this way the dialog will work properly despite having diffrent yarns <---
 
-    public void IsPlayingDialog() => dialogueRunner.dialogueViews[0].GetComponent<LineView>().OnContinueClicked(); //la siguiente linea
+    public void IsPlayingDialog()
+    {
+        dialogueRunner.dialogueViews[0].GetComponent<LineView>().OnContinueClicked(); //la siguiente linea
+
+
+    }
 
     public void IsAutoPlayingDialog() => dialogueRunner.dialogueViews[0].GetComponent<LineView>().UserRequestedViewAdvancement();
 
@@ -73,5 +83,15 @@ public class DialogueManager : MonoBehaviour
     public static DialogueManager GetInstance()
     {
         return instance;
+    }
+
+    private void OnEnable()
+    {
+        
+    }
+
+    private void OnDisable()
+    {
+        
     }
 }

@@ -41,11 +41,13 @@
 <<set $changeIMG to true>>
 <<set $createFade to true>>
 {$emp}: Recupera las calles. Protege la libertad.  #line:0815537 
-{$emp}: ¡Salva a nuestro país! #line:018f439 
+
+{$emp}: ¡Salva a nuestro país! #line:018f439
 
 // fundido a negro (1.0 s.)
 <<set $createFade to true>>
-    <<jump IntroL1>>
+<<stopDialogue>>
+
 ===
 
 title: IntroL1
@@ -59,7 +61,7 @@ title: IntroL1
 
 // fundido a negro (1.0 s.)
 <<set $createFade to true>>
-    <<jump Secreto1>>
+
 ===
 title: Secreto1
 ---
@@ -77,7 +79,6 @@ title: Secreto1
 <<set $changeIMG to true>>
 {$sr}: Desgraciado. Ya oyeron. Vendrán por nosotros. #line:09e1dd3 
 
-    <<jump Secreto2>>
 ===
 
 title: Secreto2
@@ -91,8 +92,6 @@ title: Secreto2
 {$ch}: Ahórrate la saliva. Tan solo eres una herramienta para nuestra nación. #line:0733328 
 
 // La CONVERSACIÓN termina. La transmisión es CORTADA.
-
-    <<jump Secreto3>>
 ===
 
 title: Secreto3
@@ -107,7 +106,6 @@ title: Secreto3
 {$ch}: Calla, mierda. Muerto serás más útil. #line:06adf53 
 
 // La CONVERSACIÓN termina. la transmisión es CORTADA
-
 ===
 
 //FINALES

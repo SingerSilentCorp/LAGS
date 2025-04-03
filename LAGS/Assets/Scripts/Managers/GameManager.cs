@@ -28,15 +28,21 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        //transitionController.InitTransition(false, () => dialogueManager.ShowOrHideDialogPanel(true));
-        //dialogueManager.InitDialog("Prologo");
-
         player.ResetPlayer();
 
         InitPanelsBehavior();
 
         ConfigButtons();
         OpenPause(false);
+    }
+
+    private void Start()
+    {
+        transitionController.InitTransition(false, () => 
+        {
+            dialogueManager.ShowOrHideDialogPanel(true);
+            dialogueManager.InitDialog("Intro", false);
+        });
     }
 
     private void InitPanelsBehavior()
