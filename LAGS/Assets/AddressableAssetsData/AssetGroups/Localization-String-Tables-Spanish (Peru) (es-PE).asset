@@ -15,8 +15,8 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-Spanish (Peru) (es-PE)
   m_GUID: 9d20329bb66057046b317214b0e6f3ee
   m_SerializeEntries:
-  - m_GUID: b609520027922534c85b863cef9e4cee
-    m_Address: TableV3_es-PE
+  - m_GUID: 96022aabbbb530d45adf9ddde7661d69
+    m_Address: TableV4_es-PE
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-es-PE

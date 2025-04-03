@@ -225,7 +225,10 @@ public class PlayerController : MonoBehaviour
     {
         gameManager.txtGuide.text = "Press Space to interact";
 
-        if (other.CompareTag("Secret")) other.GetComponent<SecretController>().StarSecretDialog();
+        if (other.CompareTag("Secret"))
+        {
+            other.GetComponent<SecretController>().StarSecretDialog();
+        }
 
         if (other.gameObject.layer == 8) gameManager.ShowTxtGuide(true);
     }
