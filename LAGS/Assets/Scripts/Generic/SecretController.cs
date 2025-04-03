@@ -19,6 +19,7 @@ public class SecretController : MonoBehaviour
     {
         if (!dialogueRunner.IsDialogueRunning)
         {
+            dialogueManager.ConfigDialgue(yarn);
             dialogueManager.ShowOrHideDialogPanel(true);
             Debug.Log("Yarn config");
             dialogueManager.InitDialog(yarnTittle,true);
