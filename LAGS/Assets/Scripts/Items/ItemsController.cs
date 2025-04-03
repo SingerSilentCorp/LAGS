@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ItemsController : MonoBehaviour
 {
-    private enum ItemType { Health, Speed, Damage };
+    private enum ItemType { SmallHealth,Health, SmallArmor, Armor,SmallAmmo, Ammo, Speed, Damage };
     [SerializeField] private ItemType type;
 
     [SerializeField] private Transform target;
@@ -18,17 +18,37 @@ public class ItemsController : MonoBehaviour
         {
             switch (type)
             {
-                case ItemType.Health:
+                case ItemType.SmallHealth:
                     target.GetComponent<PlayerController>().IncreaseOrDecreaseHealth(20);
-                    Debug.Log("Increse Health");
+                    
+                    break;
+                case ItemType.Health:
+                    target.GetComponent<PlayerController>().IncreaseOrDecreaseHealth(50);
+                    
+                    break;
+                case ItemType.SmallArmor:
+                    target.GetComponent<PlayerController>().IncreaseOrDecreaseArmor(20);
+                    
+                    break;
+                case ItemType.Armor:
+                    target.GetComponent<PlayerController>().IncreaseOrDecreaseArmor(20);
+                    
+                    break;
+                case ItemType.SmallAmmo:
+                    target.GetComponent<PlayerController>().IncreaseOrDecreaseArmor(20);
+
+                    break;
+                case ItemType.Ammo:
+                    target.GetComponent<PlayerController>().IncreaseOrDecreaseArmor(20);
+
                     break;
                 case ItemType.Speed:
                     target.GetComponent<PlayerController>().IncreaseOrDecreaseSpeed(20);
-                    Debug.Log("Increse Speed");
+                    
                     break;
                 case ItemType.Damage:
                     target.GetComponent<PlayerController>().IncreaseOrDecreaseDamage(20);
-                    Debug.Log("Increse Damage");
+                    
                     break;
                 default:
                     Debug.LogError("No type has been selected for this Item: " + this.gameObject.name);

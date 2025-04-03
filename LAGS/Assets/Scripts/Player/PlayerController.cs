@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameManager gameManager;
 
     [Header("Inputs")]
-    private InputAction move, fire, sprint;
+    private InputAction move, fire, sprint, interact;
     private InputAction uiAccept, pause;
 
     [SerializeField] private Transform cameraTransform;
@@ -33,9 +33,11 @@ public class PlayerController : MonoBehaviour
 
     [Header("PlayerStats")]
     private float baseHealth = 100;
-    private float health;
+    [HideInInspector] public float health;
     private float baseArmor = 100;
-    private float armor;
+    [HideInInspector] public float armor;
+    private float baseAmmo = 20;
+    private float ammo;
     private float baseSpeed = 20;
     private float speed;
     private float baseDamage = 10;
@@ -71,7 +73,16 @@ public class PlayerController : MonoBehaviour
         if (sprint.IsPressed()) speed = baseSpeed * 1.5f;
         else speed = baseSpeed;
 
-        if (uiAccept.WasPressedThisFrame()) dialogueManager.IsPlayingDialog();
+        if (uiAccept.WasPressedThisFrame() && !dialogueManager.autoDialog)
+        {
+            dialogueManager.IsPlayingDialog();
+            Debug.Log("NormalMode");
+        }
+        else if (uiAccept.WasPressedThisFrame() && dialogueManager.autoDialog)
+        {
+            dialogueManager.IsAutoPlayingDialog();
+            Debug.Log("automode");
+        }
     }
 
     private void FixedUpdate()
@@ -79,12 +90,15 @@ public class PlayerController : MonoBehaviour
         PlayerMovement();
     }
 
-    private void ResetPlayer()
+    public void ResetPlayer()
     {
         speed = baseSpeed;
         damage = baseDamage;
         health = baseHealth;
         armor = baseArmor;
+
+        gameManager.txtPlayerStats[0].text = health.ToString() + "%";
+        gameManager.txtPlayerStats[1].text = armor.ToString() + "%";
     }
 
     private void PlayerMovement()
@@ -119,11 +133,6 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = currentVelocity;
     }
 
-    private void Fire(InputAction.CallbackContext context)
-    {
-        if (target != null) Debug.Log("Fire: " + target.name);
-    }
-
     public void IncreaseOrDecreaseSpeed(float percent)
     {
         speed += speed * (percent / 100.0f);
@@ -131,13 +140,34 @@ public class PlayerController : MonoBehaviour
 
     public void IncreaseOrDecreaseHealth(float percent)
     {
-        if (health > baseHealth) health = baseHealth;
+        if (health >= baseHealth) health = baseHealth;
         else health += health * (percent / 100.0f);
+
+        gameManager.txtPlayerStats[0].text = health.ToString() + "%";
     }
 
     public void IncreaseOrDecreaseDamage(float percent)
     {
         damage += damage * (percent / 100.0f);
+    }
+
+    public void IncreaseOrDecreaseArmor(float percent)
+    {
+        if (armor >= baseArmor) armor = baseArmor;
+        else armor += armor * (percent / 100.0f);
+
+        gameManager.txtPlayerStats[1].text = armor.ToString() + "%";
+    }
+
+    public void IncreaseOrDecreaseAmmo(float percent)
+    {
+        if (ammo >= baseAmmo) ammo = baseAmmo;
+        else ammo += ammo * (percent / 100.0f);
+    }
+
+    private void Fire(InputAction.CallbackContext context)
+    {
+        if (target != null) Debug.Log("Fire: " + target.name);
     }
 
     private void Pause(InputAction.CallbackContext context)
@@ -153,7 +183,6 @@ public class PlayerController : MonoBehaviour
             Time.timeScale = 1.0f;
         }
     }
-
 
     private void OnEnable()
     {
@@ -175,6 +204,9 @@ public class PlayerController : MonoBehaviour
         pause.Enable();
 
         pause.performed += Pause;
+
+        interact = playerControls.Player.Interact;
+        interact.Enable();
     }
 
     private void OnDisable()
@@ -185,6 +217,33 @@ public class PlayerController : MonoBehaviour
 
         uiAccept.Disable();
         pause.Disable();
+
+        interact.Disable();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        gameManager.txtGuide.text = "Press Space to interact";
+
+        if (other.CompareTag("Secret")) other.GetComponent<SecretController>().StarSecretDialog();
+
+        if (other.gameObject.layer == 8) gameManager.ShowTxtGuide(true);
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.layer == 8)
+        {
+            if (interact.IsPressed()) 
+            {
+                gameManager.ShowTxtGuide(false);
+                other.GetComponent<DoorsController>().OpenDoor();
+            } 
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        gameManager.ShowTxtGuide(false);
     }
 }
 

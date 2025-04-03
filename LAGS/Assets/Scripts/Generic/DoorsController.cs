@@ -2,56 +2,76 @@ using UnityEngine;
 using DG.Tweening;
 public class DoorsController : MonoBehaviour
 {
+    [SerializeField] private GameObject doorTrigger;
+
     private BoxCollider detector;
 
     private Vector3 basePos;
 
-    private float doorSpeed = 3f;
-
-    //private float distance;
-    //private float rangeDistance = 22f;
+    private float doorSpeed = 0.5f;
 
     private bool isOpen;
-
-    [SerializeField] private Transform playerPos;
 
     private void Awake()
     {
         basePos = this.transform.position;
 
-        detector = transform.GetComponentInChildren<BoxCollider>();
-    }
-
-    private void Update()
-    {
-        //distance = Vector3.Distance(playerPos.position, transform.position);
+        detector = transform.GetChild(0).GetComponent<BoxCollider>();
     }
 
 
     public void OpenDoor()
     {
-        if (!isOpen)
+        if (doorTrigger != null)
         {
-            this.transform.DOMoveY(basePos.y + 14f, 0.5f).OnComplete(()=> isOpen = true);
+
+        }
+        else
+        {
+            if (!isOpen)
+            {
+                this.transform.DOMoveY(basePos.y + 14f, doorSpeed).OnComplete(() => isOpen = true);
+            }
         }
     }
 
     public void CloseDoor()
     {
-        if (isOpen)
+        if (doorTrigger != null)
         {
-            this.transform.DOMoveY(basePos.y, 0.5f).OnComplete(() => isOpen = false);
+
         }
+        else
+        {
+            if (isOpen)
+            {
+                this.transform.DOMoveY(basePos.y, doorSpeed).OnComplete(() => isOpen = false);
+            }
+        }
+         
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(detector != null) OpenDoor();
-
+        if(doorTrigger != null)
+        {
+            
+        }
+        else
+        {
+            if (detector != null && !other.CompareTag("Player")) OpenDoor();
+        }   
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (detector != null) CloseDoor();
+        if (doorTrigger != null)
+        {
+
+        }
+        else
+        {
+            if (detector != null) CloseDoor();
+        }
     }
 }

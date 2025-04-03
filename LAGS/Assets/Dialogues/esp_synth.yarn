@@ -18,7 +18,6 @@
 // una computadora (como en Word o Google Docs), "efecto máquina de escribir"
 
 <<set $createFade to true>>
-{$emp}: #line:0199f68 
 {$emp}: Las Noches. Nuestro hogar. #line:0e7fb05 
 
 <<set $changeIMG to true>>
