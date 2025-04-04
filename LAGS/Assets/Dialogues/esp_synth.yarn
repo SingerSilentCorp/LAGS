@@ -46,7 +46,7 @@
 
 // fundido a negro (1.0 s.)
 <<set $createFade to true>>
-<<stopDialogue>>
+<<stop>>
 
 ===
 
@@ -61,6 +61,7 @@ title: IntroL1
 
 // fundido a negro (1.0 s.)
 <<set $createFade to true>>
+<<stop>>
 
 ===
 title: Secreto1
@@ -78,6 +79,7 @@ title: Secreto1
 // en respuesta, el retrato del otro personaje aparece en pantalla
 <<set $changeIMG to true>>
 {$sr}: Desgraciado. Ya oyeron. Vendrán por nosotros. #line:09e1dd3 
+<<stop>>
 
 ===
 
@@ -92,6 +94,7 @@ title: Secreto2
 {$ch}: Ahórrate la saliva. Tan solo eres una herramienta para nuestra nación. #line:0733328 
 
 // La CONVERSACIÓN termina. La transmisión es CORTADA.
+<<stop>>
 ===
 
 title: Secreto3
@@ -106,13 +109,19 @@ title: Secreto3
 {$ch}: Calla, mierda. Muerto serás más útil. #line:06adf53 
 
 // La CONVERSACIÓN termina. la transmisión es CORTADA
+<<stop>>
 ===
 
 //FINALES
+// cuando inicia Final_A o Final_B, suena track de "finales del juego"
+// en el caso de Final_B, la cancion de "finales del juego" da paso a la cancion "tema del nivel secreto"
 
 title: Final_A
 ---
 // Si el número de secretos encontrados por el jugador es x≤1 :
+
+// cuando inicia Final_A o Final_B, suena track de "finales del juego"
+// en el caso de Final_B, la cancion de "finales del juego" da paso a la cancion "tema del nivel secreto"
 <<set $changeIMG to true>>
 <<set $createFade to true>>
 {$emp}: Felicidades, soldado. Lo lograste.  #line:03a7196 
@@ -128,11 +137,15 @@ title: Final_A
 
 // fundido a negro tres (3) segundos
 <<set $createFade to true>>
+<<stop>>
 ===
 
 title: Final_B
 ---
 // Si el número de secretos encontrados por el jugador es x≥2: 
+
+// cuando inicia Final_A o Final_B, suena track de "finales del juego"
+// en el caso de Final_B, la cancion de "finales del juego" da paso a la cancion "tema del nivel secreto"
 <<set $changeIMG to true>>
 <<set $createFade to true>>
 {$emp}: ¿Sorprendido? No. Deja ya de mentir. #line:0009f3b 
@@ -143,10 +156,13 @@ title: Final_B
 
 // empieza el nivel secreto
 <<set $createFade to true>>
+<<stop>>
 ===
 
 title: Final_B_Cierre
 ---
+// la canción del nivel secreto hace una transicion a una canción
+// distinta, la cancion final para el "epilogo del final_B"
 <<set $changeIMG to true>>
 <<set $createFade to true>>
 {$emp}: Mataste al malo de turno. Acabaste con todos. La sangre en tus botas lo prueba. #line:0e5e9b0 
@@ -159,4 +175,5 @@ title: Final_B_Cierre
 // fundido a negro por tres (3) segundos
 <<set $changeIMG to true>>
 <<set $createFade to true>>
+<<stop>>
 ===
