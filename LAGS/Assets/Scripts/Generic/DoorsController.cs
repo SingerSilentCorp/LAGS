@@ -1,10 +1,9 @@
 using UnityEngine;
 using DG.Tweening;
+
 public class DoorsController : MonoBehaviour
 {
-    [SerializeField] private GameObject doorTrigger;
-
-    private BoxCollider detector;
+    [SerializeField] private SwitchController doorTriggerObj;
 
     private Vector3 basePos;
 
@@ -12,66 +11,58 @@ public class DoorsController : MonoBehaviour
 
     private bool isOpen;
 
+    [HideInInspector] public bool hasTrigger, switchActivated;
+
     private void Awake()
     {
         basePos = this.transform.position;
 
-        detector = transform.GetChild(0).GetComponent<BoxCollider>();
-    }
+        if (doorTriggerObj != null)
+        {
+            hasTrigger = true;
+            switchActivated = false;
 
+            Debug.Log("has triiger: " + hasTrigger + " ObjName: " + this.gameObject.name + " TriggerState: " + switchActivated);
+        }
+        else hasTrigger = false;
+    }
 
     public void OpenDoor()
     {
-        if (doorTrigger != null)
-        {
-
-        }
-        else
+        if (!hasTrigger)
         {
             if (!isOpen)
             {
                 this.transform.DOMoveY(basePos.y + 14f, doorSpeed).OnComplete(() => isOpen = true);
             }
         }
+        else if (hasTrigger)
+        {
+            
+
+            if (!isOpen && switchActivated)
+            {
+                this.transform.DOMoveY(basePos.y + 14f, doorSpeed).OnComplete(() => isOpen = true);
+            }
+
+        }
     }
 
     public void CloseDoor()
     {
-        if (doorTrigger != null)
+        if (isOpen)
         {
-
+            this.transform.DOMoveY(basePos.y, doorSpeed).OnComplete(() => isOpen = false);
         }
-        else
-        {
-            if (isOpen)
-            {
-                this.transform.DOMoveY(basePos.y, doorSpeed).OnComplete(() => isOpen = false);
-            }
-        }
-         
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(doorTrigger != null)
-        {
-            
-        }
-        else
-        {
-            if (detector != null && !other.CompareTag("Player")) OpenDoor();
-        }   
+        if (!other.CompareTag("Player")) OpenDoor();
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (doorTrigger != null)
-        {
-
-        }
-        else
-        {
-            if (detector != null) CloseDoor();
-        }
+        CloseDoor();
     }
 }

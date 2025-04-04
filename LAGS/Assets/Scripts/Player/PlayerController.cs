@@ -231,16 +231,41 @@ public class PlayerController : MonoBehaviour
         }
 
         if (other.gameObject.layer == 8) gameManager.ShowTxtGuide(true);
+
+        if(other.gameObject.layer == 12) gameManager.ShowTxtGuide(true);
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.layer == 8)
+        if (other.gameObject.layer == 8 && !other.GetComponent<DoorsController>().hasTrigger)
         {
             if (interact.IsPressed()) 
             {
                 gameManager.ShowTxtGuide(false);
                 other.GetComponent<DoorsController>().OpenDoor();
             } 
+        }else if(other.gameObject.layer == 8 && other.GetComponent<DoorsController>().hasTrigger)
+        {
+            if (interact.IsPressed())
+            {
+                if(other.GetComponent<DoorsController>().switchActivated == false)
+                {
+                    gameManager.txtGuide.text = "Blocked";
+                }
+                else
+                {
+                    gameManager.ShowTxtGuide(false);
+                    other.GetComponent<DoorsController>().OpenDoor();
+                }
+            }
+        }
+
+        if (other.gameObject.layer == 12)
+        {
+            if (interact.IsPressed())
+            {
+                gameManager.txtGuide.text = "Door unlocked";
+                other.GetComponent<SwitchController>().UnlockDoor();
+            }
         }
     }
 

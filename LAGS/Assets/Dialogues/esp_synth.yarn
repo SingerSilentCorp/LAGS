@@ -46,7 +46,7 @@
 
 // fundido a negro (1.0 s.)
 <<set $createFade to true>>
-<<stop>>
+<<Stop>>
 
 ===
 
@@ -61,7 +61,7 @@ title: IntroL1
 
 // fundido a negro (1.0 s.)
 <<set $createFade to true>>
-<<stop>>
+<<Stop>>
 
 ===
 title: Secreto1
@@ -79,7 +79,7 @@ title: Secreto1
 // en respuesta, el retrato del otro personaje aparece en pantalla
 <<set $changeIMG to true>>
 {$sr}: Desgraciado. Ya oyeron. Vendrán por nosotros. #line:09e1dd3 
-<<stop>>
+<<Stop>>
 
 ===
 
@@ -94,7 +94,7 @@ title: Secreto2
 {$ch}: Ahórrate la saliva. Tan solo eres una herramienta para nuestra nación. #line:0733328 
 
 // La CONVERSACIÓN termina. La transmisión es CORTADA.
-<<stop>>
+<<Stop>>
 ===
 
 title: Secreto3
@@ -109,7 +109,7 @@ title: Secreto3
 {$ch}: Calla, mierda. Muerto serás más útil. #line:06adf53 
 
 // La CONVERSACIÓN termina. la transmisión es CORTADA
-<<stop>>
+<<Stop>>
 ===
 
 //FINALES
@@ -137,7 +137,7 @@ title: Final_A
 
 // fundido a negro tres (3) segundos
 <<set $createFade to true>>
-<<stop>>
+<<Stop>>
 ===
 
 title: Final_B
@@ -156,7 +156,7 @@ title: Final_B
 
 // empieza el nivel secreto
 <<set $createFade to true>>
-<<stop>>
+<<Stop>>
 ===
 
 title: Final_B_Cierre
@@ -175,5 +175,5 @@ title: Final_B_Cierre
 // fundido a negro por tres (3) segundos
 <<set $changeIMG to true>>
 <<set $createFade to true>>
-<<stop>>
+<<Stop>>
 ===

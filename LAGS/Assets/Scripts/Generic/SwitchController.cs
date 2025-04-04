@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class SwitchController : MonoBehaviour
 {
+    [SerializeField] private DoorsController door;
 
-
-    private void OnTriggerEnter(Collider other)
+    public void UnlockDoor()
     {
-        
+        door.switchActivated = true;
     }
 }

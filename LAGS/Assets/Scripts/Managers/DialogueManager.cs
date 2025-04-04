@@ -22,7 +22,7 @@ public class DialogueManager : MonoBehaviour
         if (instance != null) Debug.LogWarning("Found more than one Dialogue Manager in the scene");
         else instance = this;
 
-        dialogueRunner.AddCommandHandler("stop", ()=>transitionController.InitTransition(true,()=>transitionController.gameObject.SetActive(false)));
+        dialogueRunner.AddCommandHandler("Stop", ()=>transitionController.InitTransition(true,()=>transitionController.gameObject.SetActive(false)));
     }
 
     private IEnumerator AutoContinueDialog()
