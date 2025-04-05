@@ -12,7 +12,7 @@ public class TestEnemieAnimations : MonoBehaviour
     private NavMeshAgent agent;
 
     [Header("Enemy Stats")]
-    private float baseHealth = 15;
+    [SerializeField] private float baseHealth;
     private float health;
     [SerializeField] private float _speed;
 
