@@ -38,8 +38,6 @@ public class DoorsController : MonoBehaviour
         }
         else if (hasTrigger)
         {
-            
-
             if (!isOpen && switchActivated)
             {
                 this.transform.DOMoveY(basePos.y + 14f, doorSpeed).OnComplete(() => isOpen = true);

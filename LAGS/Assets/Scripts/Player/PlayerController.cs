@@ -66,7 +66,6 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(ray, out hit, raycastDistance, interactableLayers))
         {
             target = hit.collider.gameObject;
-            Debug.Log("Objeto detectado: " + hit.collider.name);
         }
         else target = null;
 
@@ -76,12 +75,10 @@ public class PlayerController : MonoBehaviour
         if (uiAccept.WasPressedThisFrame() && !dialogueManager.autoDialog)
         {
             dialogueManager.IsPlayingDialog();
-            Debug.Log("NormalMode");
         }
         else if (uiAccept.WasPressedThisFrame() && dialogueManager.autoDialog)
         {
             dialogueManager.IsAutoPlayingDialog();
-            Debug.Log("automode");
         }
     }
 
@@ -223,7 +220,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        gameManager.txtGuide.text = "Press Space to interact";
+        gameManager.GuideTxtConfig(0);
 
         if (other.CompareTag("Secret"))
         {
@@ -249,7 +246,7 @@ public class PlayerController : MonoBehaviour
             {
                 if(other.GetComponent<DoorsController>().switchActivated == false)
                 {
-                    gameManager.txtGuide.text = "Blocked";
+                    gameManager.GuideTxtConfig(1);
                 }
                 else
                 {
@@ -263,7 +260,7 @@ public class PlayerController : MonoBehaviour
         {
             if (interact.IsPressed())
             {
-                gameManager.txtGuide.text = "Door unlocked";
+                gameManager.GuideTxtConfig(2);
                 other.GetComponent<SwitchController>().UnlockDoor();
             }
         }

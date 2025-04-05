@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private PlayerController player;
+    [SerializeField] private TranslateController translate;
 
     [Header("PLayerUI")]
     public TextMeshProUGUI[] txtPlayerStats;
@@ -26,6 +27,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Slider volumeSlider;
     [SerializeField] private Button[] btn2ndOptions;
 
+
+    private bool isEnglish = false;
+
     private void Awake()
     {
         player.ResetPlayer();
@@ -34,6 +38,8 @@ public class GameManager : MonoBehaviour
 
         ConfigButtons();
         OpenPause(false);
+
+        ChangeTextLenguage();
     }
 
     private void Start()
@@ -87,7 +93,15 @@ public class GameManager : MonoBehaviour
 
     private void ChangeTextLenguage()
     {
+        if (isEnglish)
+        {
+            translate.EnLanguage();
 
+        }
+        else
+        {
+            translate.EsLanguage();
+        }
     }
 
     public void ShowTxtGuide(bool isShowing) => txtGuide.gameObject.SetActive(isShowing);
@@ -132,6 +146,42 @@ public class GameManager : MonoBehaviour
 
             pauseConteiner.SetActive(false);
             MouseVisible(false);
+        }
+    }
+
+    public void GuideTxtConfig(int indexTxt)
+    {
+        //0 == interact, 1 == locked door, 2 == switchTxtWhenUnlock
+
+        if (isEnglish)
+        {
+            if (indexTxt == 0)
+            {
+                txtGuide.text = "Press space to interact";
+            }
+            else if (indexTxt == 1)
+            {
+                txtGuide.text = "Locked";
+            }
+            else if (indexTxt == 1)
+            {
+                txtGuide.text = "Door has been unlocked ";
+            }
+        }
+        else
+        {
+            if (indexTxt == 0)
+            {
+                txtGuide.text = "Presiona Espacio para interactuar";
+            }
+            else if (indexTxt == 1)
+            {
+                txtGuide.text = "Bloqueado";
+            }
+            else if (indexTxt == 1)
+            {
+                txtGuide.text = "La puerta a sido desbloqueada";
+            }
         }
     }
 }
