@@ -51,7 +51,7 @@ public class TestEnemieAnimations : MonoBehaviour
 
     private void Start()
     {
-        lastX = transform.position.x;
+        //lastX = transform.position.x;
     }
 
     private void Update()
@@ -80,8 +80,9 @@ public class TestEnemieAnimations : MonoBehaviour
 
                 if (PlayerInRange())
                 {
+                    isWandering = false;
                     _enemieState = EnemysStates.ViewPlayer;
-                    _anim.CrossFade("Back", 0.0001f);
+                    _anim.CrossFade("Walk", 0.0001f);
                 }
 
                 break;
@@ -148,22 +149,25 @@ public class TestEnemieAnimations : MonoBehaviour
 
     private void WanderToNewPosition()
     {
-        agent.updateRotation = true;
-        Vector3 wanderTarget;
-
-        if (returnToStartArea && Random.value > 0.7f) // 30% chance to return closer to start
+        if(_enemieState == EnemysStates.walk)
         {
-            float radius = Random.Range(minWanderRadius * 0.5f, minWanderRadius);
-            wanderTarget = RandomNavPosition(startPosition, radius);
-        }
-        else
-        {
-            float radius = Random.Range(minWanderRadius, maxWanderRadius);
-            wanderTarget = RandomNavPosition(transform.position, radius);
-        }
+            agent.updateRotation = true;
+            Vector3 wanderTarget;
 
-        agent.SetDestination(wanderTarget);
-        timer = Random.Range(minWaitTime, maxWaitTime);
+            if (returnToStartArea && Random.value > 0.7f) // 30% chance to return closer to start
+            {
+                float radius = Random.Range(minWanderRadius * 0.5f, minWanderRadius);
+                wanderTarget = RandomNavPosition(startPosition, radius);
+            }
+            else
+            {
+                float radius = Random.Range(minWanderRadius, maxWanderRadius);
+                wanderTarget = RandomNavPosition(transform.position, radius);
+            }
+
+            agent.SetDestination(wanderTarget);
+            timer = Random.Range(minWaitTime, maxWaitTime);
+        }
     }
 
     private Vector3 RandomNavPosition(Vector3 origin, float distance)

@@ -4,11 +4,13 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     private Vector3 movePos;
-    private GameObject target;
+    [SerializeField] private GameObject target;
 
     [Header("Configuración Raycast")]
-    public float raycastDistance = 7f;
-    public LayerMask interactableLayers;
+
+    [SerializeField] private float raycastDistance = 25f;
+    [SerializeField] private LayerMask interactableLayers;
+    private Ray ray;
 
     [Header("Movement Settings")]
     private float baseRotationSpeed = 10f;
@@ -43,54 +45,57 @@ public class PlayerController : MonoBehaviour
     private float baseDamage = 10;
     private float damage;
 
+
+    [Header("Configuración de Sensibilidad")]
+    [SerializeField] private float mouseSensitivity = 100f;
+
     private void Awake()
     {
         playerControls = new PlayerInputActions();
         rb = GetComponent<Rigidbody>();
 
         gameManager.MouseVisible(false);
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void Update()
     {
         movePos = move.ReadValue<Vector2>();
 
-
-        // Obtener el rayo desde el centro de la cámara
-        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-        RaycastHit hit;
-
-        // Distancia del rayo (ajusta según necesites)
-        float raycastDistance = 100f;
-
-        // Capa para objetos interactuables (asegúrate de configurarla en el Inspector)
-        //LayerMask interactableLayers = interactableLayers;
-
-        // Debug visual del rayo
-        Debug.DrawRay(ray.origin, ray.direction * raycastDistance, Color.green, 0.1f);
-
-        // Lanzar el raycast
-        if (Physics.Raycast(ray, out hit, raycastDistance, interactableLayers.value))
+        /*RaycastHit[] hits = Physics.RaycastAll(ray, raycastDistance, interactableLayers);
+        if (hits.Length > 0)
         {
-            target = hit.collider.gameObject;
-            Debug.Log("Objeto detectado: " + hit.collider.name);
+            // Ordenar por distancia para obtener el más cercano
+            System.Array.Sort(hits, (x, y) => x.distance.CompareTo(y.distance));
+            target = hits[0].collider.gameObject;
+
+            // Alternativa: procesar todos los objetos detectados
+            foreach (var hit in hits)
+            {
+                Debug.Log($"Detectado: {hit.collider.name} a {hit.distance} metros");
+            }
         }
         else
         {
             target = null;
-        }
+        }*/
+
 
         if (sprint.IsPressed()) speed = baseSpeed * 1.5f;
         else speed = baseSpeed;
 
-        if (uiAccept.WasPressedThisFrame() && !dialogueManager.autoDialog)
+        /*if (uiAccept.WasPressedThisFrame() && !dialogueManager.autoDialog)
         {
             dialogueManager.IsPlayingDialog();
         }
         else if (uiAccept.WasPressedThisFrame() && dialogueManager.autoDialog)
         {
             dialogueManager.IsAutoPlayingDialog();
-        }
+        }*/
+
+        HandleMouseLook();
     }
 
     private void FixedUpdate()
@@ -175,10 +180,25 @@ public class PlayerController : MonoBehaviour
 
     private void Fire(InputAction.CallbackContext context)
     {
-        if (target != null)
+        // Obtener el rayo desde el centro de la cámara
+        ray = new Ray(this.transform.position, this.transform.forward);
+        //RaycastHit hit;
+
+        // Debug visual del rayo
+        Debug.DrawRay(ray.origin, ray.direction * raycastDistance, Color.green, 0.1f);
+
+        // Lanzar el raycast
+        if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance))
         {
-            Debug.Log("Fire");
+            target = hit.collider.gameObject;
             target.GetComponent<TestEnemieAnimations>().GetDamage(3.0f);
+            Debug.Log("Objeto detectado: " + hit.collider.name);
+            Debug.Log("Fire");
+        }
+        else
+        {
+            target = null;
+            Debug.Log("Origen: " + ray.origin.ToString() + "  Ray direccion: " + ray.direction.ToString());
         }
     }
 
@@ -194,6 +214,17 @@ public class PlayerController : MonoBehaviour
             gameManager.OpenPause(false);
             Time.timeScale = 1.0f;
         }
+    }
+
+    private void HandleMouseLook()
+    {
+        // Solo movimiento horizontal (Mouse X)
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+
+        // Rotación horizontal del cuerpo del jugador (izquierda/derecha)
+        this.GetComponent<Rigidbody>().MoveRotation(this.transform.rotation * Quaternion.Euler(0f, mouseX, 0f));
+
+        // Eliminamos toda la lógica de rotación vertical (Mouse Y)
     }
 
     private void OnEnable()
@@ -244,22 +275,23 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.layer == 8) gameManager.ShowTxtGuide(true);
 
-        if(other.gameObject.layer == 12) gameManager.ShowTxtGuide(true);
+        if (other.gameObject.layer == 12) gameManager.ShowTxtGuide(true);
     }
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.layer == 8 && !other.GetComponent<DoorsController>().hasTrigger)
         {
-            if (interact.IsPressed()) 
+            if (interact.IsPressed())
             {
                 gameManager.ShowTxtGuide(false);
                 other.GetComponent<DoorsController>().OpenDoor();
-            } 
-        }else if(other.gameObject.layer == 8 && other.GetComponent<DoorsController>().hasTrigger)
+            }
+        }
+        else if (other.gameObject.layer == 8 && other.GetComponent<DoorsController>().hasTrigger)
         {
             if (interact.IsPressed())
             {
-                if(other.GetComponent<DoorsController>().switchActivated == false)
+                if (other.GetComponent<DoorsController>().switchActivated == false)
                 {
                     gameManager.GuideTxtConfig(1);
                 }
@@ -288,11 +320,25 @@ public class PlayerController : MonoBehaviour
 
     public void GetDamage(float damage)
     {
-        health -= damage;
+        if (armor > 0.0f)
+        {
+            armor -= damage;
+            armor = 0.0f;
+        }
+        else
+        {
+            health -= damage;
 
-        if(health<=0) health = 0;
+            if (health <= 0.0f)
+            {
+                health = 0.0f;
+                Debug.Log("Morí");
+            }
+        }
 
+        
         gameManager.txtPlayerStats[0].text = health.ToString() + "%";
+        gameManager.txtPlayerStats[1].text = armor.ToString() + "%";
     }
 }
 
