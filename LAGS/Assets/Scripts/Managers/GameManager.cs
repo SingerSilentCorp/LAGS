@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [Header("References")]
@@ -32,12 +32,14 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        player.ResetPlayer();
-
-        InitPanelsBehavior();
-
         ConfigButtons();
-        OpenPause(false);
+        if (SceneManager.GetActiveScene().buildIndex == 0) OpenPause(true);
+        else
+        {
+            player.ResetPlayer();
+            InitPanelsBehavior();
+            OpenPause(false);
+        }
 
         ChangeTextLenguage();
     }
@@ -76,19 +78,41 @@ public class GameManager : MonoBehaviour
 
     private void ConfigButtons()
     {
-        btn1stOptions[0].onClick.AddListener(() => OpenPause(false));
-        btn1stOptions[3].onClick.AddListener(() => ChangeMenus(1));
-        btn1stOptions[5].onClick.AddListener(() => Application.Quit());
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            btn1stOptions[2].onClick.AddListener(() => ChangeMenus(1));
+            btn1stOptions[3].onClick.AddListener(() => Application.Quit());
 
-        btn2ndOptions[0].onClick.AddListener(() =>
+            btn2ndOptions[0].onClick.AddListener(() =>
+            {
+                if (!Screen.fullScreen) Screen.fullScreen = true;
+            });
+            btn2ndOptions[1].onClick.AddListener(() =>
+            {
+                if (Screen.fullScreen) Screen.fullScreen = false;
+            });
+            btn2ndOptions[2].onClick.AddListener(() => translate.EsLanguage());
+            btn2ndOptions[3].onClick.AddListener(() => translate.EnLanguage());
+            btn2ndOptions[4].onClick.AddListener(() => ChangeMenus(0));
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 1)
         {
-            if (!Screen.fullScreen) Screen.fullScreen = true;
-        });
-        btn2ndOptions[1].onClick.AddListener(() =>
-        {
-            if (Screen.fullScreen) Screen.fullScreen = false;
-        });
-        btn2ndOptions[4].onClick.AddListener(() => ChangeMenus(0));
+            btn1stOptions[0].onClick.AddListener(() => OpenPause(false));
+            btn1stOptions[3].onClick.AddListener(() => ChangeMenus(1));
+            btn1stOptions[5].onClick.AddListener(() => Application.Quit());
+
+            btn2ndOptions[0].onClick.AddListener(() =>
+            {
+                if (!Screen.fullScreen) Screen.fullScreen = true;
+            });
+            btn2ndOptions[1].onClick.AddListener(() =>
+            {
+                if (Screen.fullScreen) Screen.fullScreen = false;
+            });
+            btn2ndOptions[2].onClick.AddListener(() => translate.EsLanguage());
+            btn2ndOptions[3].onClick.AddListener(() => translate.EnLanguage());
+            btn2ndOptions[4].onClick.AddListener(() => ChangeMenus(0));
+        }
     }
 
     private void ChangeTextLenguage()
