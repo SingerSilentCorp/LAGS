@@ -44,11 +44,11 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        transitionController.InitTransition(false, () => 
+        /*transitionController.InitTransition(false, () => 
         {
             dialogueManager.ShowOrHideDialogPanel(true);
             dialogueManager.InitDialog("Intro", false);
-        });
+        });*/
     }
 
     private void InitPanelsBehavior()

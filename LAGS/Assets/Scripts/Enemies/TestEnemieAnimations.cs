@@ -1,63 +1,104 @@
-
 using System.Collections;
-
 using UnityEngine;
+using UnityEngine.AI;
 
 public class TestEnemieAnimations : MonoBehaviour
 {
-    [SerializeField] Transform _player;
     private enum EnemysStates { walk, ViewPlayer, Attack, escape, dead };
+    [SerializeField] private EnemysStates _enemieState = EnemysStates.walk;
 
-    [SerializeField] EnemysStates _enemie = EnemysStates.walk;
+    [Header("References")]
+    private Animator _anim;
+    private NavMeshAgent agent;
 
-    int health;
+    [Header("Enemy Stats")]
+    private float baseHealth = 15;
+    private float health;
+    [SerializeField] private float _speed;
 
-
-    Animator _anim;
-
-    float currentX;
+    [Header("Others")]
+    private float currentX;
     private float lastX;
+    private float timer;
+    private Vector3 startPosition;
+    private bool isWandering;
 
-    [SerializeField] float _speed;
+    [Header("Wandering Settings")]
+    [SerializeField] private float minWanderRadius;
+    [SerializeField] private float maxWanderRadius;
+    [SerializeField] private float minWaitTime;
+    [SerializeField] private float maxWaitTime;
+    [SerializeField] private bool returnToStartArea = true;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [Header("Attacking Settings")]
+    [SerializeField] private float attackRange = 10f;
+    [SerializeField] private Transform target;
+    [SerializeField] private float stoppingDistance;
+    [SerializeField] private float retreatDistance;
+
+
+    private void Awake()
     {
-        lastX = transform.position.x;
-
         _anim = GetComponent<Animator>();
-        health = 10;
-   
+        agent = GetComponent<NavMeshAgent>();
+
+        startPosition = transform.position;
+        timer = Random.Range(minWaitTime, maxWaitTime);
+        isWandering = false;
+
+        ResetEnemy();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        switch (_enemie)
+        lastX = transform.position.x;
+    }
+
+    private void Update()
+    {
+        switch (_enemieState)
         {
             case EnemysStates.walk:
 
-                MovementAnimationEjeX();
-
-
-                if (health <= 8)
+                if (!agent.pathPending && agent.remainingDistance < 0.5f)
                 {
-                    _anim.CrossFade("Walk", 0.0001f);
-                    _enemie = EnemysStates.ViewPlayer;
+                    if (!isWandering)
+                    {
+                        timer -= Time.deltaTime;
+
+                        if (timer <= 0)
+                        {
+                            WanderToNewPosition();
+                            isWandering = true;
+                        }
+                    }
+                }
+                else
+                {
+                    isWandering = false;
                 }
 
-
+                if (PlayerInRange())
+                {
+                    _enemieState = EnemysStates.ViewPlayer;
+                    _anim.CrossFade("Back", 0.0001f);
+                }
 
                 break;
 
             case EnemysStates.ViewPlayer:
 
-                FollowPlayer();
+                MoveToTarget();
 
-                if (health < 5)
+                if (PlayerInRange())
                 {
-                    StartCoroutine(StartViewPlayer());
-                    _enemie = EnemysStates.escape;
+                    Attack();
+                }
+
+                if (health <= 0.0f)
+                {
+                    DEAD();
+                    _enemieState = EnemysStates.dead;
                 }
 
                 break;
@@ -67,8 +108,7 @@ public class TestEnemieAnimations : MonoBehaviour
 
                 if (health < 1)
                 {
-                    DEAD();
-                    _enemie = EnemysStates.dead;
+                    
                 }
 
                 break;
@@ -76,8 +116,6 @@ public class TestEnemieAnimations : MonoBehaviour
 
                 break;
         }
-
-        if (Input.GetKeyDown(KeyCode.S)) health -= 2;
     }
 
     private void MovementAnimationEjeX()
@@ -98,7 +136,6 @@ public class TestEnemieAnimations : MonoBehaviour
 
     private void ESCAPE() => _anim.CrossFade("StartBack", 0.0001f);
 
-
     private void DEAD() => _anim.CrossFade("Dead", 0.0001f);
 
 
@@ -109,19 +146,85 @@ public class TestEnemieAnimations : MonoBehaviour
         _anim.CrossFade("Back", 0.0001f);
     }
 
-    private bool InRangePlayer2()
+    private void WanderToNewPosition()
     {
-        return true;
+        agent.updateRotation = true;
+        Vector3 wanderTarget;
 
+        if (returnToStartArea && Random.value > 0.7f) // 30% chance to return closer to start
+        {
+            float radius = Random.Range(minWanderRadius * 0.5f, minWanderRadius);
+            wanderTarget = RandomNavPosition(startPosition, radius);
+        }
+        else
+        {
+            float radius = Random.Range(minWanderRadius, maxWanderRadius);
+            wanderTarget = RandomNavPosition(transform.position, radius);
+        }
+
+        agent.SetDestination(wanderTarget);
+        timer = Random.Range(minWaitTime, maxWaitTime);
     }
 
-    private void OutOfRangePlayer()
+    private Vector3 RandomNavPosition(Vector3 origin, float distance)
     {
+        Vector3 randomDirection = Random.insideUnitSphere * distance;
+        randomDirection += origin;
 
+        NavMeshHit navHit;
+        NavMesh.SamplePosition(randomDirection, out navHit, distance, NavMesh.AllAreas);
+
+        return navHit.position;
     }
 
-    private void FollowPlayer()
+    private void MoveToTarget()
     {
-        transform.position = Vector3.MoveTowards(transform.position, _player.position, _speed * Time.deltaTime);
+        agent.updateRotation = false;
+
+        float distanceToTarget = Vector3.Distance(transform.position, target.position);
+        Vector3 direction = (target.position - transform.position).normalized;
+
+        if (distanceToTarget > stoppingDistance)
+        {
+            agent.SetDestination(target.position);
+        }
+        else if (distanceToTarget < retreatDistance)
+        {
+            Vector3 retreatDirection = (transform.position - target.position).normalized;
+            Vector3 retreatPosition = transform.position + retreatDirection * stoppingDistance;
+            agent.SetDestination(retreatPosition);
+        }
+        else
+        {
+            agent.SetDestination(transform.position);
+        }
+
+        transform.rotation = Quaternion.LookRotation(direction);
+    }
+
+    private bool PlayerInRange()
+    {
+        return Vector3.Distance(transform.position, target.transform.position) <= attackRange;
+    }
+
+    private void Attack()
+    {
+        print("Attacking Player");
+    }
+
+    public void GetDamage(float damage)
+    {
+        health -= damage;
+
+        if (health <= 0.0) 
+        {
+            health = 0.0f;
+            DEAD();
+        }
+    }
+
+    public void ResetEnemy()
+    {
+        health = baseHealth;
     }
 }

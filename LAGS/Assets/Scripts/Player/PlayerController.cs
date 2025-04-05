@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     private GameObject target;
 
     [Header("Configuración Raycast")]
-    public float raycastDistance = 3f;
+    public float raycastDistance = 7f;
     public LayerMask interactableLayers;
 
     [Header("Movement Settings")]
@@ -56,18 +56,29 @@ public class PlayerController : MonoBehaviour
         movePos = move.ReadValue<Vector2>();
 
 
+        // Obtener el rayo desde el centro de la cámara
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
 
+        // Distancia del rayo (ajusta según necesites)
+        float raycastDistance = 100f;
 
-        Debug.DrawRay(ray.origin, ray.direction * raycastDistance, Color.green);
+        // Capa para objetos interactuables (asegúrate de configurarla en el Inspector)
+        //LayerMask interactableLayers = interactableLayers;
 
+        // Debug visual del rayo
+        Debug.DrawRay(ray.origin, ray.direction * raycastDistance, Color.green, 0.1f);
 
-        if (Physics.Raycast(ray, out hit, raycastDistance, interactableLayers))
+        // Lanzar el raycast
+        if (Physics.Raycast(ray, out hit, raycastDistance, interactableLayers.value))
         {
             target = hit.collider.gameObject;
+            Debug.Log("Objeto detectado: " + hit.collider.name);
         }
-        else target = null;
+        else
+        {
+            target = null;
+        }
 
         if (sprint.IsPressed()) speed = baseSpeed * 1.5f;
         else speed = baseSpeed;
@@ -164,7 +175,11 @@ public class PlayerController : MonoBehaviour
 
     private void Fire(InputAction.CallbackContext context)
     {
-        if (target != null) Debug.Log("Fire: " + target.name);
+        if (target != null)
+        {
+            Debug.Log("Fire");
+            target.GetComponent<TestEnemieAnimations>().GetDamage(3.0f);
+        }
     }
 
     private void Pause(InputAction.CallbackContext context)
@@ -269,6 +284,15 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         gameManager.ShowTxtGuide(false);
+    }
+
+    public void GetDamage(float damage)
+    {
+        health -= damage;
+
+        if(health<=0) health = 0;
+
+        gameManager.txtPlayerStats[0].text = health.ToString() + "%";
     }
 }
 
