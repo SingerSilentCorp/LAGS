@@ -11,8 +11,8 @@ public class TestEnemieAnimations : MonoBehaviour
     [SerializeField] EnemysStates _enemie = EnemysStates.walk;
 
     int health;
-    float velocidadX;
-    private Rigidbody rb;
+
+
     Animator _anim;
 
     float currentX;
@@ -27,7 +27,7 @@ public class TestEnemieAnimations : MonoBehaviour
 
         _anim = GetComponent<Animator>();
         health = 10;
-        rb = GetComponent<Rigidbody>();
+   
     }
 
     // Update is called once per frame

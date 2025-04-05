@@ -117,7 +117,9 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: 9a67eebce1b15764d8b9347e8e9970e9
+    name: ShootPistola
   m_AudioMixerGroupViews:
   - guids:
     - 86d442cccfb2bbf4387e01ab5355966f
