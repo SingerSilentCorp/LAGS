@@ -19,10 +19,9 @@ public class DoorsController : MonoBehaviour
 
         if (doorTriggerObj != null)
         {
+            Debug.Log("has trigger");
             hasTrigger = true;
             switchActivated = false;
-
-            Debug.Log("has triiger: " + hasTrigger + " ObjName: " + this.gameObject.name + " TriggerState: " + switchActivated);
         }
         else hasTrigger = false;
     }

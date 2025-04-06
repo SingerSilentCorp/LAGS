@@ -18,6 +18,8 @@ public class TestEnemieAnimations : MonoBehaviour
     private float health;
     [SerializeField] private float _speed;
     [HideInInspector] public float damage;
+    private float baseCooldown = 2.0f;
+    private float cooldown;
 
     [Header("Others")]
     private float currentX;
@@ -41,7 +43,6 @@ public class TestEnemieAnimations : MonoBehaviour
 
     [Header("JefeConfig")]
     [SerializeField] private bool isABoss;
-    [SerializeField] private DoorsController door;
 
     private void Awake()
     {
@@ -53,11 +54,6 @@ public class TestEnemieAnimations : MonoBehaviour
         isWandering = false;
 
         ResetEnemy();
-    }
-
-    private void Start()
-    {
-        //lastX = transform.position.x;
     }
 
     private void Update()
@@ -100,16 +96,21 @@ public class TestEnemieAnimations : MonoBehaviour
 
                 MoveToTarget();
 
+                cooldown -= Time.deltaTime;
+
                 if (PlayerInRange())
                 {
-                    Attack();
+                    if (cooldown <= 0.0f) Attack();
                 }
+
+                if (cooldown <= 0.0f) cooldown = baseCooldown;
 
                 if (health <= 0.0f)
                 {
                     DEAD();
                     _enemieState = EnemysStates.dead;
                 }
+
 
                 break;
 
@@ -123,7 +124,7 @@ public class TestEnemieAnimations : MonoBehaviour
 
                 break;
             case EnemysStates.dead:
-
+                
                 break;
         }
     }
@@ -150,6 +151,7 @@ public class TestEnemieAnimations : MonoBehaviour
     {
         if (isABoss)
         {
+            Debug.Log("Boss dead");
             this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             this.GetComponent<BoxCollider>().enabled = false;
             this.GetComponent<SwitchController>().UnlockDoor();

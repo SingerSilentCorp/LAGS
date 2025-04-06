@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private DialogueManager dialogueManager;
 
     [Header("PauseMenu")]
+    [SerializeField] private GameObject cavasPause;
     [SerializeField] private GameObject pauseConteiner;
     [SerializeField] private GameObject[] pauseMenus;
     [HideInInspector] public bool pauseOpen = false;
@@ -40,8 +41,17 @@ public class GameManager : MonoBehaviour
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 60;
 
-        DontDestroyOnLoad(this);
-        DontDestroyOnLoad(playerUICanvas);
+        ConfigScene();
+
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            DontDestroyOnLoad(playerUICanvas);
+            DontDestroyOnLoad(cavasPause);
+            DontDestroyOnLoad(transitionController.gameObject);
+            DontDestroyOnLoad(DialogSistemGObj);
+            DontDestroyOnLoad(player);
+            DontDestroyOnLoad(this.transform.parent);
+        }
 
         data = DataManager.LoadData();
         isEnglish = data.isEnglish;
@@ -92,12 +102,13 @@ public class GameManager : MonoBehaviour
     private void ConfigButtons()
     {
         btn1stOptions[0].onClick.AddListener(() => OpenPause(false));
-        btn1stOptions[1].onClick.AddListener(() => DataManager.SaveData(isEnglish,volumeSlider.value,sensitiveSlider.value));
+        btn1stOptions[1].onClick.AddListener(() => DataManager.SaveData(isEnglish, volumeSlider.value, sensitiveSlider.value));
         btn1stOptions[2].onClick.AddListener(() => DataManager.LoadData());
         btn1stOptions[3].onClick.AddListener(() => ChangeMenus(1));
-        btn1stOptions[4].onClick.AddListener(() => 
+        btn1stOptions[4].onClick.AddListener(() =>
         {
             SceneManager.LoadScene(0);
+            ConfigScene();
         });
         btn1stOptions[5].onClick.AddListener(() => Application.Quit());
 
@@ -110,17 +121,17 @@ public class GameManager : MonoBehaviour
             if (Screen.fullScreen) Screen.fullScreen = false;
         });
 
-        volumeSlider.onValueChanged.AddListener((value) => 
+        volumeSlider.onValueChanged.AddListener((value) =>
         {
             data.volume = value;
             volumeSlider.value = value;
         });
-        sensitiveSlider.onValueChanged.AddListener((value) => 
+        sensitiveSlider.onValueChanged.AddListener((value) =>
         {
             data.sensitive = value;
             sensitiveSlider.value = value;
         });
-        
+
 
         btn2ndOptions[2].onClick.AddListener(() => translate.EsLanguage());
         btn2ndOptions[3].onClick.AddListener(() => translate.EnLanguage());
@@ -224,9 +235,46 @@ public class GameManager : MonoBehaviour
         else player.ActiveInputs(isActivating);
     }
 
-    public void UpdateHP(float health) => txtPlayerStats[0].text = health.ToString() + "%";
+    public void ChangeToAnotherLevel(int levelIndex)
+    {
+        SceneManager.LoadScene(levelIndex);
+        ConfigScene();
+    }
 
-    public void UpdateArmor(float armor) => txtPlayerStats[1].text = armor.ToString() + "%";
+    //Config loadScene when loaded
+    public void ConfigScene()
+    {
+        SceneManager.sceneLoaded += OnSceneLoadedTemp;
+    }
+
+    private void OnSceneLoadedTemp(Scene scene, LoadSceneMode mode)
+    {
+        if(SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            Destroy(this);
+            Destroy(transform.parent.gameObject);
+            Destroy(playerUICanvas);
+            Destroy(cavasPause);
+            Destroy(transitionController.gameObject);
+            Destroy(DialogSistemGObj);
+            Destroy(player);
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            player.transform.position = new Vector3(156.399994f, 0.699000001f, 108.5f);
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            player.transform.position = new Vector3(-12f, 2f, 53f);
+        }
+
+        player.transform.Rotate(new Vector3(0f, 180f, 0f));
+        SceneManager.sceneLoaded -= OnSceneLoadedTemp;
+    }
+
+    public void UpdateHP(float health) => txtPlayerStats[0].text = Mathf.RoundToInt(health).ToString() + "%";
+
+    public void UpdateArmor(float armor) => txtPlayerStats[1].text = Mathf.RoundToInt(armor).ToString() + "%";
 
     private void OnApplicationQuit() => DataManager.SaveData(isEnglish, volumeSlider.value, sensitiveSlider.value);
 
