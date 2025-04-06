@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEditor.Overlays;
 public class GameManager : MonoBehaviour
 {
     [Header("References")]
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Slider sensitiveSlider;
     [SerializeField] private Button[] btn2ndOptions;
 
+    
 
     [HideInInspector] public bool isEnglish = false;
 
@@ -35,6 +37,8 @@ public class GameManager : MonoBehaviour
     {
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 60;
+
+        DataManager.LoadData();
 
         ConfigButtons();
         if (SceneManager.GetActiveScene().buildIndex == 0) OpenPause(true);
@@ -84,7 +88,11 @@ public class GameManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
-            btn1stOptions[0].onClick.AddListener(() => SceneManager.LoadScene(1));
+            btn1stOptions[0].onClick.AddListener(() => 
+            {
+                DataManager.SaveData(isEnglish);
+                SceneManager.LoadScene(1);
+            });
             btn1stOptions[3].onClick.AddListener(() => ChangeMenus(1));
             btn1stOptions[4].onClick.AddListener(() => Application.Quit());
 

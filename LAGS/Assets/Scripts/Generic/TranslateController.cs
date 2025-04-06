@@ -13,11 +13,23 @@ public class TranslateController : MonoBehaviour
     [SerializeField, Space] private DialogueRunner dialogueRunner;
     [SerializeField, Space] private TextMeshProUGUI[] playerUITxt;
 
+    private bool english;
+
+    private void Awake()
+    {
+        english = DataManager.LoadData();
+        this.GetComponent<GameManager>().isEnglish = english;
+
+        if (english) EnLanguage();
+        else EsLanguage();
+    }
+
     public void EnLanguage()
     {
         CambiarIdioma("en-US");
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
+            this.GetComponent<GameManager>().isEnglish = true;
             //PauseMenu
             pauseMenuTxt[0].text = "New Game";
             pauseMenuTxt[1].text = "Save";
@@ -53,13 +65,14 @@ public class TranslateController : MonoBehaviour
             pauseMenuTxt[14].text = "Return";
 
             //PLayerUI
-            this.GetComponent<GameManager>().isEnglish = true;
             this.GetComponent<GameManager>().GuideTxtConfig(0);
         }
     }
 
     public void EsLanguage()
     {
+        this.GetComponent<GameManager>().isEnglish = false;
+
         CambiarIdioma("es-PE");
 
         if (SceneManager.GetActiveScene().buildIndex == 0)
@@ -97,7 +110,6 @@ public class TranslateController : MonoBehaviour
             pauseMenuTxt[14].text = "Volver";
 
             //PLayerUI
-            this.GetComponent<GameManager>().isEnglish = false;
             this.GetComponent<GameManager>().GuideTxtConfig(0);
         }
             
