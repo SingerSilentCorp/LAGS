@@ -19,7 +19,7 @@ public static class DataManager
     }
 
     // Cargar datos desde JSON
-    public static bool LoadData(Data.isEnglish)
+    public static bool LoadData()
     {
         if (File.Exists(_savePath))
         {
