@@ -1,9 +1,14 @@
+using Newtonsoft.Json.Bson;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class TestEnemieAnimations : MonoBehaviour
 {
+
+    [Header("SpritesEnemies")]
+    [SerializeField] Sprite[] _enemiesSprite;
+    [SerializeField] RuntimeAnimatorController[] _animationsEnemies;
     private enum EnemyType { pistola, escopeta, metralleta, jefe1, jefe2, jefe3, jefe4}
     [SerializeField] private EnemyType type;
     private enum EnemysStates { walk, ViewPlayer, Attack, escape, dead };
@@ -12,6 +17,7 @@ public class TestEnemieAnimations : MonoBehaviour
     [Header("References")]
     private Animator _anim;
     private NavMeshAgent agent;
+    private SpriteRenderer _render;
 
     [Header("Enemy Stats")]
     [SerializeField] private float baseHealth;
@@ -48,12 +54,48 @@ public class TestEnemieAnimations : MonoBehaviour
     {
         _anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
+        _render = GetComponent<SpriteRenderer>();
 
         startPosition = transform.position;
         timer = Random.Range(minWaitTime, maxWaitTime);
         isWandering = false;
 
         ResetEnemy();
+    }
+    private void Start()
+    {
+        switch(type)
+        {
+            case EnemyType.pistola:
+                _render.sprite = _enemiesSprite[0];
+                _anim.runtimeAnimatorController = _animationsEnemies[0];
+                break;
+            case EnemyType.metralleta:
+                _render.sprite = _enemiesSprite[1];
+                _anim.runtimeAnimatorController = _animationsEnemies[1];
+                break;
+            case EnemyType.escopeta:
+                _render.sprite = _enemiesSprite[2];
+                _anim.runtimeAnimatorController = _animationsEnemies[2];
+                break;
+            case EnemyType.jefe1:
+                _render.sprite = _enemiesSprite[3];
+                _anim.runtimeAnimatorController = _animationsEnemies[3];
+                break;
+            case EnemyType.jefe2:
+                _render.sprite = _enemiesSprite[4];
+                _anim.runtimeAnimatorController = _animationsEnemies[4];
+                break;
+            case EnemyType.jefe3:
+                _render.sprite = _enemiesSprite[5];
+                _anim.runtimeAnimatorController = _animationsEnemies[5];
+                break;
+            case EnemyType.jefe4:
+                _render.sprite = _enemiesSprite[3];
+                _anim.runtimeAnimatorController = _animationsEnemies[3];
+                break;
+
+        }
     }
 
     private void Update()
@@ -87,7 +129,7 @@ public class TestEnemieAnimations : MonoBehaviour
                 {
                     isWandering = false;
                     _enemieState = EnemysStates.ViewPlayer;
-                    _anim.CrossFade("Walk", 0.0001f);
+                    //_anim.CrossFade("Walk", 0.0001f);
                 }
 
                 break;
@@ -129,23 +171,23 @@ public class TestEnemieAnimations : MonoBehaviour
         }
     }
 
-    private void MovementAnimationEjeX()
-    {
-        currentX = transform.position.x;
+    //private void MovementAnimationEjeX()
+    //{
+    //    currentX = transform.position.x;
 
-        if (currentX > lastX)
-        {
-            _anim.CrossFade("Right", 0.0001f);
-        }
-        else if (currentX < lastX)
-        {
-            _anim.CrossFade("Left", 0.0001f);
-        }
+    //    if (currentX > lastX)
+    //    {
+    //        _anim.CrossFade("Right", 0.0001f);
+    //    }
+    //    else if (currentX < lastX)
+    //    {
+    //        _anim.CrossFade("Left", 0.0001f);
+    //    }
 
-        lastX = currentX;
-    }
+    //    lastX = currentX;
+    //}
 
-    private void ESCAPE() => _anim.CrossFade("StartBack", 0.0001f);
+    //private void ESCAPE() => _anim.CrossFade("StartBack", 0.0001f);
 
     private void DEAD()
     {
@@ -158,19 +200,19 @@ public class TestEnemieAnimations : MonoBehaviour
         }
         else
         {
-            _anim.CrossFade("Dead", 0.0001f);
+            //_anim.CrossFade("Dead", 0.0001f);
             this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             this.GetComponent<BoxCollider>().enabled = false;
         }
     }
 
 
-    private IEnumerator StartViewPlayer()
-    {
-        _anim.CrossFade("StartBack", 0.0001f);
-        yield return new WaitForSeconds(_anim.GetCurrentAnimatorStateInfo(0).length);
-        _anim.CrossFade("Back", 0.0001f);
-    }
+    //private IEnumerator StartViewPlayer()
+    //{
+    //    _anim.CrossFade("StartBack", 0.0001f);
+    //    yield return new WaitForSeconds(_anim.GetCurrentAnimatorStateInfo(0).length);
+    //    _anim.CrossFade("Back", 0.0001f);
+    //}
 
     private void WanderToNewPosition()
     {
@@ -289,4 +331,7 @@ public class TestEnemieAnimations : MonoBehaviour
 
         health = baseHealth;
     }
+
+
+    
 }
