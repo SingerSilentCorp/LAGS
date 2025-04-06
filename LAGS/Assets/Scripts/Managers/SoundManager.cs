@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class SoundManager : MonoBehaviour
     
     [Header("SoundTrack")]
     [SerializeField] AudioClip Nivel1;
+    [SerializeField] AudioClip Nivel1Loop;
 
     [Header("Effects")]
     [Header("Arma")]
@@ -28,7 +31,7 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        MusicBackground.PlayOneShot(Nivel1);
+        StartCoroutine(PlaySongs());
     }
 
 
@@ -42,5 +45,19 @@ public class SoundManager : MonoBehaviour
     public void CaminataEnemie2() => SFX.PlayOneShot(caminataEnemie2);
     public void CaminataEnemie3() => SFX.PlayOneShot(caminataEnemie3);
     public void CaminataJefe() => SFX.PlayOneShot(caminataJefe);
+
+    IEnumerator PlaySongs()
+    {
+
+        MusicBackground.clip = Nivel1;
+        MusicBackground.Play();
+
+            yield return new WaitForSeconds(Nivel1.length -1.8f);
+
+        MusicBackground.clip = Nivel1Loop;
+        MusicBackground.Play();
+
+    }
+
 
 }
