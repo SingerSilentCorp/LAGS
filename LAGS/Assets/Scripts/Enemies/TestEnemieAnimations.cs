@@ -218,6 +218,7 @@ public class TestEnemieAnimations : MonoBehaviour
     private void Attack()
     {
         print("Attacking Player");
+        target.GetComponent<PlayerController>().GetDamage(10f);
     }
 
     public void GetDamage(float damage)
