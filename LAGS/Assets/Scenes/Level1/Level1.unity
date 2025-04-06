@@ -1373,7 +1373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &108954873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1388,7 +1388,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MusicBackground: {fileID: 1688718622}
   SFX: {fileID: 1365476057}
-  Nivel1: {fileID: 8300000, guid: 7d8f4d149d174224e9f5031977d3fb63, type: 3}
+  Nivel1: {fileID: 8300000, guid: 0801ac60abb0ab34dbf21af388aa6af7, type: 3}
+  Nivel1Loop: {fileID: 8300000, guid: 19e451dbd33aea04d8667f0b52b52220, type: 3}
   shootPistola: {fileID: 8300000, guid: d1fdf1b861593e349af0a3a508c4f6d8, type: 3}
   reloadPistola: {fileID: 8300000, guid: 22e17f6a6ea7a874bbe412157582af35, type: 3}
   shootMetralleta: {fileID: 8300000, guid: 54a410a0f00dba442bc32c9660b5337e, type: 3}

@@ -34,7 +34,6 @@ public class SoundManager : MonoBehaviour
         StartCoroutine(PlaySongs());
     }
 
-
     public void ShootPistola() => SFX.PlayOneShot(shootPistola);
     public void ReloadPistola() => SFX.PlayOneShot(reloadPistola);
     public void ShootMetralleta() => SFX.PlayOneShot(shootMetralleta);
@@ -48,16 +47,14 @@ public class SoundManager : MonoBehaviour
 
     IEnumerator PlaySongs()
     {
-
+        MusicBackground.loop = false;
         MusicBackground.clip = Nivel1;
         MusicBackground.Play();
 
             yield return new WaitForSeconds(Nivel1.length -1.8f);
 
         MusicBackground.clip = Nivel1Loop;
+        MusicBackground.loop = true;
         MusicBackground.Play();
-
     }
-
-
 }
