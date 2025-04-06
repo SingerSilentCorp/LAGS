@@ -301,6 +301,8 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.layer == 12) gameManager.ShowTxtGuide(true);
 
         if (other.CompareTag("Exit")) gameManager.ChangeToAnotherLevel(2);
+        if (other.CompareTag("Exit2")) gameManager.ChangeToAnotherLevel(3);
+        if (other.CompareTag("Exit3")) gameManager.ChangeToAnotherLevel(4);
     }
 
     private void OnTriggerStay(Collider other)
@@ -363,6 +365,7 @@ public class PlayerController : MonoBehaviour
             if (health <= 0.0f)
             {
                 health = 0.0f;
+                SceneManager.LoadScene(0);
                 Debug.Log("Morí");
             }
         }
