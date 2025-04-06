@@ -4,7 +4,8 @@ using UnityEngine.AI;
 
 public class TestEnemieAnimations : MonoBehaviour
 {
-
+    private enum EnemyType { pistola, escopeta, metralleta, jefe1, jefe2}
+    [SerializeField] private EnemyType type;
     private enum EnemysStates { walk, ViewPlayer, Attack, escape, dead };
     [SerializeField] private EnemysStates _enemieState = EnemysStates.walk;
 
@@ -16,6 +17,7 @@ public class TestEnemieAnimations : MonoBehaviour
     [SerializeField] private float baseHealth;
     private float health;
     [SerializeField] private float _speed;
+    [HideInInspector] public float damage;
 
     [Header("Others")]
     private float currentX;
@@ -36,6 +38,10 @@ public class TestEnemieAnimations : MonoBehaviour
     [SerializeField] private Transform target;
     [SerializeField] private float stoppingDistance;
     [SerializeField] private float retreatDistance;
+
+    [Header("JefeConfig")]
+    [SerializeField] private bool isABoss;
+    [SerializeField] private DoorsController door;
 
     private void Awake()
     {
@@ -142,9 +148,18 @@ public class TestEnemieAnimations : MonoBehaviour
 
     private void DEAD()
     {
-        _anim.CrossFade("Dead", 0.0001f);
-        this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-        this.GetComponent<BoxCollider>().enabled = false;
+        if (isABoss)
+        {
+            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            this.GetComponent<BoxCollider>().enabled = false;
+            this.GetComponent<SwitchController>().UnlockDoor();
+        }
+        else
+        {
+            _anim.CrossFade("Dead", 0.0001f);
+            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            this.GetComponent<BoxCollider>().enabled = false;
+        }
     }
 
 
@@ -219,7 +234,7 @@ public class TestEnemieAnimations : MonoBehaviour
     private void Attack()
     {
         print("Attacking Player");
-        target.GetComponent<PlayerController>().GetDamage(10f);
+        target.GetComponent<PlayerController>().GetDamage(damage);
     }
 
     public void GetDamage(float damage)
@@ -235,6 +250,33 @@ public class TestEnemieAnimations : MonoBehaviour
 
     public void ResetEnemy()
     {
+        switch (type)
+        {
+            case EnemyType.pistola:
+
+                damage = Random.Range(6.0f, 10.01f);
+                health = 24.0f;
+                break;
+            case EnemyType.escopeta:
+                damage = Random.Range(15.0f, 20.01f);
+                health = 36.0f;
+                break;
+            case EnemyType.metralleta:
+                damage = Random.Range(8.0f, 12.01f);
+                health = 60.0f;
+                break;
+            case EnemyType.jefe1:
+                damage = Random.Range(10.0f, 15.01f);
+                health = 400.0f;
+                break;
+            case EnemyType.jefe2:
+                damage = Random.Range(12.0f, 15.01f);
+                health = 430.0f;
+                break;
+            default:
+                break;
+        }
+
         health = baseHealth;
     }
 }
