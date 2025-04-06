@@ -209,6 +209,7 @@ public class TestEnemieAnimations : MonoBehaviour
             this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             this.GetComponent<BoxCollider>().enabled = false;
         }
+        this.gameObject.SetActive(false);
     }
 
 
