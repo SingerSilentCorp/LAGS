@@ -53,6 +53,8 @@ public class TestEnemieAnimations : MonoBehaviour
         timer = Random.Range(minWaitTime, maxWaitTime);
         isWandering = false;
 
+        target = GameObject.FindFirstObjectByType<PlayerController>().gameObject.transform;
+
         ResetEnemy();
     }
 

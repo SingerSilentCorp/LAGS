@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.03773582, g: 0.03773582, b: 0.03773582, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.029
+  m_FogDensity: 0.08
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -1222,6 +1222,18 @@ PrefabInstance:
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4188075444530949154, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_Size.x
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4188075444530949154, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_Size.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4188075444530949154, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_Size.z
+      value: 260
       objectReference: {fileID: 0}
     - target: {fileID: 4796353872232857644, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_LocalScale.x
@@ -25565,6 +25577,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ManagersConteiner
       objectReference: {fileID: 0}
+    - target: {fileID: 2661268284759191119, guid: e94f86f1f3e3ef547a8af7f9f9e67a90, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2934089384062565483, guid: e94f86f1f3e3ef547a8af7f9f9e67a90, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -25717,7 +25733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4796353872232857644, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.27700007
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4796353872232857644, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_LocalPosition.z
