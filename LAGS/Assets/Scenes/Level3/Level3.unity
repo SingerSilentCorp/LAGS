@@ -29912,6 +29912,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1519686301}
     m_Modifications:
+    - target: {fileID: 4994229880769653071, guid: 1db7e55ec0f51c443a27bf237e4352f5, type: 3}
+      propertyPath: yarnTittle
+      value: Secreto2
+      objectReference: {fileID: 0}
     - target: {fileID: 5858716574142797460, guid: 1db7e55ec0f51c443a27bf237e4352f5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 518.8

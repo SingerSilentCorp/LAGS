@@ -67,11 +67,6 @@ public class GameManager : MonoBehaviour
         ChangeTextLenguage();
     }
 
-    private void Start()
-    {
-        
-    }
-
     private void InitPanelsBehavior()
     {
         txtGuide.gameObject.SetActive(false);
