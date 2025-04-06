@@ -67,6 +67,33 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ChangeWeapon1",
+                    "type": "Button",
+                    "id": "25cef906-becb-46ac-8ba3-72410d0a9036",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ChangeWeapon2",
+                    "type": "Button",
+                    "id": "6b5d151e-f544-47db-a132-3d477b877f73",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ChangeWeapon3",
+                    "type": "Button",
+                    "id": "a4197713-6392-42bf-bedc-b8262727faaf",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -188,6 +215,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9660b530-c89a-4881-80f4-6d6f3e296bb3",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeWeapon1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e534e39b-010b-4a79-9a23-b062fb7b1c30",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeWeapon2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d6a07e7b-3fe9-4362-837d-9667c7244bbf",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeWeapon3",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

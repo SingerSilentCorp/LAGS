@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Inputs")]
     private InputAction move, fire, sprint, interact;
+    private InputAction changeW1, changeW2, changeW3;
     private InputAction uiAccept, pause;
 
     [SerializeField] private Transform cameraTransform;
@@ -75,6 +76,19 @@ public class PlayerController : MonoBehaviour
         else if (uiAccept.WasPressedThisFrame() && dialogueManager.autoDialog)
         {
             dialogueManager.IsAutoPlayingDialog();
+        }
+
+        if (changeW1.WasPressedThisFrame())
+        {
+
+        }
+        else if (changeW2.WasPressedThisFrame())
+        {
+
+        }
+        else if (changeW3.WasPressedThisFrame())
+        {
+
         }
 
         HandleMouseLook();
@@ -223,6 +237,17 @@ public class PlayerController : MonoBehaviour
 
         interact = playerControls.Player.Interact;
         interact.Enable();
+
+        changeW1 = playerControls.Player.ChangeWeapon1;
+        changeW1.Enable();
+
+        changeW2 = playerControls.Player.ChangeWeapon2;
+        changeW2.Enable();
+
+
+        changeW3 = playerControls.Player.ChangeWeapon3;
+        changeW3.Enable();
+
     }
 
     private void OnDisable()
@@ -239,7 +264,7 @@ public class PlayerController : MonoBehaviour
 
     public void ActiveInputs(bool isActivating)
     {
-        if(isActivating) OnDisable();
+        if (isActivating) OnDisable();
         else OnEnable();
     }
 
