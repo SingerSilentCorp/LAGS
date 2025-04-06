@@ -182,12 +182,10 @@ public class PlayerController : MonoBehaviour
         if (context.performed && !gameManager.pauseOpen)
         {
             gameManager.OpenPause(true);
-            Time.timeScale = 0.0f;
         }
         else if (context.performed && gameManager.pauseOpen)
         {
             gameManager.OpenPause(false);
-            Time.timeScale = 1.0f;
         }
     }
 

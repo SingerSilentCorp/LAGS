@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Button[] btn2ndOptions;
 
 
-    private bool isEnglish = false;
+    [HideInInspector] public bool isEnglish = false;
 
     private void Awake()
     {
@@ -84,10 +84,10 @@ public class GameManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
-            btn1stOptions[0].onClick.AddListener(()=> SceneManager.LoadScene(1));
+            btn1stOptions[0].onClick.AddListener(() => SceneManager.LoadScene(1));
             btn1stOptions[3].onClick.AddListener(() => ChangeMenus(1));
             btn1stOptions[4].onClick.AddListener(() => Application.Quit());
-            
+
             btn2ndOptions[0].onClick.AddListener(() =>
             {
                 if (!Screen.fullScreen) Screen.fullScreen = true;
@@ -109,7 +109,7 @@ public class GameManager : MonoBehaviour
             btn1stOptions[3].onClick.AddListener(() => ChangeMenus(1));
             btn1stOptions[5].onClick.AddListener(() => Application.Quit());
 
-            sensitiveSlider.value = player.mouseSensitivity;
+            player.mouseSensitivity = sensitiveSlider.value;
 
             btn2ndOptions[0].onClick.AddListener(() =>
             {
@@ -163,6 +163,7 @@ public class GameManager : MonoBehaviour
 
         if (isOpenning)
         {
+            Time.timeScale = 0.0f;
             pauseOpen = true;
             pauseConteiner.SetActive(true);
             pauseMenus[0].SetActive(true);
@@ -180,6 +181,7 @@ public class GameManager : MonoBehaviour
 
             pauseConteiner.SetActive(false);
             MouseVisible(false);
+            Time.timeScale = 1.0f;
         }
     }
 
