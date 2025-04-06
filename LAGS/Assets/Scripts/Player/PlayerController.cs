@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    SoundManager _sound;
+
     private Vector3 movePos;
     [SerializeField] private GameObject target;
 
@@ -54,6 +56,9 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        _sound= SoundManager.Instance;
+
+
         playerControls = new PlayerInputActions();
         rb = GetComponent<Rigidbody>();
 
@@ -192,6 +197,7 @@ public class PlayerController : MonoBehaviour
 
     private void Fire(InputAction.CallbackContext context)
     {
+        _sound.ShootPistola();
         // Obtener el rayo desde el centro de la cámara
         ray = new Ray(this.transform.position, this.transform.forward);
 

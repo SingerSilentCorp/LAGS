@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class TestEnemieAnimations : MonoBehaviour
 {
+    SoundManager _sound;
+
 
     [Header("SpritesEnemies")]
     [SerializeField] Sprite[] _enemiesSprite;
@@ -66,6 +68,8 @@ public class TestEnemieAnimations : MonoBehaviour
     }
     private void Start()
     {
+        _sound = SoundManager.Instance;
+
         switch(type)
         {
             case EnemyType.pistola:
@@ -279,7 +283,19 @@ public class TestEnemieAnimations : MonoBehaviour
 
     private void Attack()
     {
-        print("Attacking Player");
+        switch (type)
+        {
+            case EnemyType.pistola:
+                _sound.ShootPistola();
+                break;
+            case EnemyType.metralleta:
+                _sound.ShootMetralleta();
+                break;
+            case EnemyType.escopeta:
+                _sound.ShootEscopeta(); 
+                break;
+        }
+                print("Attacking Player");
         target.GetComponent<PlayerController>().GetDamage(damage);
     }
 
