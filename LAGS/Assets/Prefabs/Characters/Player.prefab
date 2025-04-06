@@ -190,7 +190,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6167116308264282548}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -206,7 +206,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 1c86db0b534fa1c4293f5fd0c3956774, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -302,10 +302,6 @@ MonoBehaviour:
   health: 0
   armor: 0
   mouseSensitivity: 100
-  invertYAxis: 0
-  minVerticalAngle: -90
-  maxVerticalAngle: 90
-  rotationSmoothness: 5
 --- !u!114 &8093925821136827968
 MonoBehaviour:
   m_ObjectHideFlags: 0
