@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public float health;
     private float baseArmor = 100;
     [HideInInspector] public float armor;
-    private float baseAmmo = 20;
+    private float baseAmmo = 250;
     private float ammo;
     private float baseSpeed = 20;
     private float speed;
@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour
         speed = baseSpeed;
         damage = baseDamage;
         health = baseHealth;
-        armor = baseArmor;
+        armor = 0;
 
         gameManager.UpdateHP(health);
         gameManager.UpdateHP(armor);
@@ -133,31 +133,31 @@ public class PlayerController : MonoBehaviour
         speed += speed * (percent / 100.0f);
     }
 
-    public void IncreaseOrDecreaseHealth(float percent)
+    public void IncreaseOrDecreaseHealth(float value)
     {
         if (health >= baseHealth) health = baseHealth;
-        else health += health * (percent / 100.0f);
+        else health = value;
 
         gameManager.UpdateHP(health);
     }
 
-    public void IncreaseOrDecreaseDamage(float percent)
+    public void IncreaseOrDecreaseDamage(float value)
     {
-        damage += damage * (percent / 100.0f);
+        damage += value;
     }
 
-    public void IncreaseOrDecreaseArmor(float percent)
+    public void IncreaseOrDecreaseArmor(float value)
     {
         if (armor >= baseArmor) armor = baseArmor;
-        else armor += armor * (percent / 100.0f);
+        else armor = value;
 
-        gameManager.UpdateHP(armor);
+        gameManager.UpdateArmor(armor);
     }
 
-    public void IncreaseOrDecreaseAmmo(float percent)
+    public void IncreaseOrDecreaseAmmo(float value)
     {
         if (ammo >= baseAmmo) ammo = baseAmmo;
-        else ammo += ammo * (percent / 100.0f);
+        else ammo = value;
     }
 
     private void Fire(InputAction.CallbackContext context)

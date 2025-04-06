@@ -23,23 +23,23 @@ public class ItemsController : MonoBehaviour
                     
                     break;
                 case ItemType.Health:
-                    target.GetComponent<PlayerController>().IncreaseOrDecreaseHealth(50);
+                    target.GetComponent<PlayerController>().IncreaseOrDecreaseHealth(40);
                     
                     break;
                 case ItemType.SmallArmor:
-                    target.GetComponent<PlayerController>().IncreaseOrDecreaseArmor(20);
+                    target.GetComponent<PlayerController>().IncreaseOrDecreaseArmor(50);
                     
                     break;
                 case ItemType.Armor:
-                    target.GetComponent<PlayerController>().IncreaseOrDecreaseArmor(20);
+                    target.GetComponent<PlayerController>().IncreaseOrDecreaseArmor(100);
                     
                     break;
                 case ItemType.SmallAmmo:
-                    target.GetComponent<PlayerController>().IncreaseOrDecreaseArmor(20);
+                    target.GetComponent<PlayerController>().IncreaseOrDecreaseAmmo(20);
 
                     break;
                 case ItemType.Ammo:
-                    target.GetComponent<PlayerController>().IncreaseOrDecreaseArmor(20);
+                    target.GetComponent<PlayerController>().IncreaseOrDecreaseAmmo(20);
 
                     break;
                 case ItemType.Speed:
