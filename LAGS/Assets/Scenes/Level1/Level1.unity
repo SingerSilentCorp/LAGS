@@ -1598,6 +1598,7 @@ MonoBehaviour:
   SFX: {fileID: 1365476057}
   Nivel1: {fileID: 8300000, guid: 0801ac60abb0ab34dbf21af388aa6af7, type: 3}
   Nivel1Loop: {fileID: 8300000, guid: 19e451dbd33aea04d8667f0b52b52220, type: 3}
+  Menu: {fileID: 8300000, guid: 18ee9fb28e7bd264c84bfe23f578672f, type: 3}
   shootPistola: {fileID: 8300000, guid: d1fdf1b861593e349af0a3a508c4f6d8, type: 3}
   reloadPistola: {fileID: 8300000, guid: 22e17f6a6ea7a874bbe412157582af35, type: 3}
   shootMetralleta: {fileID: 8300000, guid: 54a410a0f00dba442bc32c9660b5337e, type: 3}

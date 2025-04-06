@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
+
 
 public class SoundManager : MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class SoundManager : MonoBehaviour
     [Header("SoundTrack")]
     [SerializeField] AudioClip Nivel1;
     [SerializeField] AudioClip Nivel1Loop;
+    [SerializeField] AudioClip Menu;
 
     [Header("Effects")]
     [Header("Arma")]
@@ -32,18 +35,29 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)
-        {
+        
             Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
+
+
+        
+
+        if (SceneManager.GetActiveScene().name != "MainMenu")
         {
-            if(Instance != null)
-            {
-                Destroy(gameObject);
-            }
+            double startTime = AudioSettings.dspTime + 1.0; // Comienza dentro de 1 segundo
+
+            // Programar el primer audio
+            MusicBackground.clip = Nivel1;
+            MusicBackground.PlayScheduled(startTime);
+
+            // Calcular cuándo terminará el primer clip
+            double clip1EndTime = startTime + Nivel1.length;
+
+            // Programar el segundo audio justo cuando termine el primero
+            SFX.clip = Nivel1Loop;
+            SFX.PlayScheduled(clip1EndTime);
         }
+
+
     }
 
     private void Start()
