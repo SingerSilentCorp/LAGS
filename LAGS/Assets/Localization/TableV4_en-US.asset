@@ -19,211 +19,218 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 225954856960
-    m_Localized: 'Las Noches. Our home. '
+    m_Localized: '{0}: Las Noches. Our home. '
     m_Metadata:
       m_Items: []
   - m_Id: 225992605696
-    m_Localized: It pains me to say this, but this nation is under grave peril.
+    m_Localized: '{0}: It pains me to say this, but this nation is under grave peril. '
     m_Metadata:
       m_Items: []
   - m_Id: 225996800000
-    m_Localized: Anarchists and criminals are hellbent on ruining managed democracy,
-      our society's pillar.
+    m_Localized: '{0}: Anarchists and criminals are hellbent on ruining managed democracy,
+      our society''s pillar.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800001
-    m_Localized: They poison the minds of our children and they slaughter the mothers.
+    m_Localized: '{0}: They poison the minds of our children and they slaughter the
+      mothers.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800002
-    m_Localized: Spreaders of lies, they terrorize homes.
+    m_Localized: '{0}: Spreaders of lies, they terrorize homes.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800003
-    m_Localized: Your family could be next.
+    m_Localized: '{0}: Your family could be next.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800004
-    m_Localized: "That's the reason you are here\u2014to protect the innocent."
+    m_Localized: "{0}: That's the reason you are here\u2014to protect the innocent."
     m_Metadata:
       m_Items: []
   - m_Id: 225996800005
-    m_Localized: You are our defenders, the champions of freedom.
+    m_Localized: '{0}: You are our defenders, the champions of freedom.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800006
-    m_Localized: "YOU are our democracy\xB4s sword."
+    m_Localized: "{0}: YOU are our democracy\xB4s sword."
     m_Metadata:
       m_Items: []
   - m_Id: 225996800007
-    m_Localized: "The CHROMED heroes of this nation\u2014the Synth."
+    m_Localized: "{0}: The CHROMED heroes of this nation\u2014the Synth."
     m_Metadata:
       m_Items: []
   - m_Id: 225996800008
-    m_Localized: Recover the streets. Reinstate liberty.
+    m_Localized: '{0}: Recover the streets. Reinstate liberty.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800009
-    m_Localized: Save our people, save this country!
+    m_Localized: '{0}: Save our people, save this country!'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800010
-    m_Localized: Aluminium envelops your body. Titanium reinforces your bones.
+    m_Localized: '{0}: Aluminium envelops your body. Titanium reinforces your bones.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800011
-    m_Localized: "You are the govt's most perfect creation\u2014their mightiest defender."
+    m_Localized: "{0}: You are the govt's most perfect creation\u2014their mightiest
+      defender."
     m_Metadata:
       m_Items: []
   - m_Id: 225996800012
-    m_Localized: You are a Synth, a soldier that gave it all to protect their city.
+    m_Localized: '{0}: You are a Synth, a soldier that gave it all to protect their
+      city.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800013
-    m_Localized: Retake Las Noches. Remind them who's boss.
+    m_Localized: '{0}: Retake Las Noches. Remind them who''s boss.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800014
-    m_Localized: It's done. There were no survivors.
+    m_Localized: '{0}: It''s done. There were no survivors.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800015
-    m_Localized: You have fulfilled your duty to the city. Their deaths strenghten
-      us.
+    m_Localized: '{0}: You have fulfilled your duty to the city. Their deaths strenghten
+      us.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800016
-    m_Localized: "Now, your end of the deal. Let them go. You know that\u2014"
+    m_Localized: "{0}: Now, your end of the deal. Let them go. You know that\u2014"
     m_Metadata:
       m_Items: []
   - m_Id: 225996800017
-    m_Localized: Can it. You will see them in the afterlife, if you believe in that
-      bullshit too.
+    m_Localized: '{0}: Can it. You will see them in the afterlife, if you believe
+      in that bullshit too.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800018
-    m_Localized: Piece of shit. You heard it. They are coming.
+    m_Localized: '{0}: Piece of shit. You heard it. They are coming.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800019
-    m_Localized: Cargo arrived safely, Iron Wolf.
+    m_Localized: '{0}: Cargo arrived safely, Iron Wolf.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800020
-    m_Localized: At your service. A taste will blow their brains out gehehee.
+    m_Localized: '{0}: At your service. A taste will blow their brains out gehehee.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800021
-    m_Localized: As was expected. Payment's on its way.
+    m_Localized: '{0}: As was expected. Payment''s on its way.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800022
-    m_Localized: "Cobalt Hydra, it's a pleasure to\u2014"
+    m_Localized: "{0}: Cobalt Hydra, it's a pleasure to\u2014"
     m_Metadata:
       m_Items: []
   - m_Id: 225996800023
-    m_Localized: Save it. You are nothing but a tool for our grand nation.
+    m_Localized: '{0}: Save it. You are nothing but a tool for our grand nation.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800024
-    m_Localized: "...Impossible. I thought that\u2014"
+    m_Localized: "{0}: ...Impossible. I thought that\u2014"
     m_Metadata:
       m_Items: []
   - m_Id: 225996800025
-    m_Localized: I warned you. No witnesses. Your face is all over the place now.
+    m_Localized: '{0}: I warned you. No witnesses. Your face is all over the place
+      now.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800026
-    m_Localized: Yeah, yeah, I know, I'll fix this.
+    m_Localized: '{0}: Yeah, yeah, I know, I''ll fix this.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800027
-    m_Localized: You must think that I am an imbecile.
+    m_Localized: '{0}: You must think that I am an imbecile.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800028
-    m_Localized: "Bro, I respect you, I assure you that\u2014"
+    m_Localized: "{0}: Bro, I respect you, I assure you that\u2014"
     m_Metadata:
       m_Items: []
   - m_Id: 225996800029
-    m_Localized: Shut the fuck up. Dying is the only thing you are good for now.
+    m_Localized: '{0}: Shut the fuck up. Dying is the only thing you are good for
+      now.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800030
-    m_Localized: Congrats, soldier. You did it.
+    m_Localized: '{0}: Congrats, soldier. You did it.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800031
-    m_Localized: You delivered retribution to the vermin that emaciated our city.
+    m_Localized: '{0}: You delivered retribution to the vermin that emaciated our
+      city.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800032
-    m_Localized: You earned your place among our heroes. Our crusader of justice.
+    m_Localized: '{0}: You earned your place among our heroes. Our crusader of justice.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800033
-    m_Localized: Your hand rekindled managed democracy's flame.
+    m_Localized: '{0}: Your hand rekindled managed democracy''s flame.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800034
-    m_Localized: Do not fear. Do not doubt. Do not ask questions.
+    m_Localized: '{0}: Do not fear. Do not doubt. Do not ask questions.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800035
-    m_Localized: Thanks to you, we are freer than yesterday.
+    m_Localized: '{0}: Thanks to you, we are freer than yesterday.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800036
-    m_Localized: 'The price was paid with the blood of traitors, but that is all
-      right. '
+    m_Localized: '{0}: The price was paid with the blood of traitors, but that is
+      all right. '
     m_Metadata:
       m_Items: []
   - m_Id: 225996800037
-    m_Localized: Everything, really, is all right.
+    m_Localized: '{0}: Everything, really, is all right.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800038
-    m_Localized: Surprised? No. Stop lying.
+    m_Localized: '{0}: Surprised? No. Stop lying.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800039
-    m_Localized: Truth was laid bare before your eyes. You chose to ignore it. Easy
-      to do, after all.
+    m_Localized: '{0}: Truth was laid bare before your eyes. You chose to ignore
+      it. Easy to do, after all.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800040
-    m_Localized: It was someone else's problem.
+    m_Localized: '{0}: It was someone else''s problem.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800041
-    m_Localized: What? Do you feel like standing down, crying some? Don't make me
-      laugh.
+    m_Localized: '{0}: What? Do you feel like standing down, crying some? Don''t
+      make me laugh.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800042
-    m_Localized: That's better. Feel the rage. Our rage. Go. Clean up this mess.
+    m_Localized: '{0}: That''s better. Feel the rage. Our rage. Go. Clean up this
+      mess.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800043
-    m_Localized: You killed the bad guy. Annihilated everyone else. The blood caking
-      your boots proves it.
+    m_Localized: '{0}: You killed the bad guy. Annihilated everyone else. The blood
+      caking your boots proves it.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800044
-    m_Localized: You stop for a moment and listen to the streets of Las Noches. They
-      are coming for you.
+    m_Localized: '{0}: You stop for a moment and listen to the streets of Las Noches.
+      They are coming for you.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800045
-    m_Localized: What will you do? Avert your eyes? Give up? Impossible.
+    m_Localized: '{0}: What will you do? Avert your eyes? Give up? Impossible.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800046
-    m_Localized: Lock and load. Your fight has only just begun.
+    m_Localized: '{0}: Lock and load. Your fight has only just begun.'
     m_Metadata:
       m_Items: []
   - m_Id: 225996800047
-    m_Localized: Give them hell.
+    m_Localized: '{0}: Give them hell.'
     m_Metadata:
       m_Items: []
   references:

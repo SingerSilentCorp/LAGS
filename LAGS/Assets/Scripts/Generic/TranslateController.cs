@@ -26,10 +26,11 @@ public class TranslateController : MonoBehaviour
 
     public void EnLanguage()
     {
+        this.GetComponent<GameManager>().isEnglish = true;
         CambiarIdioma("en-US");
+        
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
-            this.GetComponent<GameManager>().isEnglish = true;
             //PauseMenu
             pauseMenuTxt[0].text = "New Game";
             pauseMenuTxt[1].text = "Save";
@@ -38,12 +39,13 @@ public class TranslateController : MonoBehaviour
             pauseMenuTxt[4].text = "Exit";
             pauseMenuTxt[5].text = "Volume";
             pauseMenuTxt[6].text = "Screen Mode";
-            pauseMenuTxt[7].text = "Full Screen";
-            pauseMenuTxt[8].text = "Window";
-            pauseMenuTxt[9].text = "Lenguage";
-            pauseMenuTxt[10].text = "Spanish";
-            pauseMenuTxt[11].text = "English";
-            pauseMenuTxt[12].text = "Return";
+            pauseMenuTxt[7].text = "Sensitive";
+            pauseMenuTxt[8].text = "Full Screen";
+            pauseMenuTxt[9].text = "Window";
+            pauseMenuTxt[10].text = "Lenguage";
+            pauseMenuTxt[11].text = "Spanish";
+            pauseMenuTxt[12].text = "English";
+            pauseMenuTxt[13].text = "Return";
 
         }
         else{
@@ -72,7 +74,6 @@ public class TranslateController : MonoBehaviour
     public void EsLanguage()
     {
         this.GetComponent<GameManager>().isEnglish = false;
-
         CambiarIdioma("es-PE");
 
         if (SceneManager.GetActiveScene().buildIndex == 0)
@@ -85,12 +86,13 @@ public class TranslateController : MonoBehaviour
             pauseMenuTxt[4].text = "Salir";
             pauseMenuTxt[5].text = "Volumen";
             pauseMenuTxt[6].text = "Modo de pantalla";
-            pauseMenuTxt[7].text = "Pantalla completa";
-            pauseMenuTxt[8].text = "Ventana";
-            pauseMenuTxt[9].text = "Lenguaje";
-            pauseMenuTxt[10].text = "Español";
-            pauseMenuTxt[11].text = "Ingles";
-            pauseMenuTxt[12].text = "Volver";
+            pauseMenuTxt[7].text = "Sensibilidad";
+            pauseMenuTxt[8].text = "Pantalla completa";
+            pauseMenuTxt[9].text = "Ventana";
+            pauseMenuTxt[10].text = "Lenguaje";
+            pauseMenuTxt[11].text = "Español";
+            pauseMenuTxt[12].text = "Ingles";
+            pauseMenuTxt[13].text = "Volver";
         }
         else
         {

@@ -4,6 +4,7 @@ using UnityEngine.AI;
 
 public class TestEnemieAnimations : MonoBehaviour
 {
+
     private enum EnemysStates { walk, ViewPlayer, Attack, escape, dead };
     [SerializeField] private EnemysStates _enemieState = EnemysStates.walk;
 
