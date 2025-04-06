@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Configuración Raycast")]
 
-    [SerializeField] private float raycastDistance = 25f;
+    [SerializeField] private float raycastDistance;
     [SerializeField] private LayerMask interactableLayers;
     private Ray ray;
 
@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
 
 
     [Header("Configuración de Sensibilidad")]
-    [SerializeField] private float mouseSensitivity = 100f;
+    [HideInInspector] public float mouseSensitivity = 500f;
 
     private void Awake()
     {
@@ -68,14 +68,14 @@ public class PlayerController : MonoBehaviour
         if (sprint.IsPressed()) speed = baseSpeed * 1.5f;
         else speed = baseSpeed;
 
-        /*if (uiAccept.WasPressedThisFrame() && !dialogueManager.autoDialog)
+        if (uiAccept.WasPressedThisFrame() && !dialogueManager.autoDialog)
         {
             dialogueManager.IsPlayingDialog();
         }
         else if (uiAccept.WasPressedThisFrame() && dialogueManager.autoDialog)
         {
             dialogueManager.IsAutoPlayingDialog();
-        }*/
+        }
 
         HandleMouseLook();
     }
@@ -174,10 +174,7 @@ public class PlayerController : MonoBehaviour
             target = hit.collider.gameObject;
             target.GetComponent<TestEnemieAnimations>().GetDamage(damage);
         }
-        else
-        {
-            target = null;
-        }
+        else target = null;
     }
 
     private void Pause(InputAction.CallbackContext context)
@@ -246,10 +243,7 @@ public class PlayerController : MonoBehaviour
     {
         gameManager.GuideTxtConfig(0);
 
-        if (other.CompareTag("Secret"))
-        {
-            other.GetComponent<SecretController>().StarSecretDialog();
-        }
+        if (other.CompareTag("Secret")) gameManager.ShowTxtGuide(true);
 
         if (other.gameObject.layer == 8) gameManager.ShowTxtGuide(true);
 
@@ -288,6 +282,11 @@ public class PlayerController : MonoBehaviour
                 gameManager.GuideTxtConfig(2);
                 other.GetComponent<SwitchController>().UnlockDoor();
             }
+        }
+
+        if (other.CompareTag("Secret"))
+        {
+            if (interact.IsPressed()) other.GetComponent<SecretController>().StarSecretDialog();
         }
     }
 

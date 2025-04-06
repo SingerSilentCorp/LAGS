@@ -33,10 +33,6 @@ public class DialogueManager : MonoBehaviour
     }
 
     //This is the order you should follow ---->
-    public void ConfigDialgue(YarnProject yarnP)
-    {
-        if (!dialogueRunner.IsDialogueRunning) dialogueRunner.yarnProject = yarnP;
-    }
 
     public void ShowOrHideDialogPanel(bool isActivating) => dialoguePanel.SetActive(isActivating);
 

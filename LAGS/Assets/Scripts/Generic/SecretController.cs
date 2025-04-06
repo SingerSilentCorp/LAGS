@@ -10,16 +10,10 @@ public class SecretController : MonoBehaviour
 
     [SerializeField] private string yarnTittle;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        dialogueManager.ConfigDialgue(yarn);
-    }   
-
     public void StarSecretDialog()
     {
         if (!dialogueRunner.IsDialogueRunning)
         {
-            dialogueManager.ConfigDialgue(yarn);
             dialogueManager.ShowOrHideDialogPanel(true);
             Debug.Log("Yarn config");
             dialogueManager.InitDialog(yarnTittle,true);

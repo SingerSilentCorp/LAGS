@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     [Header("ConfigOptionsMenu")]
     [SerializeField] private Button[] btn1stOptions;
     [SerializeField] private Slider volumeSlider;
+    [SerializeField] private Slider sensitiveSlider;
     [SerializeField] private Button[] btn2ndOptions;
 
 
@@ -32,6 +33,9 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
+
         ConfigButtons();
         if (SceneManager.GetActiveScene().buildIndex == 0) OpenPause(true);
         else
@@ -83,7 +87,7 @@ public class GameManager : MonoBehaviour
             btn1stOptions[0].onClick.AddListener(()=> SceneManager.LoadScene(1));
             btn1stOptions[3].onClick.AddListener(() => ChangeMenus(1));
             btn1stOptions[4].onClick.AddListener(() => Application.Quit());
-
+            
             btn2ndOptions[0].onClick.AddListener(() =>
             {
                 if (!Screen.fullScreen) Screen.fullScreen = true;
@@ -98,9 +102,14 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            sensitiveSlider.minValue = 100;
+            sensitiveSlider.maxValue = 500;
+
             btn1stOptions[0].onClick.AddListener(() => OpenPause(false));
             btn1stOptions[3].onClick.AddListener(() => ChangeMenus(1));
             btn1stOptions[5].onClick.AddListener(() => Application.Quit());
+
+            sensitiveSlider.value = player.mouseSensitivity;
 
             btn2ndOptions[0].onClick.AddListener(() =>
             {
