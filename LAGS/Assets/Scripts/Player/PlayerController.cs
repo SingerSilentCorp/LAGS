@@ -302,7 +302,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("Exit")) gameManager.ChangeToAnotherLevel(2);
         if (other.CompareTag("Exit2")) gameManager.ChangeToAnotherLevel(3);
-        if (other.CompareTag("Exit3")) gameManager.ChangeToAnotherLevel(4);
+        if (other.CompareTag("Exit3")) Application.Quit();
     }
 
     private void OnTriggerStay(Collider other)
