@@ -15,18 +15,19 @@ public class TranslateController : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             //PauseMenu
-            pauseMenuTxt[0].text = "Save";
-            pauseMenuTxt[1].text = "Load";
-            pauseMenuTxt[2].text = "Options";
-            pauseMenuTxt[3].text = "Exit";
-            pauseMenuTxt[4].text = "Volume";
-            pauseMenuTxt[5].text = "Screen Mode";
-            pauseMenuTxt[6].text = "Full Screen";
-            pauseMenuTxt[7].text = "Window";
-            pauseMenuTxt[8].text = "Lenguage";
-            pauseMenuTxt[9].text = "Spanish";
-            pauseMenuTxt[10].text = "English";
-            pauseMenuTxt[11].text = "Return";
+            pauseMenuTxt[0].text = "New Game";
+            pauseMenuTxt[1].text = "Save";
+            pauseMenuTxt[2].text = "Load";
+            pauseMenuTxt[3].text = "Options";
+            pauseMenuTxt[4].text = "Exit";
+            pauseMenuTxt[5].text = "Volume";
+            pauseMenuTxt[6].text = "Screen Mode";
+            pauseMenuTxt[7].text = "Full Screen";
+            pauseMenuTxt[8].text = "Window";
+            pauseMenuTxt[9].text = "Lenguage";
+            pauseMenuTxt[10].text = "Spanish";
+            pauseMenuTxt[11].text = "English";
+            pauseMenuTxt[12].text = "Return";
 
         }
         else{
@@ -56,18 +57,19 @@ public class TranslateController : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             //PauseMenu
-            pauseMenuTxt[0].text = "Guardar";
-            pauseMenuTxt[1].text = "Cargar";
-            pauseMenuTxt[2].text = "Opciones";
-            pauseMenuTxt[3].text = "Salir";
-            pauseMenuTxt[4].text = "Volumen";
-            pauseMenuTxt[5].text = "Modo de pantalla";
-            pauseMenuTxt[6].text = "Pantalla completa";
-            pauseMenuTxt[7].text = "Ventana";
-            pauseMenuTxt[8].text = "Lenguaje";
-            pauseMenuTxt[9].text = "Español";
-            pauseMenuTxt[10].text = "Ingles";
-            pauseMenuTxt[11].text = "Volver";
+            pauseMenuTxt[0].text = "Nueva Partida";
+            pauseMenuTxt[1].text = "Guardar";
+            pauseMenuTxt[2].text = "Cargar";
+            pauseMenuTxt[3].text = "Opciones";
+            pauseMenuTxt[4].text = "Salir";
+            pauseMenuTxt[5].text = "Volumen";
+            pauseMenuTxt[6].text = "Modo de pantalla";
+            pauseMenuTxt[7].text = "Pantalla completa";
+            pauseMenuTxt[8].text = "Ventana";
+            pauseMenuTxt[9].text = "Lenguaje";
+            pauseMenuTxt[10].text = "Español";
+            pauseMenuTxt[11].text = "Ingles";
+            pauseMenuTxt[12].text = "Volver";
         }
         else
         {

@@ -80,8 +80,9 @@ public class GameManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
-            btn1stOptions[2].onClick.AddListener(() => ChangeMenus(1));
-            btn1stOptions[3].onClick.AddListener(() => Application.Quit());
+            btn1stOptions[0].onClick.AddListener(()=> SceneManager.LoadScene(1));
+            btn1stOptions[3].onClick.AddListener(() => ChangeMenus(1));
+            btn1stOptions[4].onClick.AddListener(() => Application.Quit());
 
             btn2ndOptions[0].onClick.AddListener(() =>
             {
@@ -95,7 +96,7 @@ public class GameManager : MonoBehaviour
             btn2ndOptions[3].onClick.AddListener(() => translate.EnLanguage());
             btn2ndOptions[4].onClick.AddListener(() => ChangeMenus(0));
         }
-        else if (SceneManager.GetActiveScene().buildIndex == 1)
+        else
         {
             btn1stOptions[0].onClick.AddListener(() => OpenPause(false));
             btn1stOptions[3].onClick.AddListener(() => ChangeMenus(1));

@@ -188,7 +188,7 @@ public class PlayerController : MonoBehaviour
         Debug.DrawRay(ray.origin, ray.direction * raycastDistance, Color.green, 0.1f);
 
         // Lanzar el raycast
-        if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance))
+        if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance, interactableLayers))
         {
             target = hit.collider.gameObject;
             target.GetComponent<TestEnemieAnimations>().GetDamage(3.0f);
