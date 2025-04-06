@@ -16,8 +16,6 @@ public static class DataManager
 
         string jsonData = JsonUtility.ToJson(data, prettyPrint: true);
         File.WriteAllText(_savePath, jsonData);
-
-        Debug.Log("Datos guardados en: " + _savePath);
     }
 
     // Cargar TODOS los datos (retorna la clase Data completa)
@@ -29,7 +27,6 @@ public static class DataManager
             {
                 string jsonData = File.ReadAllText(_savePath);
                 Data data = JsonUtility.FromJson<Data>(jsonData);
-                Debug.Log("Datos cargados correctamente.");
                 return data;
             }
             catch (System.Exception e)

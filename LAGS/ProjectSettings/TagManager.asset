@@ -8,6 +8,7 @@ TagManager:
   - PowerUp
   - Secret
   - PlayerUI
+  - Exit
   layers:
   - Default
   - TransparentFX

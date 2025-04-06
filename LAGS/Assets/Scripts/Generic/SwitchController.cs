@@ -7,5 +7,6 @@ public class SwitchController : MonoBehaviour
     public void UnlockDoor()
     {
         door.switchActivated = true;
+        Debug.Log("Door unlocked: " + door.switchActivated);
     }
 }

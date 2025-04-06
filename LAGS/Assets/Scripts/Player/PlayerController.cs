@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -35,15 +37,15 @@ public class PlayerController : MonoBehaviour
     private Vector3 currentVelocity;
 
     [Header("PlayerStats")]
-    private float baseHealth = 100;
+    private float baseHealth = 100.0f;
     [HideInInspector] public float health;
-    private float baseArmor = 100;
+    private float baseArmor = 100.0f;
     [HideInInspector] public float armor;
-    private float baseAmmo = 250;
+    private float baseAmmo = 250.0f;
     private float ammo;
-    private float baseSpeed = 20;
+    private float baseSpeed = 20.0f;
     private float speed;
-    private float baseDamage = 12;
+    private float baseDamage = 12.0f;
     private float damage;
 
 
@@ -52,6 +54,8 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(this);
+
         playerControls = new PlayerInputActions();
         rb = GetComponent<Rigidbody>();
 
@@ -104,10 +108,12 @@ public class PlayerController : MonoBehaviour
         speed = baseSpeed;
         damage = baseDamage;
         health = baseHealth;
-        armor = 0;
+        armor = 0.0f;
 
         gameManager.UpdateHP(health);
-        gameManager.UpdateHP(armor);
+        gameManager.UpdateArmor(armor);
+
+        Debug.Log(health + "  " + armor);
     }
 
     private void PlayerMovement()
@@ -152,7 +158,7 @@ public class PlayerController : MonoBehaviour
         if (health >= baseHealth) health = baseHealth;
         else
         {
-            health = value;
+            health += value;
             gameObject.SetActive(false);
         }
 
@@ -169,7 +175,7 @@ public class PlayerController : MonoBehaviour
         if (armor >= baseArmor) armor = baseArmor;
         else
         {
-            armor = value;
+            armor += value;
             gameObject.SetActive(false);
         }
 
@@ -181,7 +187,7 @@ public class PlayerController : MonoBehaviour
         if (ammo >= baseAmmo) ammo = baseAmmo;
         else
         {
-            ammo = value; 
+            ammo += value; 
             gameObject.SetActive(false);
         }
     }
@@ -289,7 +295,10 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.layer == 8) gameManager.ShowTxtGuide(true);
 
         if (other.gameObject.layer == 12) gameManager.ShowTxtGuide(true);
+
+        if (other.CompareTag("Exit")) SceneManager.LoadScene(2);
     }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.layer == 8 && !other.GetComponent<DoorsController>().hasTrigger)
