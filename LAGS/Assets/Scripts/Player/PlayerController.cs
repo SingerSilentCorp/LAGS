@@ -147,10 +147,14 @@ public class PlayerController : MonoBehaviour
         speed += speed * (percent / 100.0f);
     }
 
-    public void IncreaseOrDecreaseHealth(float value)
+    public void IncreaseOrDecreaseHealth(float value, GameObject gameObject)
     {
         if (health >= baseHealth) health = baseHealth;
-        else health = value;
+        else
+        {
+            health = value;
+            gameObject.SetActive(false);
+        }
 
         gameManager.UpdateHP(health);
     }
@@ -160,18 +164,26 @@ public class PlayerController : MonoBehaviour
         damage += value;
     }
 
-    public void IncreaseOrDecreaseArmor(float value)
+    public void IncreaseOrDecreaseArmor(float value, GameObject gameObject)
     {
         if (armor >= baseArmor) armor = baseArmor;
-        else armor = value;
+        else
+        {
+            armor = value;
+            gameObject.SetActive(false);
+        }
 
         gameManager.UpdateArmor(armor);
     }
 
-    public void IncreaseOrDecreaseAmmo(float value)
+    public void IncreaseOrDecreaseAmmo(float value, GameObject gameObject)
     {
         if (ammo >= baseAmmo) ammo = baseAmmo;
-        else ammo = value;
+        else
+        {
+            ammo = value; 
+            gameObject.SetActive(false);
+        }
     }
 
     private void Fire(InputAction.CallbackContext context)

@@ -19,27 +19,27 @@ public class ItemsController : MonoBehaviour
             switch (type)
             {
                 case ItemType.SmallHealth:
-                    target.GetComponent<PlayerController>().IncreaseOrDecreaseHealth(20);
+                    target.GetComponent<PlayerController>().IncreaseOrDecreaseHealth(20,this.gameObject);
                     
                     break;
                 case ItemType.Health:
-                    target.GetComponent<PlayerController>().IncreaseOrDecreaseHealth(40);
+                    target.GetComponent<PlayerController>().IncreaseOrDecreaseHealth(40, this.gameObject);
                     
                     break;
                 case ItemType.SmallArmor:
-                    target.GetComponent<PlayerController>().IncreaseOrDecreaseArmor(50);
+                    target.GetComponent<PlayerController>().IncreaseOrDecreaseArmor(50, this.gameObject);
                     
                     break;
                 case ItemType.Armor:
-                    target.GetComponent<PlayerController>().IncreaseOrDecreaseArmor(100);
+                    target.GetComponent<PlayerController>().IncreaseOrDecreaseArmor(100, this.gameObject);
                     
                     break;
                 case ItemType.SmallAmmo:
-                    target.GetComponent<PlayerController>().IncreaseOrDecreaseAmmo(20);
+                    target.GetComponent<PlayerController>().IncreaseOrDecreaseAmmo(20, this.gameObject);
 
                     break;
                 case ItemType.Ammo:
-                    target.GetComponent<PlayerController>().IncreaseOrDecreaseAmmo(20);
+                    target.GetComponent<PlayerController>().IncreaseOrDecreaseAmmo(20, this.gameObject);
 
                     break;
                 case ItemType.Speed:
