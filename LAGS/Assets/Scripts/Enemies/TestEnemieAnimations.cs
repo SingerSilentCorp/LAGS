@@ -22,16 +22,15 @@ public class TestEnemieAnimations : MonoBehaviour
     private SpriteRenderer _render;
 
     [Header("Enemy Stats")]
-    [SerializeField] private float baseHealth;
+    private float baseHealth;
     private float health;
-    [SerializeField] private float _speed;
+    private float _speed;
     [HideInInspector] public float damage;
+
     private float baseCooldown = 2.0f;
     private float cooldown;
 
     [Header("Others")]
-    private float currentX;
-    private float lastX;
     private float timer;
     private Vector3 startPosition;
     private bool isWandering;
@@ -44,7 +43,7 @@ public class TestEnemieAnimations : MonoBehaviour
     [SerializeField] private bool returnToStartArea = true;
 
     [Header("Attacking Settings")]
-    [SerializeField] private float attackRange = 10f;
+    private float attackRange = 30f;
     [SerializeField] private Transform target;
     [SerializeField] private float stoppingDistance;
     [SerializeField] private float retreatDistance;
@@ -62,7 +61,7 @@ public class TestEnemieAnimations : MonoBehaviour
         timer = Random.Range(minWaitTime, maxWaitTime);
         isWandering = false;
 
-        target = GameObject.FindFirstObjectByType<PlayerController>().gameObject.transform;
+        target = FindFirstObjectByType<PlayerController>().gameObject.transform;
 
         ResetEnemy();
     }
