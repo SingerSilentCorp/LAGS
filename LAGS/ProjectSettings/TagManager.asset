@@ -19,8 +19,8 @@ TagManager:
   - Map
   - Door
   - Health
-  - Speed
-  - Damage
+  - Armor
+  - Ammo
   - doorTrigger
   - 
   - 

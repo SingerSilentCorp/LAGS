@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2467124147667648799}
   - component: {fileID: 6057311360005196028}
   - component: {fileID: 475071000811892602}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Armor
   m_TagString: PowerUp
   m_Icon: {fileID: 0}

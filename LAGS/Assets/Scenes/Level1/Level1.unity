@@ -14755,7 +14755,7 @@ GameObject:
   - component: {fileID: 1164484367}
   - component: {fileID: 1164484366}
   - component: {fileID: 1164484365}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Armor (1)
   m_TagString: PowerUp
   m_Icon: {fileID: 0}
@@ -22014,7 +22014,7 @@ GameObject:
   - component: {fileID: 1864398163}
   - component: {fileID: 1864398162}
   - component: {fileID: 1864398161}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Armor (2)
   m_TagString: PowerUp
   m_Icon: {fileID: 0}
@@ -25894,6 +25894,10 @@ PrefabInstance:
     - target: {fileID: 308283814966110937, guid: 6f46ded9a7ee1e84b9083e2035250a3a, type: 3}
       propertyPath: m_Name
       value: Armor
+      objectReference: {fileID: 0}
+    - target: {fileID: 308283814966110937, guid: 6f46ded9a7ee1e84b9083e2035250a3a, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 475071000811892602, guid: 6f46ded9a7ee1e84b9083e2035250a3a, type: 3}
       propertyPath: target
