@@ -41,7 +41,12 @@ public class SoundManager : MonoBehaviour
 
         
 
-        if (SceneManager.GetActiveScene().name != "MainMenu")
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            MusicBackground.clip = Menu;
+            MusicBackground.Play();
+        }
+        else 
         {
             double startTime = AudioSettings.dspTime + 1.0; // Comienza dentro de 1 segundo
 
@@ -57,12 +62,11 @@ public class SoundManager : MonoBehaviour
             SFX.PlayScheduled(clip1EndTime);
         }
 
-
     }
 
     private void Start()
     {
-        StartCoroutine(PlaySongs());
+ 
     }
 
     public void ShootPistola() => SFX.PlayOneShot(shootPistola);
