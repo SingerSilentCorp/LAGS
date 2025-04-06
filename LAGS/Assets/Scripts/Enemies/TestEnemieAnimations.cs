@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 public class TestEnemieAnimations : MonoBehaviour
 {
-    private enum EnemyType { pistola, escopeta, metralleta, jefe1, jefe2}
+    private enum EnemyType { pistola, escopeta, metralleta, jefe1, jefe2, jefe3, jefe4}
     [SerializeField] private EnemyType type;
     private enum EnemysStates { walk, ViewPlayer, Attack, escape, dead };
     [SerializeField] private EnemysStates _enemieState = EnemysStates.walk;
@@ -272,6 +272,14 @@ public class TestEnemieAnimations : MonoBehaviour
             case EnemyType.jefe2:
                 damage = Random.Range(12.0f, 15.01f);
                 health = 430.0f;
+                break;
+            case EnemyType.jefe3:
+                damage = Random.Range(15.0f, 18.01f);
+                health = 450.0f;
+                break;
+            case EnemyType.jefe4:
+                damage = Random.Range(18.0f, 20.01f);
+                health = 800.0f;
                 break;
             default:
                 break;
