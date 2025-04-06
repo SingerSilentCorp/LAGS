@@ -4,7 +4,7 @@ using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
-    private static SoundManager instance;
+    public static SoundManager instance;
 
     [Header ("Audio Source")]
     [SerializeField] AudioSource MusicBackground;
