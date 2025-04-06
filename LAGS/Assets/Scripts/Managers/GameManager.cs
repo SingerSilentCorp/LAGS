@@ -43,11 +43,15 @@ public class GameManager : MonoBehaviour
 
         ConfigScene();
 
-        DontDestroyOnLoad(this.transform.parent);
-        DontDestroyOnLoad(playerUICanvas);
-        DontDestroyOnLoad(cavasPause);
-        DontDestroyOnLoad(transitionController.gameObject);
-        DontDestroyOnLoad(DialogSistemGObj);
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            DontDestroyOnLoad(playerUICanvas);
+            DontDestroyOnLoad(cavasPause);
+            DontDestroyOnLoad(transitionController.gameObject);
+            DontDestroyOnLoad(DialogSistemGObj);
+            DontDestroyOnLoad(player);
+            DontDestroyOnLoad(this.transform.parent);
+        }
 
         data = DataManager.LoadData();
         isEnglish = data.isEnglish;
@@ -104,6 +108,7 @@ public class GameManager : MonoBehaviour
         btn1stOptions[4].onClick.AddListener(() =>
         {
             SceneManager.LoadScene(0);
+            ConfigScene();
         });
         btn1stOptions[5].onClick.AddListener(() => Application.Quit());
 
@@ -230,6 +235,12 @@ public class GameManager : MonoBehaviour
         else player.ActiveInputs(isActivating);
     }
 
+    public void ChangeToAnotherLevel(int levelIndex)
+    {
+        SceneManager.LoadScene(levelIndex);
+        ConfigScene();
+    }
+
     //Config loadScene when loaded
     public void ConfigScene()
     {
@@ -238,7 +249,25 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoadedTemp(Scene scene, LoadSceneMode mode)
     {
-        player.transform.position = new Vector3(-12f, 2f, 53f);
+        if(SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            Destroy(this);
+            Destroy(transform.parent.gameObject);
+            Destroy(playerUICanvas);
+            Destroy(cavasPause);
+            Destroy(transitionController.gameObject);
+            Destroy(DialogSistemGObj);
+            Destroy(player);
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            player.transform.position = new Vector3(156.399994f, 0.699000001f, 108.5f);
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            player.transform.position = new Vector3(-12f, 2f, 53f);
+        }
+
         player.transform.Rotate(new Vector3(0f, 180f, 0f));
         SceneManager.sceneLoaded -= OnSceneLoadedTemp;
     }

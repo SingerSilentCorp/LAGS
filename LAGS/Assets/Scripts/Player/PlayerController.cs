@@ -54,8 +54,6 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this);
-
         playerControls = new PlayerInputActions();
         rb = GetComponent<Rigidbody>();
 
@@ -187,7 +185,7 @@ public class PlayerController : MonoBehaviour
         if (ammo >= baseAmmo) ammo = baseAmmo;
         else
         {
-            ammo += value; 
+            ammo += value;
             gameObject.SetActive(false);
         }
     }
@@ -296,7 +294,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.layer == 12) gameManager.ShowTxtGuide(true);
 
-        if (other.CompareTag("Exit")) SceneManager.LoadScene(2);
+        if (other.CompareTag("Exit")) gameManager.ChangeToAnotherLevel(2);
     }
 
     private void OnTriggerStay(Collider other)
