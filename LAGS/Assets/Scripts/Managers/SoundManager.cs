@@ -4,6 +4,8 @@ using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
+    private static SoundManager instance;
+
     [Header ("Audio Source")]
     [SerializeField] AudioSource MusicBackground;
     [SerializeField] AudioSource SFX;
@@ -28,6 +30,21 @@ public class SoundManager : MonoBehaviour
     [SerializeField] AudioClip caminataEnemie3;
     [SerializeField] AudioClip caminataJefe;
 
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            if(instance != null)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
 
     private void Start()
     {
