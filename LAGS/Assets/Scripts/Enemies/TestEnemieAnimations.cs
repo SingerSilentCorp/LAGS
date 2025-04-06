@@ -36,7 +36,6 @@ public class TestEnemieAnimations : MonoBehaviour
     [SerializeField] private float stoppingDistance;
     [SerializeField] private float retreatDistance;
 
-
     private void Awake()
     {
         _anim = GetComponent<Animator>();
@@ -56,6 +55,9 @@ public class TestEnemieAnimations : MonoBehaviour
 
     private void Update()
     {
+        Vector3 direction = (target.position - transform.position).normalized;
+        transform.rotation = Quaternion.LookRotation(direction);
+
         switch (_enemieState)
         {
             case EnemysStates.walk:
@@ -137,7 +139,12 @@ public class TestEnemieAnimations : MonoBehaviour
 
     private void ESCAPE() => _anim.CrossFade("StartBack", 0.0001f);
 
-    private void DEAD() => _anim.CrossFade("Dead", 0.0001f);
+    private void DEAD()
+    {
+        _anim.CrossFade("Dead", 0.0001f);
+        this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        this.GetComponent<BoxCollider>().enabled = false;
+    }
 
 
     private IEnumerator StartViewPlayer()
@@ -186,7 +193,6 @@ public class TestEnemieAnimations : MonoBehaviour
         agent.updateRotation = false;
 
         float distanceToTarget = Vector3.Distance(transform.position, target.position);
-        Vector3 direction = (target.position - transform.position).normalized;
 
         if (distanceToTarget > stoppingDistance)
         {
@@ -202,8 +208,6 @@ public class TestEnemieAnimations : MonoBehaviour
         {
             agent.SetDestination(transform.position);
         }
-
-        transform.rotation = Quaternion.LookRotation(direction);
     }
 
     private bool PlayerInRange()

@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
     private float ammo;
     private float baseSpeed = 20;
     private float speed;
-    private float baseDamage = 10;
+    private float baseDamage = 12;
     private float damage;
 
 
@@ -63,24 +63,6 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         movePos = move.ReadValue<Vector2>();
-
-        /*RaycastHit[] hits = Physics.RaycastAll(ray, raycastDistance, interactableLayers);
-        if (hits.Length > 0)
-        {
-            // Ordenar por distancia para obtener el más cercano
-            System.Array.Sort(hits, (x, y) => x.distance.CompareTo(y.distance));
-            target = hits[0].collider.gameObject;
-
-            // Alternativa: procesar todos los objetos detectados
-            foreach (var hit in hits)
-            {
-                Debug.Log($"Detectado: {hit.collider.name} a {hit.distance} metros");
-            }
-        }
-        else
-        {
-            target = null;
-        }*/
 
 
         if (sprint.IsPressed()) speed = baseSpeed * 1.5f;
@@ -182,7 +164,6 @@ public class PlayerController : MonoBehaviour
     {
         // Obtener el rayo desde el centro de la cámara
         ray = new Ray(this.transform.position, this.transform.forward);
-        //RaycastHit hit;
 
         // Debug visual del rayo
         Debug.DrawRay(ray.origin, ray.direction * raycastDistance, Color.green, 0.1f);
@@ -191,14 +172,11 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance, interactableLayers))
         {
             target = hit.collider.gameObject;
-            target.GetComponent<TestEnemieAnimations>().GetDamage(3.0f);
-            Debug.Log("Objeto detectado: " + hit.collider.name);
-            Debug.Log("Fire");
+            target.GetComponent<TestEnemieAnimations>().GetDamage(damage);
         }
         else
         {
             target = null;
-            Debug.Log("Origen: " + ray.origin.ToString() + "  Ray direccion: " + ray.direction.ToString());
         }
     }
 
