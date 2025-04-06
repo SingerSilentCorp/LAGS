@@ -69,11 +69,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        transitionController.InitTransition(false, () =>
-        {
-            dialogueManager.ShowOrHideDialogPanel(true);
-            dialogueManager.InitDialog("Intro", false);
-        });
+        
     }
 
     private void InitPanelsBehavior()
@@ -262,8 +258,14 @@ public class GameManager : MonoBehaviour
         else if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             player.transform.position = new Vector3(156.399994f, 0.699000001f, 108.5f);
+
+            transitionController.InitTransition(false, () =>
+            {
+                dialogueManager.ShowOrHideDialogPanel(true);
+                dialogueManager.InitDialog("Intro", false);
+            });
         }
-        else if (SceneManager.GetActiveScene().buildIndex == 2)
+        else if(SceneManager.GetActiveScene().buildIndex > 1)
         {
             player.transform.position = new Vector3(-12f, 2f, 53f);
         }

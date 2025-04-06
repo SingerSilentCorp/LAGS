@@ -10,6 +10,12 @@ public class SecretController : MonoBehaviour
 
     [SerializeField] private string yarnTittle;
 
+    private void Awake()
+    {
+        dialogueManager = FindFirstObjectByType<DialogueManager>();
+        dialogueRunner = FindFirstObjectByType<DialogueRunner>();
+    }
+
     public void StarSecretDialog()
     {
         if (!dialogueRunner.IsDialogueRunning)

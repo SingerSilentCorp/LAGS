@@ -14,6 +14,8 @@ public class TransitionController : MonoBehaviour
 
     [SerializeField] private Image fadeImg, otherImg;
 
+    [SerializeField] private GameObject skipObj;
+
     private float transitionTime;
 
     [HideInInspector] public bool endTransition, startingTransition;
@@ -38,6 +40,8 @@ public class TransitionController : MonoBehaviour
         otherImg.sprite = otherImgList[0];
 
         imgIndexValue = 0;
+
+        skipObj.SetActive(false);
     }
 
     public void InitTransition(bool isEnding, System.Action OnComplete)

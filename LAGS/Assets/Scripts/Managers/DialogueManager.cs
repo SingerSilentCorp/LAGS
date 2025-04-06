@@ -53,8 +53,6 @@ public class DialogueManager : MonoBehaviour
 
     public void IsPlayingDialog()
     {
-        //if(dialogueRunner.AddCommandHandler)
-        //dialogueRunner.AddCommandHandler("Stop", () => transitionController.InitTransition(true, () => transitionController.gameObject.SetActive(false)));
         dialogueRunner.dialogueViews[0].GetComponent<LineView>().OnContinueClicked(); //la siguiente linea
     }
 
