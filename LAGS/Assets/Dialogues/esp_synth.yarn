@@ -18,10 +18,13 @@
 // una computadora (como en Word o Google Docs), "efecto máquina de escribir"
 
 <<set $createFade to true>>
+
 {$emp}: Las Noches. Nuestro hogar. #line:0173474 
 
 <<set $changeIMG to true>>
 <<set $createFade to true>>
+
+
 {$emp}: Duele decirlo, pero esta nación corre un grave peligro. #line:09943e3 
 {$emp}: Anarquistas y criminales atentan contra la democracia dirigida, el pilar de la sociedad. #line:0fe322a 
 {$emp}: Ellos envenenan la mente de nuestros niños y matan a sus madres. #line:070cdfa 
@@ -30,6 +33,7 @@
 
 <<set $changeIMG to true>>
 <<set $createFade to true>>
+
 {$emp}: Por eso es que estás aquí—para proteger a los inocentes. #line:0fe64f5 
 {$emp}: Ustedes son nuestros defensores, los campeones de la libertad. #line:05c2753 
 
@@ -54,6 +58,7 @@ title: IntroL1
 ---
 <<set $changeIMG to true>>
 <<set $createFade to true>>
+
 {$emp}: El aluminio recubre tu cuerpo. El titanio refuerza tus huesos.  #line:0ab7706 
 {$emp}: Eres la creación más perfecta del gobierno—su más grande defensor.  #line:0107c99 
 {$emp}: Eres un Synth, un soldado que lo dió todo para proteger su ciudad.  #line:032108a 
@@ -61,6 +66,7 @@ title: IntroL1
 
 // fundido a negro (1.0 s.)
 <<set $createFade to true>>
+
 <<Stop>>
 
 ===

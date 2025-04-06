@@ -2,21 +2,12 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public class GameManager : MonoBehaviour
+using UnityEditor.Overlays;
+
+public class MenuManager : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private PlayerController player;
     [SerializeField] private TranslateController translate;
-
-    [Header("PLayerUI")]
-    [SerializeField] private GameObject playerUICanvas;
-    [SerializeField] private TextMeshProUGUI[] txtPlayerStats;
-    [SerializeField] private TextMeshProUGUI txtGuide;
-
-    [Header("Dialog and Transition")]
-    [SerializeField, Space] private TransitionController transitionController;
-    [SerializeField] private GameObject DialogSistemGObj;
-    [SerializeField] private DialogueManager dialogueManager;
 
     [Header("PauseMenu")]
     [SerializeField] private GameObject pauseConteiner;
@@ -29,46 +20,37 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Slider sensitiveSlider;
     [SerializeField] private Button[] btn2ndOptions;
 
-
     [Header("Data")]
     private Data data;
 
     [HideInInspector] public bool isEnglish = false;
+
 
     private void Awake()
     {
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 60;
 
-        DontDestroyOnLoad(this);
-        DontDestroyOnLoad(playerUICanvas);
-
         data = DataManager.LoadData();
         isEnglish = data.isEnglish;
         volumeSlider.value = data.volume;
         sensitiveSlider.value = data.sensitive;
 
-        ConfigButtons();
-
-        player.ResetPlayer();
-        InitPanelsBehavior();
-        OpenPause(false);
+        OpenPause(true);
 
         ChangeTextLenguage();
+        ConfigButtons();
     }
 
-    private void Start()
+    private void NewGame()
     {
-        transitionController.InitTransition(false, () =>
-        {
-            dialogueManager.ShowOrHideDialogPanel(true);
-            dialogueManager.InitDialog("Intro", false);
-        });
-    }
+        DataManager.SaveData(isEnglish, volumeSlider.value, sensitiveSlider.value);
+        data = DataManager.LoadData();
+        isEnglish = data.isEnglish;
+        volumeSlider.value = data.volume;
+        sensitiveSlider.value = data.sensitive;
 
-    private void InitPanelsBehavior()
-    {
-        txtGuide.gameObject.SetActive(false);
+        SceneManager.LoadScene(1);
     }
 
     private void ChangeMenus(int menuIndex)
@@ -91,15 +73,12 @@ public class GameManager : MonoBehaviour
 
     private void ConfigButtons()
     {
-        btn1stOptions[0].onClick.AddListener(() => OpenPause(false));
-        btn1stOptions[1].onClick.AddListener(() => DataManager.SaveData(isEnglish,volumeSlider.value,sensitiveSlider.value));
+        btn1stOptions[0].onClick.AddListener(() => NewGame());
+        btn1stOptions[1].onClick.AddListener(() => DataManager.SaveData(isEnglish, volumeSlider.value, sensitiveSlider.value));
         btn1stOptions[2].onClick.AddListener(() => DataManager.LoadData());
         btn1stOptions[3].onClick.AddListener(() => ChangeMenus(1));
-        btn1stOptions[4].onClick.AddListener(() => 
-        {
-            SceneManager.LoadScene(0);
-        });
-        btn1stOptions[5].onClick.AddListener(() => Application.Quit());
+        btn1stOptions[4].onClick.AddListener(() => Application.Quit());
+
 
         btn2ndOptions[0].onClick.AddListener(() =>
         {
@@ -110,21 +89,26 @@ public class GameManager : MonoBehaviour
             if (Screen.fullScreen) Screen.fullScreen = false;
         });
 
-        volumeSlider.onValueChanged.AddListener((value) => 
+        volumeSlider.onValueChanged.AddListener((value) =>
         {
             data.volume = value;
             volumeSlider.value = value;
+
         });
-        sensitiveSlider.onValueChanged.AddListener((value) => 
+        sensitiveSlider.onValueChanged.AddListener((value) =>
         {
             data.sensitive = value;
             sensitiveSlider.value = value;
         });
-        
 
         btn2ndOptions[2].onClick.AddListener(() => translate.EsLanguage());
         btn2ndOptions[3].onClick.AddListener(() => translate.EnLanguage());
-        btn2ndOptions[4].onClick.AddListener(() => ChangeMenus(0));
+        btn2ndOptions[4].onClick.AddListener(() =>
+        {
+            DataManager.SaveData(isEnglish, volumeSlider.value, sensitiveSlider.value);
+            ChangeMenus(0);
+        });
+
     }
 
     private void ChangeTextLenguage()
@@ -132,8 +116,6 @@ public class GameManager : MonoBehaviour
         if (isEnglish) translate.EnLanguage();
         else translate.EsLanguage();
     }
-
-    public void ShowTxtGuide(bool isShowing) => txtGuide.gameObject.SetActive(isShowing);
 
     public void MouseVisible(bool isVisible)
     {
@@ -158,13 +140,10 @@ public class GameManager : MonoBehaviour
 
         if (isOpenning)
         {
-            Time.timeScale = 0.0f;
             pauseOpen = true;
             pauseConteiner.SetActive(true);
             pauseMenus[0].SetActive(true);
             MouseVisible(true);
-
-
         }
         else
         {
@@ -176,58 +155,9 @@ public class GameManager : MonoBehaviour
 
             pauseConteiner.SetActive(false);
             MouseVisible(false);
-            Time.timeScale = 1.0f;
-
             DataManager.SaveData(isEnglish, volumeSlider.value, sensitiveSlider.value);
         }
     }
 
-    public void GuideTxtConfig(int indexTxt)
-    {
-        //0 == interact, 1 == locked door, 2 == switchTxtWhenUnlock
-
-        if (isEnglish)
-        {
-            if (indexTxt == 0)
-            {
-                txtGuide.text = "Press space to interact";
-            }
-            else if (indexTxt == 1)
-            {
-                txtGuide.text = "Locked";
-            }
-            else if (indexTxt == 1)
-            {
-                txtGuide.text = "Door has been unlocked ";
-            }
-        }
-        else
-        {
-            if (indexTxt == 0)
-            {
-                txtGuide.text = "Presiona Espacio para interactuar";
-            }
-            else if (indexTxt == 1)
-            {
-                txtGuide.text = "Bloqueado";
-            }
-            else if (indexTxt == 1)
-            {
-                txtGuide.text = "La puerta a sido desbloqueada";
-            }
-        }
-    }
-
-    public void ActivePlayerInput(bool isActivating)
-    {
-        if (isActivating) player.ActiveInputs(isActivating);
-        else player.ActiveInputs(isActivating);
-    }
-
-    public void UpdateHP(float health) => txtPlayerStats[0].text = health.ToString() + "%";
-
-    public void UpdateArmor(float armor) => txtPlayerStats[1].text = armor.ToString() + "%";
-
     private void OnApplicationQuit() => DataManager.SaveData(isEnglish, volumeSlider.value, sensitiveSlider.value);
-
 }

@@ -92,8 +92,8 @@ public class PlayerController : MonoBehaviour
         health = baseHealth;
         armor = baseArmor;
 
-        gameManager.txtPlayerStats[0].text = health.ToString() + "%";
-        gameManager.txtPlayerStats[1].text = armor.ToString() + "%";
+        gameManager.UpdateHP(health);
+        gameManager.UpdateHP(armor);
     }
 
     private void PlayerMovement()
@@ -138,7 +138,7 @@ public class PlayerController : MonoBehaviour
         if (health >= baseHealth) health = baseHealth;
         else health += health * (percent / 100.0f);
 
-        gameManager.txtPlayerStats[0].text = health.ToString() + "%";
+        gameManager.UpdateHP(health);
     }
 
     public void IncreaseOrDecreaseDamage(float percent)
@@ -151,7 +151,7 @@ public class PlayerController : MonoBehaviour
         if (armor >= baseArmor) armor = baseArmor;
         else armor += armor * (percent / 100.0f);
 
-        gameManager.txtPlayerStats[1].text = armor.ToString() + "%";
+        gameManager.UpdateHP(armor);
     }
 
     public void IncreaseOrDecreaseAmmo(float percent)
@@ -231,10 +231,16 @@ public class PlayerController : MonoBehaviour
         fire.Disable();
         sprint.Disable();
 
-        uiAccept.Disable();
+        //uiAccept.Disable();
         pause.Disable();
 
         interact.Disable();
+    }
+
+    public void ActiveInputs(bool isActivating)
+    {
+        if(isActivating) OnDisable();
+        else OnEnable();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -311,9 +317,8 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        
-        gameManager.txtPlayerStats[0].text = health.ToString() + "%";
-        gameManager.txtPlayerStats[1].text = armor.ToString() + "%";
+        gameManager.UpdateHP(health);
+        gameManager.UpdateArmor(armor);
     }
 }
 

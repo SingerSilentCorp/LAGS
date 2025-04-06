@@ -19,6 +19,8 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(this);
+
         if (instance != null) Debug.LogWarning("Found more than one Dialogue Manager in the scene");
         else instance = this;
 
@@ -51,9 +53,9 @@ public class DialogueManager : MonoBehaviour
 
     public void IsPlayingDialog()
     {
+        //if(dialogueRunner.AddCommandHandler)
+        //dialogueRunner.AddCommandHandler("Stop", () => transitionController.InitTransition(true, () => transitionController.gameObject.SetActive(false)));
         dialogueRunner.dialogueViews[0].GetComponent<LineView>().OnContinueClicked(); //la siguiente linea
-
-
     }
 
     public void IsAutoPlayingDialog() => dialogueRunner.dialogueViews[0].GetComponent<LineView>().UserRequestedViewAdvancement();
@@ -79,15 +81,5 @@ public class DialogueManager : MonoBehaviour
     public static DialogueManager GetInstance()
     {
         return instance;
-    }
-
-    private void OnEnable()
-    {
-        
-    }
-
-    private void OnDisable()
-    {
-        
     }
 }

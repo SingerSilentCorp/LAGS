@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class TransitionController : MonoBehaviour
 {
+    [SerializeField] private GameManager gameManager;
+
     [SerializeField] private DialogueManager dialogueManager;
 
     [SerializeField] private Sprite[] otherImgList;
@@ -14,14 +16,16 @@ public class TransitionController : MonoBehaviour
 
     private float transitionTime;
 
-    [HideInInspector] public bool endTransition, isFadding, startingTransition;
+    [HideInInspector] public bool endTransition, startingTransition;
 
     [HideInInspector] public int imgIndexValue;
 
-    private bool changeImg;
+    [HideInInspector] public bool changeImg, isFadding;
 
     private void Awake()
     {
+        DontDestroyOnLoad(this);
+
         fadeImg.color = new Color(0, 0, 0, 0);
         otherImg.color = new Color(1, 1, 1, 0);
 
@@ -41,6 +45,8 @@ public class TransitionController : MonoBehaviour
         startingTransition = true;
         isFadding = dialogueManager.GetIfFadding();
         changeImg = dialogueManager.GetIfChangingIMG();
+
+        //Debug.Log(isFadding + "   " + changeImg);
 
         if (isEnding)
         {
@@ -91,13 +97,12 @@ public class TransitionController : MonoBehaviour
                 dialogueManager.IsPlayingDialog();
                 startingTransition = false;
             }
-            
         }
-       
     }
 
     public int GetOtherImageLength()
     {
         return otherImgList.Length;
     }
+
 }
