@@ -142,7 +142,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -284,14 +284,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 800941379}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &2008045 stripped
 Transform:
@@ -316,7 +324,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -458,14 +466,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1251263827}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &26590960 stripped
 Transform:
@@ -847,6 +863,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 36604879}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &55658393 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 1681490168}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &67732489
 GameObject:
   m_ObjectHideFlags: 0
@@ -1652,7 +1673,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -1794,14 +1815,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2033359293}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &115435845 stripped
 Transform:
@@ -2462,7 +2491,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -2604,14 +2633,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 898143947}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &139353989 stripped
 Transform:
@@ -3629,6 +3666,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1887253481}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &210980730 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 1962784071}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &219174210
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3647,7 +3689,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -3789,14 +3831,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 379513981}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &219174211 stripped
 Transform:
@@ -4477,7 +4527,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -4619,14 +4669,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1444742785}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &263458859 stripped
 Transform:
@@ -4651,7 +4709,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -4793,14 +4851,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 649957842}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &277940755 stripped
 Transform:
@@ -4825,7 +4891,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -4967,14 +5033,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2097355253}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &284311304 stripped
 Transform:
@@ -4999,7 +5073,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -5141,14 +5215,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1381485528}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &286121665 stripped
 Transform:
@@ -5655,6 +5737,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 306121283}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &307043584 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 2059453427}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &309072044
 GameObject:
   m_ObjectHideFlags: 0
@@ -5905,6 +5992,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 309202617}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &311608984 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 1681028376}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &315437009
 GameObject:
   m_ObjectHideFlags: 0
@@ -6243,6 +6335,48 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &379513974 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 219174210}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &379513981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379513974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
+--- !u!1 &380654188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 1153515866}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &380716488 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6012838979847891608, guid: 86ad7236d5ddbd147b51d3f32703f36c, type: 3}
@@ -6923,6 +7057,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429278483}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &440501344 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 1454957610}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &450115721
 GameObject:
   m_ObjectHideFlags: 0
@@ -7318,7 +7457,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -7460,14 +7599,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2130150363}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &464933745 stripped
 Transform:
@@ -7635,6 +7782,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473236274}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &487612881 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 915371426}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &489160032
 GameObject:
   m_ObjectHideFlags: 0
@@ -8206,7 +8358,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -8348,14 +8500,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 860581017}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &515383825 stripped
 Transform:
@@ -8907,6 +9067,43 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 634963963}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &649957835 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 277940754}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &649957842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649957835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
 --- !u!1 &656384994
 GameObject:
   m_ObjectHideFlags: 0
@@ -9391,6 +9588,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729700767}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &731893969 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 2004058799}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &732075018 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8471271827391686043, guid: 1135f99e5b4fb0a429116332d6381159, type: 3}
@@ -9707,7 +9909,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -9849,14 +10051,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1796087649}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &745550599 stripped
 Transform:
@@ -10345,7 +10555,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -10487,14 +10697,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 867483149}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &765589723 stripped
 Transform:
@@ -10876,6 +11094,43 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 793697170}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &800941372 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 2008044}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &800941379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800941372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
 --- !u!1 &826383348
 GameObject:
   m_ObjectHideFlags: 0
@@ -11175,6 +11430,43 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859056136}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &860581010 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 515383824}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &860581017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860581010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
 --- !u!1 &860829397
 GameObject:
   m_ObjectHideFlags: 0
@@ -11352,6 +11644,43 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &867483142 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 765589722}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &867483149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867483142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
 --- !u!1001 &879356647
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11771,6 +12100,43 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 893059455}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &898143940 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 139353988}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &898143947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898143940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
 --- !u!1 &898827593
 GameObject:
   m_ObjectHideFlags: 0
@@ -12198,7 +12564,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -12340,20 +12706,60 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 915371434}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &915371427 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4796353872232857644, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
   m_PrefabInstance: {fileID: 915371426}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &915371434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487612881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
 --- !u!1 &922191568
 GameObject:
   m_ObjectHideFlags: 0
@@ -13061,7 +13467,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -13203,14 +13609,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1711171174}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &969690309 stripped
 Transform:
@@ -14821,6 +15235,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1105587194}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1110927112 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 1456525326}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1114618720
 GameObject:
   m_ObjectHideFlags: 0
@@ -15325,7 +15744,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -15467,14 +15886,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1860916207}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &1142711053 stripped
 Transform:
@@ -15624,7 +16051,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -15766,20 +16193,60 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1153515874}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &1153515867 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4796353872232857644, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
   m_PrefabInstance: {fileID: 1153515866}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1153515874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380654188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
 --- !u!1 &1154085939
 GameObject:
   m_ObjectHideFlags: 0
@@ -16402,7 +16869,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -16544,19 +17011,32 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2074254222}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &1239919212 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4796353872232857644, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
   m_PrefabInstance: {fileID: 1239919211}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1240145702 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 1367500354}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1246330770
 GameObject:
@@ -16683,6 +17163,43 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1246330770}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1251263820 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 26590959}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1251263827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251263820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
 --- !u!1 &1252719799
 GameObject:
   m_ObjectHideFlags: 0
@@ -17232,6 +17749,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307193367}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1324235101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: Player/Move
+  m_EditorClassIdentifier: 
+  m_Asset: {fileID: -944628639613478452, guid: d9051270036d6ca4eb60d14e6ab08877, type: 3}
+  m_ActionId: ce41f65c-3165-4718-aef4-ac8731370ecf
 --- !u!1 &1324249208
 GameObject:
   m_ObjectHideFlags: 0
@@ -18232,7 +18763,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -18374,20 +18905,60 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1367500362}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &1367500355 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4796353872232857644, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
   m_PrefabInstance: {fileID: 1367500354}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1367500362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240145702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
 --- !u!1 &1369196170
 GameObject:
   m_ObjectHideFlags: 0
@@ -18641,6 +19212,43 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6295449814268380730, guid: 1135f99e5b4fb0a429116332d6381159, type: 3}
   m_PrefabInstance: {fileID: 9190487533234086935}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1381485521 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 286121664}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1381485528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381485521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
 --- !u!1 &1389819021
 GameObject:
   m_ObjectHideFlags: 0
@@ -19103,7 +19711,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -19245,20 +19853,65 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2124354727}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &1443788931 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4796353872232857644, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
   m_PrefabInstance: {fileID: 1443788930}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1444742778 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 263458858}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1444742785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444742778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
 --- !u!114 &1454644590 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 454001167584799421, guid: 1135f99e5b4fb0a429116332d6381159, type: 3}
@@ -19288,7 +19941,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -19430,20 +20083,60 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1454957618}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &1454957611 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4796353872232857644, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
   m_PrefabInstance: {fileID: 1454957610}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1454957618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440501344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
 --- !u!1001 &1456525326
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19466,7 +20159,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -19608,20 +20301,60 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1456525334}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &1456525327 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4796353872232857644, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
   m_PrefabInstance: {fileID: 1456525326}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1456525334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110927112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
 --- !u!1 &1459500840
 GameObject:
   m_ObjectHideFlags: 0
@@ -20465,7 +21198,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -20607,14 +21340,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1877526161}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &1561375823 stripped
 Transform:
@@ -20889,7 +21630,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -21031,14 +21772,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1773410071}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &1593272275 stripped
 Transform:
@@ -21253,7 +22002,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -21395,14 +22144,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1963914506}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &1629446480 stripped
 Transform:
@@ -21914,6 +22671,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658662904}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1668324423 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 2018617254}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1668769277
 GameObject:
   m_ObjectHideFlags: 0
@@ -22514,7 +23276,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -22656,20 +23418,60 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1681028384}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &1681028377 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4796353872232857644, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
   m_PrefabInstance: {fileID: 1681028376}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1681028384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311608984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
 --- !u!1001 &1681490168
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22688,7 +23490,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -22830,20 +23632,60 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1681490176}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &1681490169 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4796353872232857644, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
   m_PrefabInstance: {fileID: 1681490168}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1681490176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55658393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
 --- !u!1 &1688718621
 GameObject:
   m_ObjectHideFlags: 0
@@ -23234,6 +24076,43 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1703902745}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1711171167 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 969690308}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1711171174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711171167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
 --- !u!1 &1723089105
 GameObject:
   m_ObjectHideFlags: 0
@@ -23417,6 +24296,43 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1773410064 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 1593272274}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1773410071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773410064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
 --- !u!1001 &1775867186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23435,7 +24351,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -23577,20 +24493,65 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1971615444}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &1775867187 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4796353872232857644, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
   m_PrefabInstance: {fileID: 1775867186}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1796087642 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 745550598}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1796087649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796087642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
 --- !u!1 &1804268791
 GameObject:
   m_ObjectHideFlags: 0
@@ -24095,6 +25056,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1819734760}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1825510875 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 6605594043233175896}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1857768586
 GameObject:
   m_ObjectHideFlags: 0
@@ -24220,6 +25186,43 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1857768586}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1860916200 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 1142711052}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1860916207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860916200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
 --- !u!1 &1863607678
 GameObject:
   m_ObjectHideFlags: 0
@@ -24479,6 +25482,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1877526154 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 1561375822}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1877526161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877526154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
 --- !u!1 &1887253480
 GameObject:
   m_ObjectHideFlags: 0
@@ -25259,7 +26299,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -25401,20 +26441,134 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1962784079}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &1962784072 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4796353872232857644, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
   m_PrefabInstance: {fileID: 1962784071}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1962784079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210980730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
+--- !u!1 &1963914499 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 1629446479}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1963914506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963914499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
+--- !u!1 &1971615437 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 1775867186}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1971615444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971615437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
 --- !u!1 &1974759125
 GameObject:
   m_ObjectHideFlags: 0
@@ -25826,7 +26980,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -25968,19 +27122,64 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2004058807}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &2004058800 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4796353872232857644, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
   m_PrefabInstance: {fileID: 2004058799}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2004058807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731893969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
+--- !u!1 &2004609381 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 2123894011}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2009037315
 GameObject:
@@ -26125,7 +27324,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -26267,20 +27466,60 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2018617262}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &2018617255 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4796353872232857644, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
   m_PrefabInstance: {fileID: 2018617254}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2018617262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668324423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
 --- !u!1 &2025718128
 GameObject:
   m_ObjectHideFlags: 0
@@ -26437,6 +27676,43 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2030940877}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2033359286 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 115435844}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2033359293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033359286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
 --- !u!1 &2034887690
 GameObject:
   m_ObjectHideFlags: 0
@@ -26841,7 +28117,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -26983,20 +28259,97 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2059453435}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &2059453428 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4796353872232857644, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
   m_PrefabInstance: {fileID: 2059453427}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2059453435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307043584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
+--- !u!1 &2074254215 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 1239919211}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2074254222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074254215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
 --- !u!1 &2085784117
 GameObject:
   m_ObjectHideFlags: 0
@@ -27247,6 +28600,43 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2087203719}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2097355246 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 284311303}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2097355253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097355246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
 --- !u!1001 &2123894011
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27265,7 +28655,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -27407,20 +28797,97 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2123894019}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &2123894012 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4796353872232857644, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
   m_PrefabInstance: {fileID: 2123894011}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2123894019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004609381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
+--- !u!1 &2124354720 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 1443788930}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2124354727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124354720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
 --- !u!1 &2128653789
 GameObject:
   m_ObjectHideFlags: 0
@@ -27546,6 +29013,43 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2128653789}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2130150356 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+  m_PrefabInstance: {fileID: 464933744}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2130150363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130150356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
 --- !u!1 &2135313627
 GameObject:
   m_ObjectHideFlags: 0
@@ -28549,7 +30053,7 @@ PrefabInstance:
       objectReference: {fileID: 591028879}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: attackRange
@@ -28671,20 +30175,60 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8343779489182767824, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997216066998271603, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 38412b775ac813646a44301781a4b8aa, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1711566148474881834, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6407762083487186880, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6605594043233175904}
   m_SourcePrefab: {fileID: 100100000, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
 --- !u!4 &6605594043233175897 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4796353872232857644, guid: 173312c8206f8174e9c51e3dc3813da0, type: 3}
   m_PrefabInstance: {fileID: 6605594043233175896}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6605594043233175904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825510875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite:
+  - {fileID: 1957906420, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: 839319558, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1890200227, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  - {fileID: -1312228744, guid: df18cbc26854f1f4493b5cc2df3d8d69, type: 3}
+  _animationsEnemies:
+  - {fileID: 9100000, guid: d98b87e4cd0185442bebb3b387302fac, type: 2}
+  _sound: {fileID: 108954873}
+  damage: 0
+  minWanderRadius: 10
+  maxWanderRadius: 30
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 591028879}
+  stoppingDistance: 15
+  retreatDistance: 20
+  isABoss: 0
 --- !u!1001 &7007711865051012609
 PrefabInstance:
   m_ObjectHideFlags: 0

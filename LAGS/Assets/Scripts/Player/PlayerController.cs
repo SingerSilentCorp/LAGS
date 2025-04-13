@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameManager gameManager;
 
     [Header("Inputs")]
-    private InputAction move,  sprint, interact;
+    private InputAction move, fire ,sprint, interact;
     private InputAction changeW1, changeW2, changeW3;
     private InputAction uiAccept, pause;
 
@@ -223,6 +223,27 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void Fire(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            _sound.ShootPistola();
+            // Obtener el rayo desde el centro de la cámara
+            Ray ray = new Ray(this.transform.position, this.transform.forward.normalized * raycastDistance);
+
+            // Debug visual del rayo
+            Debug.DrawRay(ray.origin, ray.direction * raycastDistance, Color.green, 0.1f);
+
+            // Lanzar el raycast
+            if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance, interactableLayers))
+            {
+                target = hit.collider.gameObject;
+                target.GetComponent<EnemyController>().GetDamage(damage);
+            }
+            else target = null;
+        }
+    }
+
     private void HandleMouseLook()
     {
         // Solo movimiento horizontal (Mouse X)
@@ -239,10 +260,10 @@ public class PlayerController : MonoBehaviour
         move = playerControls.Player.Move;
         move.Enable();
 
-        //fire = playerControls.Player.Attack;
-        //fire.Enable();
+        fire = playerControls.Player.Attack;
+        fire.Enable();
 
-        //fire.performed += Fire;
+        fire.performed += Fire;
 
         sprint = playerControls.Player.Sprint;
         sprint.Enable();
@@ -273,7 +294,7 @@ public class PlayerController : MonoBehaviour
     private void OnDisable()
     {
         move.Disable();
-        //fire.Disable();
+        fire.Disable();
         sprint.Disable();
 
         //uiAccept.Disable();
