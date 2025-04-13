@@ -9,6 +9,9 @@ TagManager:
   - Secret
   - PlayerUI
   - Exit
+  - Exit2
+  - Exit3
+  - Exit4
   layers:
   - Default
   - TransparentFX

@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float raycastDistance;
     [SerializeField] private LayerMask interactableLayers;
-    private Ray ray;
+    //private Ray ray;
 
     [Header("Movement Settings")]
     private float baseRotationSpeed = 10f;
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameManager gameManager;
 
     [Header("Inputs")]
-    private InputAction move, fire, sprint, interact;
+    private InputAction move,  sprint, interact;
     private InputAction changeW1, changeW2, changeW3;
     private InputAction uiAccept, pause;
 
@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
             dialogueManager.IsAutoPlayingDialog();
         }
 
-        if (changeW1.WasPressedThisFrame())
+        /*if (changeW1.WasPressedThisFrame())
         {
 
         }
@@ -96,9 +96,27 @@ public class PlayerController : MonoBehaviour
         else if (changeW3.WasPressedThisFrame())
         {
 
-        }
+        }*/
 
         HandleMouseLook();
+
+        /*if (fire.WasPressedThisFrame())
+        {
+            _sound.ShootPistola();
+            // Obtener el rayo desde el centro de la cámara
+            Ray ray = new Ray(this.transform.position, this.transform.forward.normalized * raycastDistance);
+
+            // Debug visual del rayo
+            Debug.DrawRay(ray.origin, ray.direction * raycastDistance, Color.green, 0.1f);
+
+            // Lanzar el raycast
+            if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance, interactableLayers))
+            {
+                target = hit.collider.gameObject;
+                target.GetComponent<TestEnemieAnimations>().GetDamage(damage);
+            }
+            else target = null;
+        }*/
     }
 
     private void FixedUpdate()
@@ -115,8 +133,6 @@ public class PlayerController : MonoBehaviour
 
         gameManager.UpdateHP(health);
         gameManager.UpdateArmor(armor);
-
-        Debug.Log(health + "  " + armor);
     }
 
     private void PlayerMovement()
@@ -195,24 +211,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Fire(InputAction.CallbackContext context)
-    {
-        _sound.ShootPistola();
-        // Obtener el rayo desde el centro de la cámara
-        ray = new Ray(this.transform.position, this.transform.forward);
-
-        // Debug visual del rayo
-        Debug.DrawRay(ray.origin, ray.direction * raycastDistance, Color.green, 0.1f);
-
-        // Lanzar el raycast
-        if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance, interactableLayers))
-        {
-            target = hit.collider.gameObject;
-            target.GetComponent<TestEnemieAnimations>().GetDamage(damage);
-        }
-        else target = null;
-    }
-
     private void Pause(InputAction.CallbackContext context)
     {
         if (context.performed && !gameManager.pauseOpen)
@@ -241,10 +239,10 @@ public class PlayerController : MonoBehaviour
         move = playerControls.Player.Move;
         move.Enable();
 
-        fire = playerControls.Player.Attack;
-        fire.Enable();
+        //fire = playerControls.Player.Attack;
+        //fire.Enable();
 
-        fire.performed += Fire;
+        //fire.performed += Fire;
 
         sprint = playerControls.Player.Sprint;
         sprint.Enable();
@@ -275,7 +273,7 @@ public class PlayerController : MonoBehaviour
     private void OnDisable()
     {
         move.Disable();
-        fire.Disable();
+        //fire.Disable();
         sprint.Disable();
 
         //uiAccept.Disable();
@@ -302,7 +300,8 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("Exit")) gameManager.ChangeToAnotherLevel(2);
         if (other.CompareTag("Exit2")) gameManager.ChangeToAnotherLevel(3);
-        if (other.CompareTag("Exit3")) Application.Quit();
+        if (other.CompareTag("Exit3")) gameManager.ChangeToAnotherLevel(4);
+        if (other.CompareTag("Exit4")) Application.Quit();
     }
 
     private void OnTriggerStay(Collider other)

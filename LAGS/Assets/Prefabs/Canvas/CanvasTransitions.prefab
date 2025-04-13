@@ -123,6 +123,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a92d4ef85b803f44682f428ec5a6212a, type: 3}
   fadeImg: {fileID: 6003493879127867568}
   otherImg: {fileID: 5353653427668566810}
+  skipObj: {fileID: 6373092256313972823}
   endTransition: 0
   startingTransition: 0
   imgIndexValue: 0

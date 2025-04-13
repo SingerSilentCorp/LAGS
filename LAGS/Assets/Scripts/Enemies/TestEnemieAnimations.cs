@@ -1,4 +1,3 @@
-using Newtonsoft.Json.Bson;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
@@ -6,7 +5,6 @@ using UnityEngine.AI;
 public class TestEnemieAnimations : MonoBehaviour
 {
     SoundManager _sound;
-
 
     [Header("SpritesEnemies")]
     [SerializeField] Sprite[] _enemiesSprite;
@@ -158,41 +156,9 @@ public class TestEnemieAnimations : MonoBehaviour
                     _enemieState = EnemysStates.dead;
                 }
 
-
-                break;
-
-            case EnemysStates.escape:
-
-
-                if (health < 1)
-                {
-                    
-                }
-
-                break;
-            case EnemysStates.dead:
-                
                 break;
         }
     }
-
-    //private void MovementAnimationEjeX()
-    //{
-    //    currentX = transform.position.x;
-
-    //    if (currentX > lastX)
-    //    {
-    //        _anim.CrossFade("Right", 0.0001f);
-    //    }
-    //    else if (currentX < lastX)
-    //    {
-    //        _anim.CrossFade("Left", 0.0001f);
-    //    }
-
-    //    lastX = currentX;
-    //}
-
-    //private void ESCAPE() => _anim.CrossFade("StartBack", 0.0001f);
 
     private void DEAD()
     {
@@ -211,14 +177,6 @@ public class TestEnemieAnimations : MonoBehaviour
         }
         this.gameObject.SetActive(false);
     }
-
-
-    //private IEnumerator StartViewPlayer()
-    //{
-    //    _anim.CrossFade("StartBack", 0.0001f);
-    //    yield return new WaitForSeconds(_anim.GetCurrentAnimatorStateInfo(0).length);
-    //    _anim.CrossFade("Back", 0.0001f);
-    //}
 
     private void WanderToNewPosition()
     {
@@ -295,8 +253,8 @@ public class TestEnemieAnimations : MonoBehaviour
                 _sound.ShootEscopeta(); 
                 break;
         }
-                print("Attacking Player");
-        target.GetComponent<PlayerController>().GetDamage(damage);
+                //print("Attacking Player");
+        //target.GetComponent<PlayerController>().GetDamage(damage);
     }
 
     public void GetDamage(float damage)
@@ -349,7 +307,4 @@ public class TestEnemieAnimations : MonoBehaviour
 
         health = baseHealth;
     }
-
-
-    
 }

@@ -50,56 +50,58 @@ public class TransitionController : MonoBehaviour
         isFadding = dialogueManager.GetIfFadding();
         changeImg = dialogueManager.GetIfChangingIMG();
 
-        //Debug.Log(isFadding + "   " + changeImg);
+
 
         if (isEnding)
         {
             isFadding = false;
             startingTransition = false;
-            if (OnComplete != null) OnComplete();
+            OnComplete?.Invoke();
 
-            return;
-        }
-
-        if (isFadding == true)
-        {
-            fadeImg.DOFade(1, transitionTime).OnComplete(() =>
-            {
-                otherImg.color = new Color(1, 1, 1, 1);
-
-                if (changeImg == true)
-                {
-                    imgIndexValue++;
-                    otherImg.sprite = otherImgList[imgIndexValue];
-                    dialogueManager.IsPlayingDialog();
-                    dialogueManager.SetChangingIMGFalse();
-                    dialogueManager.SetIfFaddingFalse();
-                    fadeImg.DOFade(0, transitionTime).OnComplete(() => { startingTransition = false; });
-                }
-                else
-                {
-                    dialogueManager.SetIfFaddingFalse();
-                    dialogueManager.IsPlayingDialog();
-                    fadeImg.DOFade(0, transitionTime).OnComplete(() => { startingTransition = false; });
-                }
-
-                if (OnComplete != null) OnComplete();
-            });
+            //return;
         }
         else
         {
-            if (changeImg == true)
+            if (isFadding == true)
             {
-                dialogueManager.IsPlayingDialog();
-                imgIndexValue++;
-                otherImg.sprite = otherImgList[imgIndexValue];
-                dialogueManager.SetChangingIMGFalse();
-                startingTransition = false;
+                fadeImg.DOFade(1, transitionTime).OnComplete(() =>
+                {
+                    otherImg.color = new Color(1, 1, 1, 1);
+
+                    if (changeImg == true)
+                    {
+                        imgIndexValue++;
+                        otherImg.sprite = otherImgList[imgIndexValue];
+                        dialogueManager.IsPlayingDialog();
+                        dialogueManager.SetChangingIMGFalse();
+                        dialogueManager.SetIfFaddingFalse();
+                        fadeImg.DOFade(0, transitionTime).OnComplete(() => { startingTransition = false; });
+                    }
+                    else
+                    {
+                        dialogueManager.SetIfFaddingFalse();
+                        dialogueManager.IsPlayingDialog();
+                        fadeImg.DOFade(0, transitionTime).OnComplete(() => { startingTransition = false; });
+                    }
+
+                    if (OnComplete != null) OnComplete();
+                });
             }
             else
             {
-                dialogueManager.IsPlayingDialog();
-                startingTransition = false;
+                if (changeImg == true)
+                {
+                    dialogueManager.IsPlayingDialog();
+                    imgIndexValue++;
+                    otherImg.sprite = otherImgList[imgIndexValue];
+                    dialogueManager.SetChangingIMGFalse();
+                    startingTransition = false;
+                }
+                else
+                {
+                    dialogueManager.IsPlayingDialog();
+                    startingTransition = false;
+                }
             }
         }
     }

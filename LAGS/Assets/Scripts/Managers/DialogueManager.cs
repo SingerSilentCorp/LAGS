@@ -16,6 +16,7 @@ public class DialogueManager : MonoBehaviour
     private static DialogueManager instance;
 
     [HideInInspector] public bool autoDialog;
+    private bool isEnding;
 
     private void Awake()
     {
@@ -24,7 +25,13 @@ public class DialogueManager : MonoBehaviour
         if (instance != null) Debug.LogWarning("Found more than one Dialogue Manager in the scene");
         else instance = this;
 
-        dialogueRunner.AddCommandHandler("Stop", ()=>transitionController.InitTransition(true,()=>transitionController.gameObject.SetActive(false)));
+        dialogueRunner.AddCommandHandler("Transition", () =>
+        {
+            if (GetIfEnding() == false) transitionController.InitTransition(false, null);
+            else transitionController.InitTransition(true, () => transitionController.gameObject.SetActive(false));
+        });
+        //dialogueRunner.AddCommandHandler("Stop", ()=>transitionController.InitTransition(true,));
+
     }
 
     private IEnumerator AutoContinueDialog()
@@ -54,6 +61,9 @@ public class DialogueManager : MonoBehaviour
     public void IsPlayingDialog()
     {
         dialogueRunner.dialogueViews[0].GetComponent<LineView>().OnContinueClicked(); //la siguiente linea
+        transitionController.isFadding = GetIfFadding();
+        transitionController.changeImg = GetIfChangingIMG();
+        isEnding = GetIfEnding();
     }
 
     public void IsAutoPlayingDialog() => dialogueRunner.dialogueViews[0].GetComponent<LineView>().UserRequestedViewAdvancement();
@@ -70,6 +80,13 @@ public class DialogueManager : MonoBehaviour
         bool fade;
         variableStorage.TryGetValue("$createFade", out fade);
         return fade;
+    }
+
+    private bool GetIfEnding()
+    {
+        bool ending;
+        variableStorage.TryGetValue("$isEnding", out ending);
+        return ending;
     }
 
     public void SetIfFaddingFalse() => variableStorage.SetValue("$createFade", false);

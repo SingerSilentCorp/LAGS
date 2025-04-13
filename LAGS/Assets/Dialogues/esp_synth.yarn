@@ -8,6 +8,7 @@
 <<declare $sh = "Silver Hare">>
 <<declare $changeIMG = false>>
 <<declare $createFade = true>>
+<<declare $isEnding = false>>
 
 // NOTAS GENERALES
 
@@ -18,11 +19,13 @@
 // una computadora (como en Word o Google Docs), "efecto máquina de escribir"
 
 <<set $createFade to true>>
+<<Transition>>
 
 {$emp}: Las Noches. Nuestro hogar. #line:0173474 
 
 <<set $changeIMG to true>>
 <<set $createFade to true>>
+<<Transition>>
 
 
 {$emp}: Duele decirlo, pero esta nación corre un grave peligro. #line:09943e3 
@@ -33,24 +36,30 @@
 
 <<set $changeIMG to true>>
 <<set $createFade to true>>
+<<Transition>>
 
 {$emp}: Por eso es que estás aquí—para proteger a los inocentes. #line:0fe64f5 
 {$emp}: Ustedes son nuestros defensores, los campeones de la libertad. #line:05c2753 
 
 <<set $changeIMG to true>>
 <<set $createFade to true>>
+<<Transition>>
+
 {$emp}: USTEDES son el escudo de la democracia. #line:0fbba52 
 {$emp}: Los HÉROES cromados de la nación—los Synth. #line:0aa062e 
 
 <<set $changeIMG to true>>
 <<set $createFade to true>>
+<<Transition>>
+
 {$emp}: Recupera las calles. Protege la libertad.  #line:0815537 
 
 {$emp}: ¡Salva a nuestro país! #line:018f439
 
 // fundido a negro (1.0 s.)
 <<set $createFade to true>>
-<<Stop>>
+<<set $isEnding to true>>
+<<Transition>>
 
 ===
 
