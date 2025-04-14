@@ -1,25 +1,22 @@
-using Newtonsoft.Json.Bson;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class TestEnemieAnimations : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
-    SoundManager _sound;
-
+    private enum EnemyType { pistola, escopeta, metralleta, jefe1, jefe2, jefe3, jefe4 }
+    [SerializeField] private EnemyType type;
+    private enum EnemysStates { walk, ViewPlayer, Attack, escape, dead };
+    [SerializeField] private EnemysStates _enemieState = EnemysStates.walk;
 
     [Header("SpritesEnemies")]
     [SerializeField] Sprite[] _enemiesSprite;
     [SerializeField] RuntimeAnimatorController[] _animationsEnemies;
-    private enum EnemyType { pistola, escopeta, metralleta, jefe1, jefe2, jefe3, jefe4}
-    [SerializeField] private EnemyType type;
-    private enum EnemysStates { walk, ViewPlayer, Attack, escape, dead };
-    [SerializeField] private EnemysStates _enemieState = EnemysStates.walk;
 
     [Header("References")]
     private Animator _anim;
     private NavMeshAgent agent;
     private SpriteRenderer _render;
+    [SerializeField] private SoundManager _sound;
 
     [Header("Enemy Stats")]
     private float baseHealth;
@@ -65,11 +62,12 @@ public class TestEnemieAnimations : MonoBehaviour
 
         ResetEnemy();
     }
+
     private void Start()
     {
-        _sound = SoundManager.Instance;
+        /*_sound = SoundManager.Instance;
 
-        switch(type)
+        switch (type)
         {
             case EnemyType.pistola:
                 _render.sprite = _enemiesSprite[0];
@@ -100,7 +98,7 @@ public class TestEnemieAnimations : MonoBehaviour
                 _anim.runtimeAnimatorController = _animationsEnemies[3];
                 break;
 
-        }
+        }*/
     }
 
     private void Update()
@@ -134,7 +132,6 @@ public class TestEnemieAnimations : MonoBehaviour
                 {
                     isWandering = false;
                     _enemieState = EnemysStates.ViewPlayer;
-                    //_anim.CrossFade("Walk", 0.0001f);
                 }
 
                 break;
@@ -145,8 +142,11 @@ public class TestEnemieAnimations : MonoBehaviour
 
                 cooldown -= Time.deltaTime;
 
+                
+
                 if (PlayerInRange())
                 {
+                    print("InRange?");
                     if (cooldown <= 0.0f) Attack();
                 }
 
@@ -158,71 +158,23 @@ public class TestEnemieAnimations : MonoBehaviour
                     _enemieState = EnemysStates.dead;
                 }
 
-
-                break;
-
-            case EnemysStates.escape:
-
-
-                if (health < 1)
-                {
-                    
-                }
-
-                break;
-            case EnemysStates.dead:
-                
                 break;
         }
     }
-
-    //private void MovementAnimationEjeX()
-    //{
-    //    currentX = transform.position.x;
-
-    //    if (currentX > lastX)
-    //    {
-    //        _anim.CrossFade("Right", 0.0001f);
-    //    }
-    //    else if (currentX < lastX)
-    //    {
-    //        _anim.CrossFade("Left", 0.0001f);
-    //    }
-
-    //    lastX = currentX;
-    //}
-
-    //private void ESCAPE() => _anim.CrossFade("StartBack", 0.0001f);
-
-    private void DEAD()
+    private Vector3 RandomNavPosition(Vector3 origin, float distance)
     {
-        if (isABoss)
-        {
-            Debug.Log("Boss dead");
-            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-            this.GetComponent<BoxCollider>().enabled = false;
-            this.GetComponent<SwitchController>().UnlockDoor();
-        }
-        else
-        {
-            //_anim.CrossFade("Dead", 0.0001f);
-            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-            this.GetComponent<BoxCollider>().enabled = false;
-        }
-        this.gameObject.SetActive(false);
+        Vector3 randomDirection = Random.insideUnitSphere * distance;
+        randomDirection += origin;
+
+        NavMeshHit navHit;
+        NavMesh.SamplePosition(randomDirection, out navHit, distance, NavMesh.AllAreas);
+
+        return navHit.position;
     }
-
-
-    //private IEnumerator StartViewPlayer()
-    //{
-    //    _anim.CrossFade("StartBack", 0.0001f);
-    //    yield return new WaitForSeconds(_anim.GetCurrentAnimatorStateInfo(0).length);
-    //    _anim.CrossFade("Back", 0.0001f);
-    //}
 
     private void WanderToNewPosition()
     {
-        if(_enemieState == EnemysStates.walk)
+        if (_enemieState == EnemysStates.walk)
         {
             agent.updateRotation = true;
             Vector3 wanderTarget;
@@ -241,17 +193,6 @@ public class TestEnemieAnimations : MonoBehaviour
             agent.SetDestination(wanderTarget);
             timer = Random.Range(minWaitTime, maxWaitTime);
         }
-    }
-
-    private Vector3 RandomNavPosition(Vector3 origin, float distance)
-    {
-        Vector3 randomDirection = Random.insideUnitSphere * distance;
-        randomDirection += origin;
-
-        NavMeshHit navHit;
-        NavMesh.SamplePosition(randomDirection, out navHit, distance, NavMesh.AllAreas);
-
-        return navHit.position;
     }
 
     private void MoveToTarget()
@@ -292,10 +233,11 @@ public class TestEnemieAnimations : MonoBehaviour
                 _sound.ShootMetralleta();
                 break;
             case EnemyType.escopeta:
-                _sound.ShootEscopeta(); 
+                _sound.ShootEscopeta();
                 break;
         }
-                print("Attacking Player");
+        
+        print("Attacking Player");
         target.GetComponent<PlayerController>().GetDamage(damage);
     }
 
@@ -303,7 +245,7 @@ public class TestEnemieAnimations : MonoBehaviour
     {
         health -= damage;
 
-        if (health <= 0.0) 
+        if (health <= 0.0)
         {
             health = 0.0f;
             DEAD();
@@ -317,31 +259,31 @@ public class TestEnemieAnimations : MonoBehaviour
             case EnemyType.pistola:
 
                 damage = Random.Range(6.0f, 10.01f);
-                health = 24.0f;
+                baseHealth = 24.0f;
                 break;
             case EnemyType.escopeta:
                 damage = Random.Range(15.0f, 20.01f);
-                health = 36.0f;
+                baseHealth = 36.0f;
                 break;
             case EnemyType.metralleta:
                 damage = Random.Range(8.0f, 12.01f);
-                health = 60.0f;
+                baseHealth = 60.0f;
                 break;
             case EnemyType.jefe1:
                 damage = Random.Range(10.0f, 15.01f);
-                health = 400.0f;
+                baseHealth = 400.0f;
                 break;
             case EnemyType.jefe2:
                 damage = Random.Range(12.0f, 15.01f);
-                health = 430.0f;
+                baseHealth = 430.0f;
                 break;
             case EnemyType.jefe3:
                 damage = Random.Range(15.0f, 18.01f);
-                health = 450.0f;
+                baseHealth = 450.0f;
                 break;
             case EnemyType.jefe4:
                 damage = Random.Range(18.0f, 20.01f);
-                health = 800.0f;
+                baseHealth = 800.0f;
                 break;
             default:
                 break;
@@ -350,6 +292,20 @@ public class TestEnemieAnimations : MonoBehaviour
         health = baseHealth;
     }
 
-
-    
+    private void DEAD()
+    {
+        if (isABoss)
+        {
+            Debug.Log("Boss dead");
+            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            this.GetComponent<BoxCollider>().enabled = false;
+            this.GetComponent<SwitchController>().UnlockDoor();
+        }
+        else
+        {
+            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            this.GetComponent<BoxCollider>().enabled = false;
+        }
+        this.gameObject.SetActive(false);
+    }
 }
