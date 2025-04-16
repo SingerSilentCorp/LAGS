@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -227,13 +228,8 @@ public class PlayerController : MonoBehaviour
 
     private void HandleMouseLook()
     {
-        // Solo movimiento horizontal (Mouse X)
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-
-        // Rotación horizontal del cuerpo del jugador (izquierda/derecha)
         this.GetComponent<Rigidbody>().MoveRotation(this.transform.rotation * Quaternion.Euler(0f, mouseX, 0f));
-
-        // Eliminamos toda la lógica de rotación vertical (Mouse Y)
     }
 
     private void OnEnable()
@@ -269,7 +265,6 @@ public class PlayerController : MonoBehaviour
 
         changeW3 = playerControls.Player.ChangeWeapon3;
         changeW3.Enable();
-
     }
 
     private void OnDisable()
@@ -282,6 +277,10 @@ public class PlayerController : MonoBehaviour
         pause.Disable();
 
         interact.Disable();
+
+        changeW1.Disable();
+        changeW2.Disable();
+        changeW3.Disable();
     }
 
     public void ActiveInputs(bool isActivating)
@@ -290,15 +289,47 @@ public class PlayerController : MonoBehaviour
         else OnEnable();
     }
 
+    private IEnumerator TxtPickSomething(int txtIndex)
+    {
+        gameManager.GuideTxtConfig(txtIndex);
+        gameManager.ShowTxtGuide(true);
+        yield return new WaitForSeconds(2.0f);
+        gameManager.ShowTxtGuide(false);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        gameManager.GuideTxtConfig(0);
+        if (other.CompareTag("Secret"))
+        {
+            gameManager.GuideTxtConfig(0);
+            gameManager.ShowTxtGuide(true);
+        }
 
-        if (other.CompareTag("Secret")) gameManager.ShowTxtGuide(true);
+        if (other.gameObject.layer == 8)
+        {
+            gameManager.GuideTxtConfig(0);
+            gameManager.ShowTxtGuide(true);
+        }
 
-        if (other.gameObject.layer == 8) gameManager.ShowTxtGuide(true);
+        if (other.gameObject.layer == 12)
+        {
+            gameManager.GuideTxtConfig(0);
+            gameManager.ShowTxtGuide(true);
+        }
 
-        if (other.gameObject.layer == 12) gameManager.ShowTxtGuide(true);
+        if(other.CompareTag("PowerUp") && other.gameObject.layer == 9 && health != baseHealth)
+        {
+            StartCoroutine(TxtPickSomething(3));
+        }
+        else if (other.CompareTag("PowerUp") && other.gameObject.layer == 10 && armor != baseArmor)
+        {
+            StartCoroutine(TxtPickSomething(4));
+        }
+        else if (other.CompareTag("PowerUp") && other.gameObject.layer == 11 && ammo != baseAmmo)
+        {
+            StartCoroutine(TxtPickSomething(5));
+        }
+
 
         if (other.CompareTag("Exit")) gameManager.ChangeToAnotherLevel(2);
         if (other.CompareTag("Exit2")) gameManager.ChangeToAnotherLevel(3);
@@ -349,7 +380,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        gameManager.ShowTxtGuide(false);
+        if(!other.CompareTag("PowerUp")) gameManager.ShowTxtGuide(false);
     }
 
     public void GetDamage(float damage)

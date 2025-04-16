@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 4188075444530949154}
   - component: {fileID: 8343779489182767824}
   - component: {fileID: 4211984680571498000}
-  - component: {fileID: 1711566148474881834}
   - component: {fileID: 2627150261414482126}
+  - component: {fileID: 3937459115099480888}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
@@ -162,35 +162,6 @@ NavMeshAgent:
   m_BaseOffset: 1.4
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1711566148474881834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6407762083487186880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75856199239f1af4293d89cfea8a0830, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemiesSprite: []
-  _animationsEnemies: []
-  type: 0
-  _enemieState: 0
-  baseHealth: 24
-  _speed: 8
-  damage: 0
-  minWanderRadius: 5
-  maxWanderRadius: 15
-  minWaitTime: 2
-  maxWaitTime: 5
-  returnToStartArea: 1
-  attackRange: 20
-  target: {fileID: 0}
-  stoppingDistance: 10
-  retreatDistance: 15
-  isABoss: 0
 --- !u!95 &2627150261414482126
 Animator:
   serializedVersion: 7
@@ -213,3 +184,30 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3937459115099480888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6407762083487186880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c8bc2b414678544b9be4c34892f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _enemieState: 0
+  _enemiesSprite: []
+  _animationsEnemies: []
+  _sound: {fileID: 0}
+  damage: 0
+  minWanderRadius: 15
+  maxWanderRadius: 25
+  minWaitTime: 4
+  maxWaitTime: 7
+  returnToStartArea: 1
+  target: {fileID: 0}
+  stoppingDistance: 20
+  retreatDistance: 25
+  isABoss: 0

@@ -139,7 +139,10 @@ public class GameManager : MonoBehaviour
         else translate.EsLanguage();
     }
 
-    public void ShowTxtGuide(bool isShowing) => txtGuide.gameObject.SetActive(isShowing);
+    public void ShowTxtGuide(bool isShowing )
+    {
+        txtGuide.gameObject.SetActive(isShowing);
+    }
 
     public void MouseVisible(bool isVisible)
     {
@@ -190,7 +193,7 @@ public class GameManager : MonoBehaviour
 
     public void GuideTxtConfig(int indexTxt)
     {
-        //0 == interact, 1 == locked door, 2 == switchTxtWhenUnlock
+        //0 == interact, 1 == locked door, 2 == switchTxtWhenUnlock, 3 == pickHealth, 4 == pickArmor, 5 == pickAmmo
 
         if (isEnglish)
         {
@@ -202,9 +205,21 @@ public class GameManager : MonoBehaviour
             {
                 txtGuide.text = "Locked";
             }
-            else if (indexTxt == 1)
+            else if (indexTxt == 2)
             {
                 txtGuide.text = "Door has been unlocked ";
+            }
+            else if (indexTxt == 3)
+            {
+                txtGuide.text = "retored health ";
+            }
+            else if (indexTxt == 4)
+            {
+                txtGuide.text = "restored armor ";
+            }
+            else if (indexTxt == 5)
+            {
+                txtGuide.text = "restored ammo ";
             }
         }
         else
@@ -217,9 +232,21 @@ public class GameManager : MonoBehaviour
             {
                 txtGuide.text = "Bloqueado";
             }
-            else if (indexTxt == 1)
+            else if (indexTxt == 2)
             {
                 txtGuide.text = "La puerta a sido desbloqueada";
+            }
+            else if (indexTxt == 3)
+            {
+                txtGuide.text = "Salud restaurada ";
+            }
+            else if (indexTxt == 4)
+            {
+                txtGuide.text = "Armadura restaurada ";
+            }
+            else if (indexTxt == 5)
+            {
+                txtGuide.text = "Munición restaurada ";
             }
         }
     }

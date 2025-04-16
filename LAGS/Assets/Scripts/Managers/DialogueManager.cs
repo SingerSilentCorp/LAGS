@@ -30,13 +30,11 @@ public class DialogueManager : MonoBehaviour
             if (GetIfEnding() == false) transitionController.InitTransition(false, null);
             else transitionController.InitTransition(true, () => transitionController.gameObject.SetActive(false));
         });
-        //dialogueRunner.AddCommandHandler("Stop", ()=>transitionController.InitTransition(true,));
-
     }
 
     private IEnumerator AutoContinueDialog()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2.0f);
         dialogueRunner.dialogueViews[0].GetComponent<LineView>().autoAdvance = true;
         if(dialogueRunner.IsDialogueRunning) StartCoroutine(AutoContinueDialog());
     }
