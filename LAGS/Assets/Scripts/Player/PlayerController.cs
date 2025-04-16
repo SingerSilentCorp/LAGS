@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float raycastDistance;
     [SerializeField] private LayerMask interactableLayers;
-    //private Ray ray;
 
     [Header("Movement Settings")]
     private float baseRotationSpeed = 10f;
@@ -85,38 +84,20 @@ public class PlayerController : MonoBehaviour
             dialogueManager.IsAutoPlayingDialog();
         }
 
-        /*if (changeW1.WasPressedThisFrame())
+        if (changeW1.WasPressedThisFrame())
         {
-
+            gameManager.ChangePlayerUI(0);
         }
         else if (changeW2.WasPressedThisFrame())
         {
-
+            gameManager.ChangePlayerUI(1);
         }
         else if (changeW3.WasPressedThisFrame())
         {
-
-        }*/
+            gameManager.ChangePlayerUI(2);
+        }
 
         HandleMouseLook();
-
-        /*if (fire.WasPressedThisFrame())
-        {
-            _sound.ShootPistola();
-            // Obtener el rayo desde el centro de la cámara
-            Ray ray = new Ray(this.transform.position, this.transform.forward.normalized * raycastDistance);
-
-            // Debug visual del rayo
-            Debug.DrawRay(ray.origin, ray.direction * raycastDistance, Color.green, 0.1f);
-
-            // Lanzar el raycast
-            if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance, interactableLayers))
-            {
-                target = hit.collider.gameObject;
-                target.GetComponent<TestEnemieAnimations>().GetDamage(damage);
-            }
-            else target = null;
-        }*/
     }
 
     private void FixedUpdate()

@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject playerUICanvas;
     [SerializeField] private TextMeshProUGUI[] txtPlayerStats;
     [SerializeField] private TextMeshProUGUI txtGuide;
+    [SerializeField] private Image imgBGPlayerObj;
+    [SerializeField] private Sprite[] imgPlayerUIBG;
 
     [Header("Dialog and Transition")]
     [SerializeField, Space] private TransitionController transitionController;
@@ -42,6 +44,8 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 60;
 
         ConfigScene();
+
+        imgBGPlayerObj.sprite = imgPlayerUIBG[0];
 
         if (SceneManager.GetActiveScene().buildIndex != 0)
         {
@@ -219,6 +223,8 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    public void ChangePlayerUI(int indexImg) => imgBGPlayerObj.sprite = imgPlayerUIBG[indexImg];
 
     public void ActivePlayerInput(bool isActivating)
     {
