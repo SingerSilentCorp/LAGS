@@ -3,6 +3,7 @@ using DG.Tweening;
 
 public class DoorsController : MonoBehaviour
 {
+    SoundManager _sound;
     [SerializeField] private SwitchController doorTriggerObj;
 
     private Vector3 basePos;
@@ -15,6 +16,7 @@ public class DoorsController : MonoBehaviour
 
     private void Awake()
     {
+        _sound = SoundManager.Instance;
         basePos = this.transform.position;
 
         if (doorTriggerObj != null)
@@ -33,6 +35,8 @@ public class DoorsController : MonoBehaviour
             if (!isOpen)
             {
                 this.transform.DOMoveY(basePos.y + 5f, doorSpeed).OnComplete(() => isOpen = true);
+                _sound.AbrirPuerta();
+                Debug.Log("Puerta Abierta");
             }
         }
         else if (hasTrigger)
@@ -40,9 +44,13 @@ public class DoorsController : MonoBehaviour
             if (!isOpen && switchActivated)
             {
                 this.transform.DOMoveY(basePos.y + 5f, doorSpeed).OnComplete(() => isOpen = true);
+                _sound.AbrirPuerta();
+                Debug.Log("Puerta Abierta");
             }
 
         }
+
+        
     }
 
     public void CloseDoor()

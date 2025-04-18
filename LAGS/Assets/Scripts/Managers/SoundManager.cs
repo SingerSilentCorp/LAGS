@@ -32,6 +32,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField] AudioClip caminataEnemie2;
     [SerializeField] AudioClip caminataEnemie3;
     [SerializeField] AudioClip caminataJefe;
+    [Header("Abrir Puerta")]
+    [SerializeField] AudioClip abrirPuerta;
 
     private void Awake()
     {
@@ -79,6 +81,7 @@ public class SoundManager : MonoBehaviour
     public void CaminataEnemie2() => SFX.PlayOneShot(caminataEnemie2);
     public void CaminataEnemie3() => SFX.PlayOneShot(caminataEnemie3);
     public void CaminataJefe() => SFX.PlayOneShot(caminataJefe);
+    public void AbrirPuerta() => SFX.PlayOneShot(abrirPuerta);
 
     IEnumerator PlaySongs()
     {

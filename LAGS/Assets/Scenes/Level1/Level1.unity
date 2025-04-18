@@ -1269,6 +1269,7 @@ MonoBehaviour:
   caminataEnemie2: {fileID: 8300000, guid: d8226b66c1c681345bd06077cf6dd050, type: 3}
   caminataEnemie3: {fileID: 8300000, guid: c07ed88d8a9f6804dab5c344aec79484, type: 3}
   caminataJefe: {fileID: 8300000, guid: ca145ab4c43fc4143ad714ebf2613153, type: 3}
+  abrirPuerta: {fileID: 8300000, guid: 99ea1b62fcab5cf40800ef52eb0bb38a, type: 3}
 --- !u!4 &108954874
 Transform:
   m_ObjectHideFlags: 0
@@ -4433,7 +4434,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 327993707}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!4 &327993711
 Transform:
   m_ObjectHideFlags: 0
@@ -18142,7 +18143,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.435
   m_Pitch: 1
   Loop: 0
   Mute: 0
