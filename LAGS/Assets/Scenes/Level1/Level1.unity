@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.03773582, g: 0.03773582, b: 0.03773582, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.08
@@ -4340,8 +4340,8 @@ Camera:
   m_GameObject: {fileID: 327993707}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -4370,7 +4370,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 8183
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 2d653b2648e4d1e44b42dd89315b9c83, type: 2}
   m_TargetDisplay: 0
@@ -4379,7 +4379,7 @@ Camera:
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!114 &327993709
@@ -4395,8 +4395,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RenderShadows: 0
-  m_RequiresDepthTextureOption: 0
-  m_RequiresOpaqueTextureOption: 0
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
   m_RendererIndex: -1
@@ -4443,7 +4443,7 @@ Transform:
   m_GameObject: {fileID: 327993707}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 64, y: 23, z: 90}
+  m_LocalPosition: {x: 64, y: 34.4, z: 90}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6956,7 +6956,7 @@ GameObject:
   - component: {fileID: 712223772}
   - component: {fileID: 712223771}
   - component: {fileID: 712223770}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: Roof
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -12567,7 +12567,7 @@ GameObject:
   - component: {fileID: 1135068555}
   - component: {fileID: 1135068554}
   - component: {fileID: 1135068553}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: Plane
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -22066,7 +22066,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2112160101619738728, guid: 1b0902cc1d514654f8256bf8a0204f66, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 64
+      value: 60.34
       objectReference: {fileID: 0}
     - target: {fileID: 2112160101619738728, guid: 1b0902cc1d514654f8256bf8a0204f66, type: 3}
       propertyPath: m_LocalPosition.y
@@ -22074,23 +22074,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2112160101619738728, guid: 1b0902cc1d514654f8256bf8a0204f66, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 90
+      value: 18.6
       objectReference: {fileID: 0}
     - target: {fileID: 2112160101619738728, guid: 1b0902cc1d514654f8256bf8a0204f66, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.27037656
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2112160101619738728, guid: 1b0902cc1d514654f8256bf8a0204f66, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2112160101619738728, guid: 1b0902cc1d514654f8256bf8a0204f66, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.96275467
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2112160101619738728, guid: 1b0902cc1d514654f8256bf8a0204f66, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2112160101619738728, guid: 1b0902cc1d514654f8256bf8a0204f66, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -22098,7 +22098,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2112160101619738728, guid: 1b0902cc1d514654f8256bf8a0204f66, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -148.627
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2112160101619738728, guid: 1b0902cc1d514654f8256bf8a0204f66, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
