@@ -32,14 +32,14 @@ public class DoorsController : MonoBehaviour
         {
             if (!isOpen)
             {
-                this.transform.DOMoveY(basePos.y + 14f, doorSpeed).OnComplete(() => isOpen = true);
+                this.transform.DOMoveY(basePos.y + 5f, doorSpeed).OnComplete(() => isOpen = true);
             }
         }
         else if (hasTrigger)
         {
             if (!isOpen && switchActivated)
             {
-                this.transform.DOMoveY(basePos.y + 14f, doorSpeed).OnComplete(() => isOpen = true);
+                this.transform.DOMoveY(basePos.y + 5f, doorSpeed).OnComplete(() => isOpen = true);
             }
 
         }

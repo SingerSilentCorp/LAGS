@@ -33,6 +33,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Button[] btn2ndOptions;
 
 
+    [Header("Secret1")]
+    [SerializeField] private GameObject[] secret1Objs;
+
     [Header("Data")]
     private Data data;
 
@@ -188,6 +191,14 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1.0f;
 
             DataManager.SaveData(isEnglish, volumeSlider.value, sensitiveSlider.value);
+        }
+    }
+
+    public void ChangeLayer()
+    {
+        for (int i = 0; i < secret1Objs.Length; i++)
+        {
+            secret1Objs[i].layer = 7;
         }
     }
 

@@ -6,16 +6,33 @@ public class ItemsController : MonoBehaviour
     private enum ItemType { SmallHealth, Health, SmallArmor, Armor, SmallAmmo, Ammo, Speed, Damage };
     [SerializeField] private ItemType type;
 
+    [Header("TweenVariables")]
+    private Vector3 mainPos;
+
+
     private Transform target;
+
 
     private void Awake()
     {
         target = FindFirstObjectByType<PlayerController>().gameObject.transform;
+        mainPos = this.transform.position;
+    }
+
+    private void Start()
+    {
+        MovingBehavior();
     }
 
     private void Update()
     {
         this.transform.LookAt(target.position);
+    }
+
+    private void MovingBehavior()
+    {
+        this.transform.DOMoveY(mainPos.y - 1.0f, 1.0f).SetEase(Ease.OutBack).OnComplete(()=> this.transform.DOMoveY(mainPos.y, 1.0f).SetEase(Ease.OutBack).OnComplete(() => MovingBehavior()));
+        //this.transform.DOMoveY(mainPos.y - 1.0f, 1.0f).SetEase(Ease.InOutBounce).OnComplete(() => this.transform.DOMoveY(mainPos.y, 1.0f).SetEase(Ease.InOutBounce).OnComplete(() => MovingBehavior()));
     }
 
     private void OnTriggerEnter(Collider other)
@@ -61,5 +78,10 @@ public class ItemsController : MonoBehaviour
                     break;
             }
         }
+    }
+
+    private void OnDisable()
+    {
+        DOTween.Kill(this.transform.gameObject);
     }
 }
