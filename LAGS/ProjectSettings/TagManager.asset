@@ -12,6 +12,7 @@ TagManager:
   - Exit2
   - Exit3
   - Exit4
+  - SpecialDoor
   layers:
   - Default
   - TransparentFX
@@ -27,8 +28,8 @@ TagManager:
   - Ammo
   - doorTrigger
   - Roof
-  - 
-  - 
+  - "PlayerP\xF3s"
+  - SpecialPlace
   - 
   - 
   - 

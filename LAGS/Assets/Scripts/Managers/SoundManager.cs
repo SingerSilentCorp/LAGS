@@ -34,6 +34,11 @@ public class SoundManager : MonoBehaviour
     [SerializeField] AudioClip caminataJefe;
     [Header("Abrir Puerta")]
     [SerializeField] AudioClip abrirPuerta;
+    [Header("Muertes")]
+    [SerializeField] AudioClip playerMuerte;
+    [SerializeField] AudioClip enemiePistolaMuerte;
+    [SerializeField] AudioClip enemieEscopetaMuerte;
+
 
     private void Awake()
     {
@@ -82,6 +87,9 @@ public class SoundManager : MonoBehaviour
     public void CaminataEnemie3() => SFX.PlayOneShot(caminataEnemie3);
     public void CaminataJefe() => SFX.PlayOneShot(caminataJefe);
     public void AbrirPuerta() => SFX.PlayOneShot(abrirPuerta);
+    public void PlayerMuerte() => SFX.PlayOneShot(playerMuerte);
+    public void EnemiePistolaMuerte() => SFX.PlayOneShot(enemiePistolaMuerte);
+    public void EnemieEscopetaMuerte() => SFX.PlayOneShot(enemieEscopetaMuerte);
 
     IEnumerator PlaySongs()
     {

@@ -305,6 +305,7 @@ public class EnemyController : MonoBehaviour
         {
             this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             this.GetComponent<BoxCollider>().enabled = false;
+            _sound.EnemiePistolaMuerte();
         }
         this.gameObject.SetActive(false);
     }

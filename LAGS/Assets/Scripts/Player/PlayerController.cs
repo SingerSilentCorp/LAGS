@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    
+
     SoundManager _sound;
 
     private Vector3 movePos;
@@ -49,7 +51,8 @@ public class PlayerController : MonoBehaviour
     private float speed;
     private float baseDamage = 12.0f;
     private float damage;
-
+    [Header("Mapa")]
+    [SerializeField] GameObject _mapa;
 
     [Header("Configuración de Sensibilidad")]
     [HideInInspector] public float mouseSensitivity = 500f;
@@ -99,6 +102,14 @@ public class PlayerController : MonoBehaviour
         }
 
         HandleMouseLook();
+
+        if(Input.GetKeyDown(KeyCode.M))
+        {
+            _mapa.SetActive(_mapa.activeSelf ? false : true);
+        }
+
+
+
     }
 
     private void FixedUpdate()
@@ -341,8 +352,13 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.layer == 8 && !other.GetComponent<DoorsController>().hasTrigger)
         {
-            if (interact.IsPressed())
+            if (Input.GetKeyDown(KeyCode.Space))
             {
+                if(other.CompareTag("SpecialDoor"))
+                {
+                    other.GetComponent<SpecialDoor>().ShowPlace();
+                }
+
                 gameManager.ShowTxtGuide(false);
                 other.GetComponent<DoorsController>().OpenDoor();
             }
@@ -396,6 +412,7 @@ public class PlayerController : MonoBehaviour
 
             if (health <= 0.0f)
             {
+                _sound.PlayerMuerte();
                 health = 0.0f;
                 SceneManager.LoadScene(0);
                 Debug.Log("Morí");

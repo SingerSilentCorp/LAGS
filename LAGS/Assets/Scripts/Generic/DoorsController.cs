@@ -44,7 +44,7 @@ public class DoorsController : MonoBehaviour
             if (!isOpen && switchActivated)
             {
                 this.transform.DOMoveY(basePos.y + 5f, doorSpeed).OnComplete(() => isOpen = true);
-                _sound.AbrirPuerta();
+               // _sound.AbrirPuerta();
                 Debug.Log("Puerta Abierta");
             }
 
