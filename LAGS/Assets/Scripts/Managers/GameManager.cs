@@ -130,7 +130,6 @@ public class GameManager : MonoBehaviour
             sensitiveSlider.value = value;
         });
 
-
         btn2ndOptions[2].onClick.AddListener(() => translate.EsLanguage());
         btn2ndOptions[3].onClick.AddListener(() => translate.EnLanguage());
         btn2ndOptions[4].onClick.AddListener(() => ChangeMenus(0));
@@ -142,7 +141,7 @@ public class GameManager : MonoBehaviour
         else translate.EsLanguage();
     }
 
-    public void ShowTxtGuide(bool isShowing )
+    public void ShowTxtGuide(bool isShowing)
     {
         txtGuide.gameObject.SetActive(isShowing);
     }
@@ -175,8 +174,6 @@ public class GameManager : MonoBehaviour
             pauseConteiner.SetActive(true);
             pauseMenus[0].SetActive(true);
             MouseVisible(true);
-
-
         }
         else
         {
@@ -284,7 +281,7 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoadedTemp(Scene scene, LoadSceneMode mode)
     {
-        if(SceneManager.GetActiveScene().buildIndex == 0)
+        if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             Destroy(this);
             Destroy(transform.parent.gameObject);
@@ -296,15 +293,14 @@ public class GameManager : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().buildIndex == 1)
         {
-            player.transform.position = new Vector3(156.399994f, 0.699000001f, 108.5f);
-
+            player.transform.position = new Vector3(60.0f, 0.7f, 18.0f);
             transitionController.InitTransition(false, () =>
             {
                 dialogueManager.ShowOrHideDialogPanel(true);
                 dialogueManager.InitDialog("Intro", false);
             });
         }
-        else if(SceneManager.GetActiveScene().buildIndex > 1)
+        else if (SceneManager.GetActiveScene().buildIndex > 1)
         {
             player.transform.position = new Vector3(-12f, 2f, 53f);
         }

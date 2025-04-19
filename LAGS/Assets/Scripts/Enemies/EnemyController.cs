@@ -41,7 +41,7 @@ public class EnemyController : MonoBehaviour
 
     [Header("Attacking Settings")]
     private float attackRange = 40f;
-    [SerializeField] private Transform target;
+    [SerializeField]private Transform target;
     [SerializeField] private float stoppingDistance;
     [SerializeField] private float retreatDistance;
 

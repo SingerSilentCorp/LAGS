@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    
-
     SoundManager _sound;
 
     private Vector3 movePos;
@@ -33,7 +31,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameManager gameManager;
 
     [Header("Inputs")]
-    private InputAction move, fire ,sprint, interact;
+    private InputAction move, fire, sprint, interact, map;
     private InputAction changeW1, changeW2, changeW3;
     private InputAction uiAccept, pause;
 
@@ -45,8 +43,10 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public float health;
     private float baseArmor = 100.0f;
     [HideInInspector] public float armor;
-    private float baseAmmo = 250.0f;
-    private float ammo;
+    private float basePistolAmmo = 250.0f;
+    private float baseShotgunAmmo = 250.0f;
+    private float baseRifleAmmo = 250.0f;
+    private float pistolAmmo, shotgunAmmo, rifleAmmo;
     private float baseSpeed = 20.0f;
     private float speed;
     private float baseDamage = 12.0f;
@@ -59,8 +59,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        _sound= SoundManager.Instance;
-
+        _sound = SoundManager.Instance;
 
         playerControls = new PlayerInputActions();
         rb = GetComponent<Rigidbody>();
@@ -74,7 +73,6 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         movePos = move.ReadValue<Vector2>();
-
 
         if (sprint.IsPressed()) speed = baseSpeed * 1.5f;
         else speed = baseSpeed;
@@ -102,14 +100,6 @@ public class PlayerController : MonoBehaviour
         }
 
         HandleMouseLook();
-
-        if(Input.GetKeyDown(KeyCode.M))
-        {
-            _mapa.SetActive(_mapa.activeSelf ? false : true);
-        }
-
-
-
     }
 
     private void FixedUpdate()
@@ -196,10 +186,34 @@ public class PlayerController : MonoBehaviour
 
     public void IncreaseOrDecreaseAmmo(float value, GameObject gameObject)
     {
-        if (ammo >= baseAmmo) ammo = baseAmmo;
-        else
+        bool fullPistol = false;
+        bool fullShotgun = false;
+        bool fullRifle = false;
+
+        pistolAmmo += 15;
+        shotgunAmmo += 10;
+        rifleAmmo += 15;
+
+        if (pistolAmmo >= basePistolAmmo)
         {
-            ammo += value;
+            pistolAmmo = basePistolAmmo;
+            fullPistol = true;
+        }
+
+        if (shotgunAmmo >= baseShotgunAmmo)
+        {
+            shotgunAmmo = baseShotgunAmmo;
+            fullShotgun = true;
+        }
+
+        if (rifleAmmo >= baseRifleAmmo)
+        {
+            rifleAmmo = baseRifleAmmo;
+            fullRifle = true;
+        }
+
+        if(!fullPistol || !fullShotgun || !fullRifle)
+        {
             gameObject.SetActive(false);
         }
     }
@@ -237,68 +251,83 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
+    private void Map(InputAction.CallbackContext context)
+    {
+        if (context.performed) _mapa.SetActive(_mapa.activeSelf ? false : true);
+    }
+
     private void HandleMouseLook()
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         this.GetComponent<Rigidbody>().MoveRotation(this.transform.rotation * Quaternion.Euler(0f, mouseX, 0f));
     }
 
-    private void OnEnable()
+    private void ActiveControllers(bool isActivating)
     {
-        move = playerControls.Player.Move;
-        move.Enable();
+        if (isActivating == true)
+        {
+            move = playerControls.Player.Move;
+            move.Enable();
 
-        fire = playerControls.Player.Attack;
-        fire.Enable();
+            fire = playerControls.Player.Attack;
+            fire.Enable();
 
-        fire.performed += Fire;
+            fire.performed += Fire;
 
-        sprint = playerControls.Player.Sprint;
-        sprint.Enable();
+            sprint = playerControls.Player.Sprint;
+            sprint.Enable();
 
-        uiAccept = playerControls.UI.Accept;
-        uiAccept.Enable();
+            uiAccept = playerControls.UI.Accept;
+            uiAccept.Enable();
 
-        pause = playerControls.Player.Pause;
-        pause.Enable();
+            pause = playerControls.Player.Pause;
+            pause.Enable();
 
-        pause.performed += Pause;
+            pause.performed += Pause;
 
-        interact = playerControls.Player.Interact;
-        interact.Enable();
+            interact = playerControls.Player.Interact;
+            interact.Enable();
 
-        changeW1 = playerControls.Player.ChangeWeapon1;
-        changeW1.Enable();
+            map = playerControls.Player.Map;
+            map.Enable();
 
-        changeW2 = playerControls.Player.ChangeWeapon2;
-        changeW2.Enable();
+            map.performed += Map;
+
+            changeW1 = playerControls.Player.ChangeWeapon1;
+            changeW1.Enable();
+
+            changeW2 = playerControls.Player.ChangeWeapon2;
+            changeW2.Enable();
 
 
-        changeW3 = playerControls.Player.ChangeWeapon3;
-        changeW3.Enable();
+            changeW3 = playerControls.Player.ChangeWeapon3;
+            changeW3.Enable();
+        }
+        else
+        {
+            move.Disable();
+            fire.Disable();
+            sprint.Disable();
+
+            //uiAccept.Disable();
+            pause.Disable();
+
+            interact.Disable();
+
+            map.Disable();
+
+            changeW1.Disable();
+            changeW2.Disable();
+            changeW3.Disable();
+        }
     }
 
-    private void OnDisable()
-    {
-        move.Disable();
-        fire.Disable();
-        sprint.Disable();
+    private void OnEnable() => ActiveControllers(true);
 
-        //uiAccept.Disable();
-        pause.Disable();
+    private void OnDisable() => ActiveControllers(false);
 
-        interact.Disable();
-
-        changeW1.Disable();
-        changeW2.Disable();
-        changeW3.Disable();
-    }
-
-    public void ActiveInputs(bool isActivating)
-    {
-        if (isActivating) OnDisable();
-        else OnEnable();
-    }
+    public void ActiveInputs(bool isActivating) => ActiveControllers(isActivating);
 
     private IEnumerator TxtPickSomething(int txtIndex)
     {
@@ -328,7 +357,7 @@ public class PlayerController : MonoBehaviour
             gameManager.ShowTxtGuide(true);
         }
 
-        if(other.CompareTag("PowerUp") && other.gameObject.layer == 9 && health != baseHealth)
+        if (other.CompareTag("PowerUp") && other.gameObject.layer == 9 && health != baseHealth)
         {
             StartCoroutine(TxtPickSomething(3));
         }
@@ -336,7 +365,7 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(TxtPickSomething(4));
         }
-        else if (other.CompareTag("PowerUp") && other.gameObject.layer == 11 && ammo != baseAmmo)
+        else if (other.CompareTag("PowerUp") && other.gameObject.layer == 11 && (pistolAmmo != basePistolAmmo || shotgunAmmo != baseShotgunAmmo || rifleAmmo != baseRifleAmmo))
         {
             StartCoroutine(TxtPickSomething(5));
         }
@@ -354,7 +383,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if(other.CompareTag("SpecialDoor"))
+                if (other.CompareTag("SpecialDoor"))
                 {
                     other.GetComponent<SpecialDoor>().ShowPlace();
                 }
@@ -396,7 +425,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(!other.CompareTag("PowerUp")) gameManager.ShowTxtGuide(false);
+        if (!other.CompareTag("PowerUp")) gameManager.ShowTxtGuide(false);
     }
 
     public void GetDamage(float damage)

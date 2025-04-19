@@ -6,6 +6,7 @@ public class DialogueManager : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private TransitionController transitionController;
+    private PlayerController player;
 
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
@@ -22,13 +23,23 @@ public class DialogueManager : MonoBehaviour
     {
         DontDestroyOnLoad(this);
 
+        autoDialog = false;
+        isEnding = false;
+
         if (instance != null) Debug.LogWarning("Found more than one Dialogue Manager in the scene");
         else instance = this;
+
+        player = FindFirstObjectByType<PlayerController>();
 
         dialogueRunner.AddCommandHandler("Transition", () =>
         {
             if (GetIfEnding() == false) transitionController.InitTransition(false, null);
-            else transitionController.InitTransition(true, () => transitionController.gameObject.SetActive(false));
+            else transitionController.InitTransition(true, () => 
+            {
+                transitionController.gameObject.SetActive(false);
+                player.ActiveInputs(true);
+
+            });
         });
     }
 
@@ -49,7 +60,11 @@ public class DialogueManager : MonoBehaviour
         autoDialog = autoModeDialog;
 
         if(autoDialog)dialogueRunner.dialogueViews[0].GetComponent<LineView>().autoAdvance = true;
-        else dialogueRunner.dialogueViews[0].GetComponent<LineView>().autoAdvance = false;
+        else
+        {
+            dialogueRunner.dialogueViews[0].GetComponent<LineView>().autoAdvance = false;
+            player.ActiveInputs(false);
+        }
 
         dialogueRunner.StartDialogue(dialogPart); //ejectura linea 1
     }

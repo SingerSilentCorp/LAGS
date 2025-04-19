@@ -8,7 +8,8 @@ public class DoorsController : MonoBehaviour
 
     private Vector3 basePos;
 
-    private float doorSpeed = 0.5f;
+    private float doorSpeed = 0.2f;
+    private float doorheight = 5.0f;
 
     private bool isOpen;
 
@@ -21,7 +22,6 @@ public class DoorsController : MonoBehaviour
 
         if (doorTriggerObj != null)
         {
-            Debug.Log("has trigger");
             hasTrigger = true;
             switchActivated = false;
         }
@@ -34,40 +34,38 @@ public class DoorsController : MonoBehaviour
         {
             if (!isOpen)
             {
-                this.transform.DOMoveY(basePos.y + 5f, doorSpeed).OnComplete(() => isOpen = true);
+                isOpen = true;
+                this.transform.DOMoveY(basePos.y + doorheight, doorSpeed);
                 _sound.AbrirPuerta();
-                Debug.Log("Puerta Abierta");
             }
         }
         else if (hasTrigger)
         {
             if (!isOpen && switchActivated)
             {
-                this.transform.DOMoveY(basePos.y + 5f, doorSpeed).OnComplete(() => isOpen = true);
-               // _sound.AbrirPuerta();
-                Debug.Log("Puerta Abierta");
+                isOpen = true;
+                this.transform.DOMoveY(basePos.y + doorheight, doorSpeed);
+                _sound.AbrirPuerta();
             }
-
         }
-
-        
     }
 
     public void CloseDoor()
     {
-        if (isOpen)
-        {
-            this.transform.DOMoveY(basePos.y, doorSpeed).OnComplete(() => isOpen = false);
-        }
+        if (isOpen) this.transform.DOMoveY(basePos.y, doorSpeed).OnComplete(() => isOpen = false);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Player")) OpenDoor();
+        if (!isOpen && !other.CompareTag("Player")) OpenDoor();
     }
 
     private void OnTriggerExit(Collider other)
     {
-        CloseDoor();
+        if (other.gameObject != null)
+        {
+            DOTween.Kill(this);
+            CloseDoor();
+        }
     }
 }

@@ -50,8 +50,6 @@ public class TransitionController : MonoBehaviour
         isFadding = dialogueManager.GetIfFadding();
         changeImg = dialogueManager.GetIfChangingIMG();
 
-
-
         if (isEnding)
         {
             isFadding = false;
